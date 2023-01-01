@@ -1,0 +1,26 @@
+.intro {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.photo {
+  max-width: 300px;
+}
+
+.intro_text {
+  padding-left: 20px;
+}
+
+.intro_text p:not(:last-of-type), .biography_section p:not(:last-of-type) {
+  margin-bottom: 10px;  
+}
+
+.ordered_list {
+  margin-bottom: 100px; 
+}
+
+.health_problem_list {
+  margin: 20px;
+  columns: 2; 
+}
