@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Image } from "next/image"
+import Image from "next/image";
 
 import styles from "./styles.module.css";
 
@@ -36,7 +36,9 @@ export default function Slideshow() {
             width={333}
             height={333}
             alt="slideshow"
-            className={`${index === i ? "active" : "inactive"} ${styles.slideshow_image}`}
+            className={`${index === i ? "active" : "inactive"} ${
+              styles.slideshow_image
+            }`}
             src={image}
             key={i}
           ></Image>

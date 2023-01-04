@@ -1,4 +1,4 @@
-import { Image } from "next/image"
+import Image from "next/image"
 
 import styles from "./styles.module.css";
 
@@ -11,6 +11,8 @@ const Cards = () => {
         <div className={styles.grid_container}>
           <div className={styles.grid}>
             <Image
+              width={111}
+              height={111}
               className={styles.grid_pic}
               src={"/images/chickpeas.jpg"}
               alt="grid-pic"
@@ -23,6 +25,10 @@ const Cards = () => {
           </div>
           <div className={styles.grid}>
             <Image
+              width={111}
+              height={111}            
+
+
               className={styles.grid_pic}
               src={"/images/tofu.png"}
               alt="grid-pic"
@@ -35,6 +41,8 @@ const Cards = () => {
           </div>
           <div className={styles.grid}>
             <Image
+            width={111}
+            height={111}
               className={styles.grid_pic}
               src={"/images/chickpeas.jpg"}
               alt="grid-pic"
@@ -47,6 +55,8 @@ const Cards = () => {
           </div>
           <div className={styles.grid}>
             <Image
+            width={111}
+            height={111}
               className={styles.grid_pic}
               src={"/images/tofu.png"}
               alt="grid-pic"
