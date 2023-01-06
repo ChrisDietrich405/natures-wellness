@@ -36,9 +36,10 @@ export default function Slideshow() {
             width={333}
             height={333}
             alt="slideshow"
-            className={`${index === i ? "active" : "inactive"} ${
-              styles.slideshow_image
-            }`}
+            className={`${styles.slideshow_image} ${index === i ? styles.active : styles.inactive}`}
+            // className={`${index === i ? "active" : "inactive"} ${
+            //   styles.slideshow_image
+            // }`}
             src={image}
             key={i}
           ></Image>

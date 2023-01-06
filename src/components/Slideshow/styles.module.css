@@ -19,22 +19,29 @@
   .slideshow_container:hover {
     transition: 1s all;
   }
-  
-  .slideshow_container .play-btn,
-  .pause-btn {
+
+  .slideshow_container {
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fade 1s;
   }
   
+  /* .slideshow_container .play-btn,
+  .pause-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade 1s;
+  } */
+  
   .slideshow {
     width: 100%;
     height: 520px;
   }
   
-  .slideshow-image {
-    margin: 0 auto 100px;
+  .slideshow_image {
+    margin: 100px auto;
     width: 100%;
     height: 520px;
   }
@@ -43,7 +50,7 @@
     display: none;
   }
   
-  .play-btn,
+  /* .play-btn,
   .pause-btn {
     position: absolute;
     display: none;
@@ -52,5 +59,5 @@
     color: black;
     width: 900px;
     height: 500px;
-  }
+  } */
   

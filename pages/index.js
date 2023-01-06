@@ -17,7 +17,7 @@ export default function Home() {
       <Slideshow />
       <section id="some" className={`${styles.container} inner-container`}>
         <div className={styles.intro}>
-          <Image src={EmPicture} width={111} height={111} alt="Em photo" className={styles.photo} >
+          <Image src={EmPicture} width={300} height={450} alt="Em photo" className={styles.photo} >
             </Image>
           <div className={styles.intro_text}>
             <h1 className="page_title">"Hi, I'm Em!"</h1>
