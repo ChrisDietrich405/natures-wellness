@@ -1,16 +1,19 @@
-import React, { useRef } from "react";
-// import { ContactResource } from "../../resources/contact-resource";
-import { api } from "./api/api";
+import React, { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import styles from "../src/styles/Contact.module.css";
 
+const publicKey = process.env.REACT_APP_USER_ID;
+
 function Contact() {
+  const [isDisabled, setIsDisabled] = useState(false)
+
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
-  // const handleSubmit = (event) => {
   //   event.preventDefault();
 
   //   const data = {
@@ -40,26 +43,33 @@ function Contact() {
     var templateParams = {
       email: userEmail,
       message: userMessage,
-      to_name: "Chris",
+      to_name: "Emily",
+      firstName: firstNameRef.current.value,
+      lastName: lastNameRef.current.value,
     };
 
     emailjs
       .send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         templateParams,
-        process.env.REACT_APP_USER_ID
+        process.env.NEXT_PUBLIC_USER_ID
       )
       .then(
         (result) => {
-          notify();
+          toast.success("Your message was successfully sent");
+          firstNameRef.current.value = "";
+          lastNameRef.current.value = "";
+          emailRef.current.value = "";
+          messageRef.current.value = "";
+          setIsDisabled(false)
         },
         (error) => {
-          console.log(error.text);
+          toast.error("Your message wasn't sent. Try later");
+          setIsDisabled(false)
         }
       );
-    document.getElementById("exampleFormControlInput1").value = "";
-    document.getElementById("exampleFormControlTextarea1").value = "";
+        setIsDisabled(true)
   };
 
   return (
@@ -119,8 +129,8 @@ function Contact() {
                 />
               </div>
               <div className={styles.form_group}>
-                <button type="submit" className={styles.send_message}>
-                  Send
+                <button type="submit" className={styles.send_message} disabled={isDisabled}>
+                  {isDisabled ? "Sending..." : "Send"}
                 </button>
               </div>
             </form>
@@ -134,6 +144,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </main>
   );
 }
