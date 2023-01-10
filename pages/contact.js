@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 // import { ContactResource } from "../../resources/contact-resource";
 import { api } from "./api/api";
+import emailjs from "@emailjs/browser";
 import styles from "../src/styles/Contact.module.css";
 
 function Contact() {
@@ -9,37 +10,69 @@ function Contact() {
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
 
-    const data = {
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
-      email: emailRef.current.value,
-      message: messageRef.current.value,
+  //   const data = {
+  //     firstName: firstNameRef.current.value,
+  //     lastName: lastNameRef.current.value,
+  //     email: emailRef.current.value,
+  //     message: messageRef.current.value,
+  //   };
+  //   api
+  //     .post("/chris", {
+  //       params: JSON.stringify({
+  //         characterId: "chris",
+  //       }),
+  //     })
+  //     .then((resp) => {
+  //       console.log(resp);
+  //     });
+  // };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    let userEmail = document.getElementById("exampleFormControlInput1").value;
+    let userMessage = document.getElementById(
+      "exampleFormControlTextarea1"
+    ).value;
+
+    var templateParams = {
+      email: userEmail,
+      message: userMessage,
+      to_name: "Chris",
     };
-    api
-      .post("/chris", {
-        params: JSON.stringify({
-          characterId: "chris",
-        }),
-      })
-      .then((resp) => {
-        console.log(resp);
-      });
+
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_USER_ID
+      )
+      .then(
+        (result) => {
+          notify();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    document.getElementById("exampleFormControlInput1").value = "";
+    document.getElementById("exampleFormControlTextarea1").value = "";
   };
 
   return (
-    <section className="inner-container">
+    <main className={styles.inner_container}>
       <div className={styles.inner}>
         <div className={styles.columns}>
           <div className={styles.form_wrapper}>
-            <form onSubmit={handleSubmit} className={styles.form}>
+            <form onSubmit={sendEmail} className={styles.form}>
               <h1>Contact Us</h1>
               <p>We'll get back to you asap!</p>
               <div className={styles.names}>
                 <div className={styles.form_group}>
-                  <label for="firstName">First Name</label>
+                  <label htmlFor="firstName">First Name</label>
                   <input
                     type="text"
                     ref={firstNameRef}
@@ -50,7 +83,7 @@ function Contact() {
                   />
                 </div>
                 <div className={styles.form_group}>
-                  <label for="lastName">Last Name</label>
+                  <label htmlFor="lastName">Last Name</label>
                   <input
                     type="text"
                     ref={lastNameRef}
@@ -62,21 +95,23 @@ function Contact() {
                 </div>
               </div>
               <div className={styles.form_group}>
-                <label for="email">Email</label>
+                <label htmlFor="exampleFormControlInput1">Email</label>
                 <input
+                  id="exampleFormControlInput1"
                   type="email"
                   name="email"
                   ref={emailRef}
-                  id="email"
+                  // id="email"
                   className={styles.input_text}
                   placeholder="example@corp.com"
                   tabIndex="3"
                 />
               </div>
               <div className={styles.form_group}>
-                <label for="message">Message</label>
+                <label htmlFor="exampleFormControlTextarea1">Message</label>
 
                 <textarea
+                  id="exampleFormControlTextarea1"
                   placeholder="Start typing..."
                   className={styles.message}
                   name="message"
@@ -99,7 +134,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
 
