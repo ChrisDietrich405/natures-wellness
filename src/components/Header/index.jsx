@@ -24,13 +24,16 @@ const Header = () => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/recipes">Recipes</Link>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/recipes">Resources</Link>
                 <div className={styles.dropdown_content}>
-                  <Link href="/breakfast">Breakfast</Link>
-                  <Link href="/main-course">Main Course</Link>
-                  <Link href="/appetizers-snacks">Appetizers & Snacks</Link>
-                  <Link href="/smoothies-drinks">Smoothies & Drinks</Link>
-                  <Link href="/desserts">Desserts</Link>
+                  <Link href="/breakfast">Documentaries</Link>
+                  <Link href="/main-course">Cookbooks</Link>
+                  <Link href="/appetizers-snacks">Books</Link>
+                  <Link href="/smoothies-drinks">Informative Websites</Link>
+                  <Link href="/desserts">Meal Delivery Services</Link>
                   <Link href="/">Travel</Link>
                 </div>
               </li>
