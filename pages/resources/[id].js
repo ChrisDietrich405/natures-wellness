@@ -1,6 +1,6 @@
 import React from "react";
 
-const RecipePage = () => {
+const RecipePage = ({}) => {
   return <div style={{ marginTop: "300px" }}>RecipePage</div>;
 };
 

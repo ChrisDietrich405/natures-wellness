@@ -27,9 +27,9 @@ const Header = () => {
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="/recipes">Resources</Link>
+                <Link href="/resources">Resources</Link>
                 <div className={styles.dropdown_content}>
-                  <Link href="/breakfast">Documentaries</Link>
+                  <Link href="/documentaries">Documentaries</Link>
                   <Link href="/main-course">Cookbooks</Link>
                   <Link href="/appetizers-snacks">Books</Link>
                   <Link href="/smoothies-drinks">Informative Websites</Link>
