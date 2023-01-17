@@ -1,4 +1,3 @@
-import ResourcesPage from "../pages/resources/whatever";
 
 export function documentariesData() {
   return [

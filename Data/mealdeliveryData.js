@@ -16,6 +16,7 @@ export function mealdeliveryData() {
       url: "https://splendidspoon.com/",
     },
     {
+      id: 4, 
       title: "Spinly",
       url: "https://sprinly.com/",
     },
