@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image"
+import Image from "next/image";
 import SocialIcons from "../SocialIcons";
 
 import styles from "./styles.module.css";
@@ -16,7 +16,13 @@ const Header = () => {
       <div className={styles.header_content}>
         <div className={styles.inner}>
           <div className={styles.logo}>
-            <Image width={40} height={40}  src={"/images/tofu.png"} style={{ width: "60px" }} alt="" />
+            <Image
+              width={40}
+              height={40}
+              src={"/images/tofu.png"}
+              style={{ width: "60px" }}
+              alt=""
+            />
           </div>
           <div className={styles.nav_menu}>
             <ul>
@@ -43,8 +49,12 @@ const Header = () => {
               <li>
                 <Link href="/services">Services</Link>
                 <div className={styles.dropdown_content}>
-                  <Link href="/coaching-packages">Coaching Packages</Link>
-                  <Link href="/wellness-programs">Wellness Programs</Link>
+                  <Link href="/services/coachingpackages">
+                    Coaching Packages
+                  </Link>
+                  <Link href="/services/wellnessprograms">
+                    Wellness Programs
+                  </Link>
 
                   <Link href="/photography">Photography</Link>
                 </div>
