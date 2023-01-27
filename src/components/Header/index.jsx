@@ -33,13 +33,13 @@ const Header = () => {
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="/resources">Resources</Link>
+                <p>Resources</p>
                 <div className={styles.dropdown_content}>
-                  <Link href="/documentaries">Documentaries</Link>
-                  <Link href="/main-course">Cookbooks</Link>
+                  <Link href="/resources/1">Documentaries</Link>
+                  <Link href="/resources/2">Meal Delivery Services</Link>
                   <Link href="/appetizers-snacks">Books</Link>
                   <Link href="/smoothies-drinks">Informative Websites</Link>
-                  <Link href="/desserts">Meal Delivery Services</Link>
+                  <Link href="/desserts">Cookbooks</Link>
                   <Link href="/">Travel</Link>
                 </div>
               </li>
