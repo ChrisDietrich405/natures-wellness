@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: { domains: ["quotefancy.com"] },
+  images: { domains: ["quotefancy.com", "localhost" ] },
 };
 
 module.exports = nextConfig;

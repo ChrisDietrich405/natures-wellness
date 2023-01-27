@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
@@ -14,6 +14,8 @@ import { api } from "../api/api";
 
 const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
+
+  const url = "http://localhost:3001/"
 
   const router = useRouter();
   const { id } = router.query;
@@ -40,38 +42,27 @@ const ResourcesId = (props) => {
           {cards.map((card) => {
             return (
               <>
-                <Grid
-                  item
-                  xs={3}
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="space-between"
-                  boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
-                >
-                  <Card sx={{ maxWidth: 345 }}>
-                    <Image
-                      width="100"
-                      height="100"
-                      alt="Forks Over Knives"
-                      src="/images/forksoverknives.jpg"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Forks Over Knives
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Link href="https://www.forksoverknives.com/the-film/">
-                        <Button size="small">Learn More</Button>
-                      </Link>
-                    </CardActions>
-                  </Card>
-                </Grid>
+                <Card sx={{ maxWidth: 345 }}>
+                  <Image
+                    width="100"
+                    height="100"
+                    alt="Forks Over Knives"
+                    src={url + card.image}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {card.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {card.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Link href={card.url}>
+                      <Button size="small">Learn More</Button>
+                    </Link>
+                  </CardActions>
+                </Card>
               </>
             );
           })}
