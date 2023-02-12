@@ -37,8 +37,8 @@ const Header = () => {
                 <div className={styles.dropdown_content}>
                   <Link href="/resources/1">Documentaries</Link>
                   <Link href="/resources/2">Meal Delivery Services</Link>
-                  <Link href="/appetizers-snacks">Books</Link>
-                  <Link href="/smoothies-drinks">Informative Websites</Link>
+                  <Link href="/resources/3">Cookbooks</Link>
+                  <Link href="/resources/4">Books</Link>
                   <Link href="/desserts">Cookbooks</Link>
                   <Link href="/">Travel</Link>
                 </div>
@@ -49,14 +49,8 @@ const Header = () => {
               <li>
                 <Link href="/services">Services</Link>
                 <div className={styles.dropdown_content}>
-                  <Link href="/services/coachingpackages">
-                    Coaching Packages
-                  </Link>
-                  <Link href="/services/wellnessprograms">
-                    Wellness Programs
-                  </Link>
-
-                  <Link href="/photography">Photography</Link>
+                  <Link href="/services/coachingPackages">Coaching Packages</Link>
+                  <Link href="/services/wellnessPrograms">Wellness Programs</Link>
                 </div>
               </li>
 

@@ -6,14 +6,18 @@ import {
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
 
-import Card from "../Card";
 import TextSlideCard from "../TextSlideCard";
 
 import styles from "./styles.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const ContentSlider = ({ childrenImageHeight, numOfSlides, slideContent, typeOfSlide }) => {
+const ContentSlider = ({
+  childrenImageHeight,
+  numOfSlides,
+  slideContent,
+  typeOfSlide,
+}) => {
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -42,26 +46,11 @@ const ContentSlider = ({ childrenImageHeight, numOfSlides, slideContent, typeOfS
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
- 
 
   return (
     <Slider {...settings} className={styles.slider_container}>
       {slideContent.map((listItem) => {
-        if(typeOfSlide === "text") {
-          return (
-            <TextSlideCard listItem={listItem}/>
-          )
-        } 
-        return (
-          <Card
-            // innerImage={innerImage}
-            imageHeight={childrenImageHeight}
-            listItem={listItem}
-            // title={listItem.title}
-            // image={listItem.img}
-            // category={listItem.category}
-          />
-        );
+        return <TextSlideCard key={listItem.title} listItem={listItem} />;
       })}
     </Slider>
   );
