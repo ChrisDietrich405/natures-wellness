@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { wellnessProgramsData } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData2 } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData3 } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData4 } from "../../src/componentsData/wellnessPrograms";
+
+import { api } from "../api/api";
 
 import ContentSlider from "../../src/components/ContentSlider";
 import { testimonials } from "../../src/componentsData/testimonials";
@@ -13,6 +15,16 @@ import List from "../../src/components/List";
 import styles from "../../src/styles/WellnessPrograms.module.css";
 
 const WellnessPrograms = () => {
+  const [testimonials, setTestimonials] = useState([])
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      const response = await api.get(`/testimonials`);
+      const { data } = response;
+      console.log("ASD: ", data);
+      setTestimonials(data);
+    };
+    fetchTestimonials();
+  }, []);
   return (
     <main className="inner-container">
       <div className={styles.wellness_container}>

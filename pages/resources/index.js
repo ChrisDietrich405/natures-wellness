@@ -14,6 +14,8 @@ import { Container } from "@mui/system";
 const Resources = () => {
   const [resources, setResources] = useState([]);
 
+  const router = useRouter();
+
   useEffect(() => {
     const fetchResource = async () => {
       const response = await api.get(`/resources`);
@@ -38,6 +40,14 @@ const Resources = () => {
                     width="300"
                     alt={resource.name}
                   />
+                  <CardActions>
+                    <Button
+                      onClick={() => router.push(`/resources/${resource.id}`)}
+                      size="small"
+                    >
+                      Learn More{" "}
+                    </Button>
+                  </CardActions>
                 </Card>
               </Grid>
             </>

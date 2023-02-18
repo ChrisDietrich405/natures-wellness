@@ -25,7 +25,7 @@ const ResourcesId = (props) => {
       const response = await api.get(`/resources_information/${id}`);
       const { data } = response;
       setCards(data);
-      console.log("resources:", data)
+      console.log("resources:", data);
     };
     fetchResources();
   }, [id]);
@@ -34,7 +34,8 @@ const ResourcesId = (props) => {
     const fetchTitle = async () => {
       const response = await api.get(`/resources/${id}`);
       const { data } = response;
-      setTitle(data[0].name)
+      console.log(data);
+      // setTitle(data[0].name)
       console.log("resources-infor: ", data);
     };
     fetchTitle();

@@ -32,25 +32,31 @@ const Header = () => {
               <li>
                 <Link href="/about">About</Link>
               </li>
+
               <li>
-                <p>Resources</p>
-                <div className={styles.dropdown_content}>
-                  <Link href="/resources/1">Documentaries</Link>
+                <Link href="/resources">Resources</Link>
+              </li>
+              <div className={styles.dropdown_content}>
+                {/* <Link href="/resources/1">Documentaries</Link>
                   <Link href="/resources/2">Meal Delivery Services</Link>
                   <Link href="/resources/3">Cookbooks</Link>
                   <Link href="/resources/4">Books</Link>
                   <Link href="/desserts">Cookbooks</Link>
-                  <Link href="/">Travel</Link>
-                </div>
-              </li>
+                  <Link href="/">Travel</Link> */}
+              </div>
+
               <li>
                 <Link href="/contact">Contact</Link>
               </li>
               <li>
                 <Link href="/services">Services</Link>
                 <div className={styles.dropdown_content}>
-                  <Link href="/services/coachingPackages">Coaching Packages</Link>
-                  <Link href="/services/wellnessPrograms">Wellness Programs</Link>
+                  <Link href="/services/coachingPackages">
+                    Coaching Packages
+                  </Link>
+                  <Link href="/services/wellnessPrograms">
+                    Wellness Programs
+                  </Link>
                 </div>
               </li>
 
