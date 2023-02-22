@@ -3,7 +3,7 @@ import React from "react";
 import Banner from "../src/components/Banner"
 import ContentSlider from "../src/components/ContentSlider";
 
-import {blogsList} from "./slideData"
+// import {blogsList} from "./slideData"
 
 const bannerPicture = "/images/tofu.png"
 
