@@ -12,7 +12,8 @@ function Blogs() {
     <>
       <Banner picturePath={bannerPicture} />
         <div className="inner-container">
-          <ContentSlider numOfSlides={4} slideContent={blogsList} />
+          <p>hello</p>
+          {/* <ContentSlider numOfSlides={4} slideContent={blogsList} /> */}
         </div>
     </>
   );

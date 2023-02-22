@@ -16,11 +16,11 @@ const About = () => {
       <Image src={EmPicture} width={300} height={450} alt="Em photo" className={styles.photo} >
         </Image>
       <div className={styles.intro_text}>
-        <h1 className="page_title">"Hi, I'm Em!"</h1>
+        {/* <h1 className="page_title">'Hi, I'm Em!'</h1> */}
         <p>
           I have an immense passion for helping guide others toward a more
           healthful and vibrant life. This passion has led me to pursue a
-          career as a Registered Dietitian, to obtain a Master's Degree in
+          career as a Registered Dietitian, to obtain a Masters Degree in
           Nutrition, and to learn as much as I can about balanced nutrition
           and healthy lifestyle practices.{" "}
         </p>
