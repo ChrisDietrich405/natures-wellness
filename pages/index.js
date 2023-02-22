@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Image from "next/image"
-import Slideshow from "../src/components/Slideshow"
+import Image from "next/image";
+import Slideshow from "../src/components/Slideshow";
 import Cards from "../src/components/Cards";
 import PictureCards from "../src/components/PictureCards";
-import styles from "../src/styles/Home.module.css"
+import styles from "../src/styles/Home.module.css";
 import { homeData, homeData2 } from "../src/data/homeData";
 import List from "../src/components/List";
 
@@ -16,64 +16,66 @@ export default function Home() {
     <>
       <Slideshow />
       <section id="some" className={`${styles.container} inner-container`}>
-        <div className={styles.intro}>
-          <Image src={EmPicture} width={300} height={450} alt="Em photo" className={styles.photo} >
-            </Image>
-          <div className={styles.intro_text}>
-            <h1 className="page_title">"Hi, I'm Em!"</h1>
-            <p>
-              I have an immense passion for helping guide others toward a more
-              healthful and vibrant life. This passion has led me to pursue a
-              career as a Registered Dietitian, to obtain a Master's Degree in
-              Nutrition, and to learn as much as I can about balanced nutrition
-              and healthy lifestyle practices.{" "}
-            </p>
-            <p>
-              These healthy lifestyle practices I abbreviate as SPARC since they
-              are sure to add spark to your life. They are as follows:
-            </p>
-            {/* <a
-              href="#some"
-              onClick={(e) => {
-                e.preventDefault();
-                setReadMore((prevState) => !prevState);
-              }}
-            >
-              {readMore ? "Show less" : "Read more"}
-            </a> */}
-
-            {/* {readMore && ( */}
-            <>
-              <List data={homeData} ordered className={styles.ordered_list}/>
-            </>
-            {/* )} */}
-          </div>
+        <h3 className={styles.home_intro}>
+          I help men and women lose weight and prevent or reverse chronic
+          diseases in a sustainable and enjoyable manner by teaching the power
+          of cultivating healthy habits related to eating more plants and
+          embracing healthy lifestyle practices.
+        </h3>
+        <div>
+          <p>Are you:</p>
+          <li>
+            Frustrated with yo-yo dieting, counting calories, drinking meal
+            replacement shakes, and cutting portions to try to lose weight and
+            keep it off?
+          </li>
+          <li>
+            Dreaming of the day when your clothes will fit more loosely or you
+            will be able to fit into your favorite pants from years past?
+          </li>
+          <li>
+            Fed up with not being able to stick to your health-related goals?{" "}
+          </li>
+          <li>
+            Wishing to jump out of bed in the morning with little or no
+            stiffness and with energy to last the whole day through?{" "}
+          </li>
+          <li>
+            Desiring to reduce your blood sugar, blood pressure, and/or
+            cholesterol without medications, to reduce your medications, or to
+            eliminate some of them?{" "}
+          </li>
         </div>
-        <section className={styles.biography_section}>
+        <div>
           <p>
-            Early in my career as a Dietitian at several nursing homes in
-            Baltimore City, I witnessed what seemed like immense suffering and
-            reduced quality of life in men and women, some as young as myself at
-            the time (late 20s) due to debilitating diseases like stroke, Type 2
-            Diabetes, kidney failure, and others. I felt at a loss of how to
-            help them which led me to want to find a way to help prevent others
-            from suffering this same fate. Finding a way to help empower,
-            educate, and support individuals on their journeys to achieving
-            optimal health became my passion and something I feel so grateful to
-            be able to do!
+            If you answered yes to any of these questions, you are not alone.
+            Having worked with hundreds of men and women trying to lose weight
+            and improve their health, I have witnessed the immense frustration
+            and despair faced by those who, just like you, often have tried many
+            different ways to lose weight and improve their health but have yet
+            to find a way that is sustainable, inexpensive, and enjoyable. This
+            is not a personal failure but rather one of our society-our diet
+            culture, food industry, ease of access to inexpensive and processed
+            foods, and the abundance of conflicting nutrition and health
+            information do not make it easy. I am here to help you to navigate
+            the challenges that society has thrown on you by working with you to
+            create and cultivate habits that can transform your health and
+            happiness. I am here so that your dreams of losing weight and
+            keeping it off, of having your clothes fit more loosely, for jumping
+            out of bed in the morning with little or no stiffness, for abundant
+            energy, reducing or eliminating your need for some or all
+            medications, and more will become realities long-term.
           </p>
-          <p>
-            Plant-based nutrition and other healthy lifestyle practices can help
-            us to look and feel our best! Research has shown the numerous
-            benefits to eating plant-based or moving in that direction and
-            embracing other elements of SPARC. A few of the health problems that
-            can be lessened or resolved by embracing the SPARC practices
-            include:
-          </p>
-          <div className={styles.health_problem_list}>
-            <List data={homeData2} />
-          </div>
-        </section>
+        </div>
+        <div>
+          <h3>Get a Free Guide Today!</h3>
+          Looking to lose weight & improve your health without sacrificing
+          taste, feeling hungry, cutting portion sizes, or counting calories?
+          Grab this free Sensational Six Guide to help you slim down while
+          feeling satisfied and energized! Complete with servings to aim for,
+          ideas on how to boost your intake of plant powerhouses, and links to
+          some delicious recipes!
+        </div>
         <Cards />
         <PictureCards />
       </section>
