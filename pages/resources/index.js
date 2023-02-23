@@ -27,23 +27,36 @@ const Resources = () => {
   }, []);
   return (
     <Container style={{ marginTop: "100px" }}>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={4}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gridAutoRows: "1fr",
+        }}
+      >
         {resources.map((resource, index) => {
           return (
             <>
-              <Grid item xs={3} gap="20px">
-                <Card>
-                  <h2>{resource.name}</h2>
+              <Grid item>
+                <Card sx={{ p: 2 }} style={{ border: "1px solid black", height:"100%", display: "flex", flexDirection: "column" }}>
+                  <h3 style={{ minHeight: "50px", textAlign: "center" }}>
+                    {resource.name}
+                  </h3>
                   <Image
+                    
                     src={test + resource.image}
-                    height="300"
-                    width="300"
+                    height="200"
+                    width="200"
                     alt={resource.name}
+                    style={{ width: "100%", height: "auto", maxHeight: "300px", objectFit: "cover"}}
                   />
-                  <CardActions>
+                  <CardActions style={{marginTop: "auto"}}>
                     <Button
                       onClick={() => router.push(`/resources/${resource.id}`)}
                       size="small"
+
                     >
                       Learn More{" "}
                     </Button>
