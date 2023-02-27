@@ -39,7 +39,7 @@ const Resources = () => {
         {resources.map((resource, index) => {
           return (
             <>
-              <Grid item>
+              <Grid item key={index}>
                 <Card sx={{ p: 2 }} style={{ border: "1px solid black", height:"100%", display: "flex", flexDirection: "column" }}>
                   <h3 style={{ minHeight: "50px", textAlign: "center" }}>
                     {resource.name}

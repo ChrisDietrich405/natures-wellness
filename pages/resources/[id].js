@@ -44,24 +44,40 @@ const ResourcesId = (props) => {
   return (
     <div>
       <h1>{title}</h1>
-      <Container>
+      <Container style={{ marginTop: "100px" }}>
         <Grid
+          spacing={4}
           container
-          style={{ margin: "100px auto" }}
-          align="center"
-          justifyContent="center"
-          alignItems="center"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gridAutoRows: "1fr",
+          }}
         >
           {cards.map((card) => {
             return (
               <>
                 <Grid item key={card.id}>
-                  <Card sx={{ maxWidth: 345 }} style={{ marginRight: "20px" }}>
+                  <Card
+                    sx={{ p: 2 }}
+                    style={{
+                      border: "1px solid black",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
                     <Image
-                      width="150"
-                      height="150"
-                      alt="Forks Over Knives"
+                      width="200"
+                      height="200"
+                      alt={card.title}
                       src={url + card.image}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h6" component="div">
