@@ -36,6 +36,9 @@ const Header = () => {
               <li>
                 <Link href="/resources">Resources</Link>
               </li>
+              <li>
+                <Link href="/testimonials">Testimonials</Link>
+              </li>
               <div className={styles.dropdown_content}>
                 {/* <Link href="/resources/1">Documentaries</Link>
                   <Link href="/resources/2">Meal Delivery Services</Link>

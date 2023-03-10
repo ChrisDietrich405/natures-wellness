@@ -4,7 +4,7 @@ import Slideshow from "../src/components/Slideshow";
 import Cards from "../src/components/Cards";
 import PictureCards from "../src/components/PictureCards";
 import styles from "../src/styles/Home.module.css";
-import { homeData, homeData2 } from "../src/data/homeData";
+import { homeData } from "../src/data/homeData";
 import List from "../src/components/List";
 
 const EmPicture = "/images/home-profile.jpg";
@@ -24,27 +24,8 @@ export default function Home() {
         </h3>
         <div>
           <p>Are you:</p>
-          <li>
-            Frustrated with yo-yo dieting, counting calories, drinking meal
-            replacement shakes, and cutting portions to try to lose weight and
-            keep it off?
-          </li>
-          <li>
-            Dreaming of the day when your clothes will fit more loosely or you
-            will be able to fit into your favorite pants from years past?
-          </li>
-          <li>
-            Fed up with not being able to stick to your health-related goals?{" "}
-          </li>
-          <li>
-            Wishing to jump out of bed in the morning with little or no
-            stiffness and with energy to last the whole day through?{" "}
-          </li>
-          <li>
-            Desiring to reduce your blood sugar, blood pressure, and/or
-            cholesterol without medications, to reduce your medications, or to
-            eliminate some of them?{" "}
-          </li>
+
+          <List data={homeData} unordered className={styles.unordered_list} />
         </div>
         <div>
           <p>
@@ -67,14 +48,21 @@ export default function Home() {
             medications, and more will become realities long-term.
           </p>
         </div>
-        <div>
-          <h3>Get a Free Guide Today!</h3>
+        <div className={styles.freeGuide}>
           Looking to lose weight & improve your health without sacrificing
           taste, feeling hungry, cutting portion sizes, or counting calories?
           Grab this free Sensational Six Guide to help you slim down while
           feeling satisfied and energized! Complete with servings to aim for,
           ideas on how to boost your intake of plant powerhouses, and links to
           some delicious recipes!
+        </div>
+        <div className={styles.freeGuideContainer}>
+          <a
+            href="https://en.wikipedia.org/wiki/Next.js"
+            className={styles.freeGuideLink}
+          >
+            Get a Free Guide Today!
+          </a>
         </div>
         <Cards />
         <PictureCards />

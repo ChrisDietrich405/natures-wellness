@@ -1,7 +1,6 @@
 .home_intro {
-  margin: 50px; 
+  margin: 50px;
 }
-
 
 /* //////////////////////////////////// */
 
@@ -19,15 +18,34 @@
   padding-left: 20px;
 }
 
-.intro_text p:not(:last-of-type), .biography_section p:not(:last-of-type) {
-  margin-bottom: 10px;  
+.intro_text p:not(:last-of-type),
+.biography_section p:not(:last-of-type) {
+  margin-bottom: 10px;
 }
 
 .ordered_list {
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
 }
 
 .health_problem_list {
   margin: 20px;
-  columns: 2; 
+  columns: 2;
+}
+
+.freeGuideContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.freeGuide {
+  margin-top: 20px;
+}
+
+.freeGuideLink {
+  text-decoration: none;
+}
+
+.freeGuideLink:hover {
+  color: green;
 }

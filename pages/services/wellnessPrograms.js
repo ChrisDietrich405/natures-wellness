@@ -8,14 +8,13 @@ import { wellnessProgramsData4 } from "../../src/componentsData/wellnessPrograms
 import { api } from "../api/api";
 
 import ContentSlider from "../../src/components/ContentSlider";
-import { testimonials } from "../../src/componentsData/testimonials";
 
 import List from "../../src/components/List";
 
 import styles from "../../src/styles/WellnessPrograms.module.css";
 
 const WellnessPrograms = () => {
-  const [testimonials, setTestimonials] = useState([])
+  const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
     const fetchTestimonials = async () => {
       const response = await api.get(`/testimonials`);

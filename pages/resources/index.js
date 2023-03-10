@@ -40,23 +40,39 @@ const Resources = () => {
           return (
             <>
               <Grid item key={index}>
-                <Card sx={{ p: 2 }} style={{ border: "1px solid black", height:"100%", display: "flex", flexDirection: "column" }}>
+                <Card
+                  sx={{ p: 2 }}
+                  style={{
+                    border: "1px solid black",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <h3 style={{ minHeight: "50px", textAlign: "center" }}>
                     {resource.name}
                   </h3>
                   <Image
-                    
                     src={test + resource.image}
                     height="200"
                     width="200"
                     alt={resource.name}
-                    style={{ width: "100%", height: "auto", maxHeight: "300px", objectFit: "cover"}}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      maxHeight: "300px",
+                      objectFit: "cover",
+                    }}
                   />
-                  <CardActions style={{marginTop: "auto"}}>
+                  <CardActions style={{ marginTop: "auto" }}>
                     <Button
+                      variant="contained"
                       onClick={() => router.push(`/resources/${resource.id}`)}
                       size="small"
-
+                      sx={{
+                        width: "100%",
+                        mt: "10px",
+                      }}
                     >
                       Learn More{" "}
                     </Button>

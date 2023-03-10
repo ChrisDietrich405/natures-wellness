@@ -88,9 +88,31 @@ const ResourcesId = (props) => {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Link href={card.url} target="_blank">
-                        <Button size="small">Learn More</Button>
-                      </Link>
+                      {/* <Link
+                      
+                        href={`${card.url}`}
+                        passHref
+                        variant="contained"
+                        size="small"
+                        sx={{
+                          width: "100%",
+                          mt: "10px",
+                        }}
+                      >
+                        <Button>About</Button>
+                      </Link> */}
+                      <Button
+                        variant="contained"
+                        href={`${card.url}`}
+                        // onClick={() => router.push(`${card.url}`)}
+                        size="small"
+                        sx={{
+                          width: "100%",
+                          mt: "10px",
+                        }}
+                      >
+                        Learn More{" "}
+                      </Button>
                     </CardActions>
                   </Card>
                 </Grid>
