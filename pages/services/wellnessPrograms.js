@@ -25,7 +25,7 @@ const WellnessPrograms = () => {
     fetchTestimonials();
   }, []);
   return (
-    <main className="inner-container">
+    <main style={{margin: "50px auto"}}>
       <div className={styles.wellness_container}>
         <h2 className={styles.offerings_title}>
           Nature’s Wellness Path’s Plant-Powered Weight Loss & Wellness Programs

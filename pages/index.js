@@ -17,13 +17,13 @@ export default function Home() {
       <Slideshow />
       <section id="some" className={`${styles.container} inner-container`}>
         <h3 className={styles.home_intro}>
-          I help men and women lose weight and prevent or reverse chronic
+          Hello, I'm Emily and I help men and women lose weight and prevent or reverse chronic
           diseases in a sustainable and enjoyable manner by teaching the power
           of cultivating healthy habits related to eating more plants and
           embracing healthy lifestyle practices.
         </h3>
         <div>
-          <p>Are you:</p>
+          <h3 style={{fontWeight: "bold", marginBottom: "20px"}}>Are you:</h3>
 
           <List data={homeData} unordered className={styles.unordered_list} />
         </div>
@@ -64,8 +64,8 @@ export default function Home() {
             Get a Free Guide Today!
           </a>
         </div>
-        <Cards />
-        <PictureCards />
+        {/* <Cards /> */}
+        {/* <PictureCards /> */}
       </section>
     </>
   );

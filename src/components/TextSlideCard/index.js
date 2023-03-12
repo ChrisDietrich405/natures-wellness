@@ -21,8 +21,9 @@ const TextSlideCard = ({ listItem }) => {
         return <p key={index}>{test.name}</p>;
       })} */}
 
-      <p>{listItem.testimonial}</p>
+      <p style={{marginBottom: "20px"}}>{listItem.testimonial}</p>
       <p className={styles.name}>{listItem.name}</p>
+      <p style={{fontWeight: "bold"}}>{listItem.city}</p>
     </div>
   );
 };

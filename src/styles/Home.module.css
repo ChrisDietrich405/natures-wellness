@@ -43,7 +43,10 @@
 }
 
 .freeGuideLink {
+  border-radius: 4px;
   text-decoration: none;
+  padding: 10px 30px; 
+  background-color: aquamarine;
 }
 
 .freeGuideLink:hover {
