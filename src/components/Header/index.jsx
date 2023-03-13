@@ -65,11 +65,11 @@ const Header = () => {
 
               <li>
                 <Link href="/blogs">Blogs</Link>
-                <div className={styles.dropdown_content}>
+                {/* <div className={styles.dropdown_content}>
                   <Link href="/nutrition">Nutrition</Link>
 
                   <Link href="/move-your-body">Move Your Body</Link>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/faq">FAQ</Link>
