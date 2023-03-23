@@ -16,6 +16,7 @@
 
 .intro_text {
   padding-left: 20px;
+  margin-top: 20px; 
 }
 
 .intro_text p:not(:last-of-type),

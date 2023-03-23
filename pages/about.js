@@ -15,8 +15,8 @@ const About = () => {
       <div className={styles.intro}>
         <Image
           src={EmPicture}
-          width={300}
-          height={450}
+          width={500}
+          height={500}
           alt="Em photo"
           className={styles.photo}
         ></Image>
@@ -77,8 +77,8 @@ const About = () => {
           <List data={aboutData2} />
         </div>
       </section>
-      <Cards />
-      <PictureCards />
+      {/* <Cards />
+      <PictureCards /> */}
     </section>
   );
 };

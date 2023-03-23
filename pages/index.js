@@ -17,36 +17,35 @@ export default function Home() {
       <Slideshow />
       <section id="some" className={`${styles.container} inner-container`}>
         <h3 className={styles.home_intro}>
-          Hello, I'm Emily and I help men and women lose weight and prevent or reverse chronic
-          diseases in a sustainable and enjoyable manner by teaching the power
-          of cultivating healthy habits related to eating more plants and
-          embracing healthy lifestyle practices.
+          Hello, I'm Emily and I help men and women lose weight and prevent or
+          reverse chronic diseases in a sustainable and enjoyable manner by
+          teaching the power of cultivating healthy habits related to eating
+          more plants and embracing healthy lifestyle practices.
         </h3>
         <div>
-          <h3 style={{fontWeight: "bold", marginBottom: "20px"}}>Are you:</h3>
+          <h3 style={{ fontWeight: "bold", marginBottom: "20px" }}>Are you:</h3>
 
           <List data={homeData} unordered className={styles.unordered_list} />
         </div>
         <div>
-          <p>
-            If you answered yes to any of these questions, you are not alone.
-            Having worked with hundreds of men and women trying to lose weight
-            and improve their health, I have witnessed the immense frustration
-            and despair faced by those who, just like you, often have tried many
-            different ways to lose weight and improve their health but have yet
-            to find a way that is sustainable, inexpensive, and enjoyable. This
-            is not a personal failure but rather one of our society-our diet
-            culture, food industry, ease of access to inexpensive and processed
-            foods, and the abundance of conflicting nutrition and health
-            information do not make it easy. I am here to help you to navigate
-            the challenges that society has thrown on you by working with you to
-            create and cultivate habits that can transform your health and
-            happiness. I am here so that your dreams of losing weight and
-            keeping it off, of having your clothes fit more loosely, for jumping
-            out of bed in the morning with little or no stiffness, for abundant
-            energy, reducing or eliminating your need for some or all
-            medications, and more will become realities long-term.
-          </p>
+          If you answered yes to any of these questions, you are not alone.
+          Having worked with hundreds of men and women trying to lose weight and
+          improve their health, I have witnessed the immense frustration and
+          despair faced by those who, just like you, often have tried many
+          different ways to lose weight and improve their health but have yet to
+          find a way that is sustainable, inexpensive, and enjoyable. This is
+          not a personal failure but rather one of our society-our diet culture,
+          food industry, ease of access to inexpensive and processed foods, and
+          the abundance of conflicting nutrition and health information do not
+          make it easy.</div>
+          <div style={{marginTop: "20px"}}>I am here to help you to navigate the challenges that
+          society has thrown on you by working with you to create and cultivate
+          habits that can transform your health and happiness. I am here so that
+          your dreams of losing weight and keeping it off, of having your
+          clothes fit more loosely, for jumping out of bed in the morning with
+          little or no stiffness, for abundant energy, reducing or eliminating
+          your need for some or all medications, and more will become realities
+          long-term.
         </div>
         <div className={styles.freeGuide}>
           Looking to lose weight & improve your health without sacrificing
