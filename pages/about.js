@@ -15,13 +15,13 @@ const About = () => {
       <div className={styles.intro}>
         <Image
           src={EmPicture}
-          width={500}
-          height={500}
+          width={550}
+          height={550}
           alt="Em photo"
           className={styles.photo}
         ></Image>
         <div className={styles.intro_text}>
-          {/* <h1 className="page_title">'Hi, I'm Em!'</h1> */}
+          <h1 className="page_title">'Hi, I'm Em!'</h1>
           <p>
             I have an immense passion for helping guide others toward a more
             healthful and vibrant life. This passion has led me to pursue a
