@@ -14,12 +14,11 @@ import List from "../../src/components/List";
 
 import styles from "../../src/styles/WellnessPrograms.module.css";
 
-// const bannerPath = `${window.location.origin}/assets/images/vegfood.jpg`;
 
 const CoachingPackages = () => {
   return (
     <>
-      {/* <Banner picturePath={bannerPath} /> */}
+      
       <section className="inner-container">
         <h2 className="page_title">Coaching Packages</h2>
         <div className={styles.consultation_package}>
@@ -48,7 +47,7 @@ const CoachingPackages = () => {
           </p>
           <p>Package includes:</p>
           <List data={coachingData4} />
-          <p>Cost: $100 for first set of follow-ups, $90 for subsequent ones</p>
+          <p>Follow-up session package: $100 for 3 sessions</p>
         </div>
         Plant-Powered Weight Loss and Wellness Programs Nature’s Wellness Path’s
         Plant-Powered Programs are right for you if you are: ● Sick of dieting,
