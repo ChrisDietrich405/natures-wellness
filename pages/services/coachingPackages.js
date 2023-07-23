@@ -12,13 +12,11 @@ import {
 
 import List from "../../src/components/List";
 
-import styles from "../../src/styles/WellnessPrograms.module.css";
-
+import styles from "../../src/styles/CoachingPackages.module.css";
 
 const CoachingPackages = () => {
   return (
     <>
-      
       <section className="inner-container">
         <h2 className="page_title">Coaching Packages</h2>
         <div className={styles.consultation_package}>
@@ -49,7 +47,7 @@ const CoachingPackages = () => {
           <List data={coachingData4} />
           <p>Follow-up session package: $100 for 3 sessions</p>
         </div>
-        Plant-Powered Weight Loss and Wellness Programs Nature’s Wellness Path’s
+        {/* Plant-Powered Weight Loss and Wellness Programs Nature’s Wellness Path’s
         Plant-Powered Programs are right for you if you are: ● Sick of dieting,
         counting calories, &amp; cutting portion sizes to try to lose weight? ●
         Fed up with feeling like a failure for falling off track with your diet
@@ -63,7 +61,7 @@ const CoachingPackages = () => {
         to help guide you on your journey to achieve such! **Options for 4-, 8-,
         and 12-week programs Book a free discovery call with me today so we can
         discuss your health-related challenges, goals, and how we can work
-        together to get you on the path to optimal health!
+        together to get you on the path to optimal health! */}
       </section>
     </>
   );

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
@@ -7,7 +8,7 @@ import styles from "../src/styles/Contact.module.css";
 const publicKey = process.env.REACT_APP_USER_ID;
 
 function Contact() {
-  const [isDisabled, setIsDisabled] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
@@ -62,14 +63,14 @@ function Contact() {
           lastNameRef.current.value = "";
           emailRef.current.value = "";
           messageRef.current.value = "";
-          setIsDisabled(false)
+          setIsDisabled(false);
         },
         (error) => {
           toast.error("Your message wasn't sent. Try later");
-          setIsDisabled(false)
+          setIsDisabled(false);
         }
       );
-        setIsDisabled(true)
+    setIsDisabled(true);
   };
 
   return (
@@ -129,18 +130,25 @@ function Contact() {
                 />
               </div>
               <div className={styles.form_group}>
-                <button type="submit" className={styles.send_message} disabled={isDisabled}>
+                <button
+                  type="submit"
+                  className={styles.send_message}
+                  disabled={isDisabled}
+                >
                   {isDisabled ? "Sending..." : "Send"}
                 </button>
               </div>
             </form>
           </div>
           <div className={styles.picture_wrapper}>
-            <img
+            <Image
               className={styles.grid_pic}
-              src={"/images/chickpeas.jpg"}
+           
+              src="/images/chickpeas.jpg"
               alt="grid-pic"
-            ></img>
+              width={300}
+              height={300}
+            ></Image>
           </div>
         </div>
       </div>

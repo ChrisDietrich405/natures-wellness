@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Image from "next/image";
 import { wellnessProgramsData } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData2 } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData3 } from "../../src/componentsData/wellnessPrograms";
@@ -31,13 +31,7 @@ const WellnessPrograms = () => {
   }, []);
   return (
     <main style={{ margin: "50px auto" }}>
-      <div className={styles.wellness_container}>
-        {/* <img
-          className={styles.offerings_img}
-          src="https://quotefancy.com/media/wallpaper/3840x2160/1755552-Virgil-Quote-The-greatest-wealth-is-health.jpg"
-          alt=""
-        /> */}
-      </div>
+      <div className={styles.wellness_container}></div>
       <section className="inner-container">
         <h2 className="page_title">Wellness Programs</h2>
         <div className={styles.consultation_package}>
@@ -63,8 +57,15 @@ const WellnessPrograms = () => {
             optimal wellness:
           </p>
           <List data={wellnessProgramsData} className={styles.offering_list} />
+          <Image
+            className={styles.offerings_img}
+            src="https://quotefancy.com/media/wallpaper/3840x2160/1755552-Virgil-Quote-The-greatest-wealth-is-health.jpg"
+            alt="wealth is health"
+            width={400}
+            height={300}
+          />
           <h3 className={styles.path_title}>
-            Pick You Plant-Powered Path To Optimal Wellness
+            Pick Your Plant-Powered Path To Optimal Wellness
           </h3>
           <div className={styles.path}>
             <p style={{ marginBottom: "10px" }}>

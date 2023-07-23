@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.social_icons}>
-        <div className={styles.inner}>
+        {/* <div className={styles.inner}>
           <SocialIcons />
-        </div>
+        </div> */}
       </div>
       <div className={styles.header_content}>
         <div className={styles.inner}>
@@ -52,7 +52,7 @@ const Header = () => {
                 <Link href="/contact">Contact</Link>
               </li>
               <li>
-                <Link href="/services">Services</Link>
+                <div disabled={true}>Services</div>
                 <div className={styles.dropdown_content}>
                   <Link href="/services/coachingPackages">
                     Coaching Packages
@@ -64,16 +64,16 @@ const Header = () => {
               </li>
 
               <li>
-                <Link href="/blogs">Blogs</Link>
+                {/* <Link href="/blogs">Blogs</Link> */}
                 {/* <div className={styles.dropdown_content}>
                   <Link href="/nutrition">Nutrition</Link>
 
                   <Link href="/move-your-body">Move Your Body</Link>
                 </div> */}
               </li>
-              <li>
+              {/* <li>
                 <Link href="/faq">FAQ</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

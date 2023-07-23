@@ -10,7 +10,6 @@ import List from "../src/components/List";
 const EmPicture = "/images/home-profile.jpg";
 
 export default function Home() {
-  const [readMore, setReadMore] = useState(false);
 
   return (
     <>
@@ -37,15 +36,16 @@ export default function Home() {
           not a personal failure but rather one of our society-our diet culture,
           food industry, ease of access to inexpensive and processed foods, and
           the abundance of conflicting nutrition and health information do not
-          make it easy.</div>
-          <div style={{marginTop: "20px"}}>I am here to help you to navigate the challenges that
-          society has thrown on you by working with you to create and cultivate
-          habits that can transform your health and happiness. I am here so that
-          your dreams of losing weight and keeping it off, of having your
-          clothes fit more loosely, for jumping out of bed in the morning with
-          little or no stiffness, for abundant energy, reducing or eliminating
-          your need for some or all medications, and more will become realities
-          long-term.
+          make it easy.
+        </div>
+        <div style={{ marginTop: "20px" }}>
+          I am here to help you to navigate the challenges that society has
+          thrown on you by working with you to create and cultivate habits that
+          can transform your health and happiness. I am here so that your dreams
+          of losing weight and keeping it off, of having your clothes fit more
+          loosely, for jumping out of bed in the morning with little or no
+          stiffness, for abundant energy, reducing or eliminating your need for
+          some or all medications, and more will become realities long-term.
         </div>
         <div className={styles.freeGuide}>
           Looking to lose weight & improve your health without sacrificing
@@ -57,8 +57,10 @@ export default function Home() {
         </div>
         <div className={styles.freeGuideContainer}>
           <a
-            href="https://en.wikipedia.org/wiki/Next.js"
+            href="https://drive.google.com/file/d/1aLAgxayEAow11BpVgFSO_LKzoDXxdZ82/view?usp=sharing"
             className={styles.freeGuideLink}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Get a Free Guide Today!
           </a>
