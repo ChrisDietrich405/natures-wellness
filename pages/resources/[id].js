@@ -34,7 +34,7 @@ const ResourcesId = (props) => {
     const fetchTitle = async () => {
       const response = await api.get(`/resources/${id}`);
       const dataArray = response.data;
-      const name = dataArray[0].name;
+      const name = dataArray[0]?.name;
       setTitle(name);
     };
     fetchTitle();
@@ -42,7 +42,7 @@ const ResourcesId = (props) => {
 
   return (
     <div>
-      <h1>{title}</h1>
+      <h1 style={{ textAlign: "center", marginTop: "20px" }}>{title}</h1>
       <Container style={{ marginTop: "100px" }}>
         <Grid
           spacing={4}
