@@ -77,14 +77,7 @@ const WellnessPrograms = () => {
             />
             <p>Cost: $200</p>
           </div>
-          <div className={styles.path}>
-            <p style={{ marginBottom: "10px" }}>Path #2: 8 Week Program</p>
-            <List
-              data={wellnessProgramsData3}
-              className={styles.offering_list}
-            />
-            <p>Cost: $400</p>
-          </div>
+
           <div className={styles.path}>
             <p style={{ marginBottom: "10px" }}>
               Path #3: 12 Week Program: longest program option, ideal for those

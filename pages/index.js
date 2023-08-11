@@ -10,19 +10,18 @@ import List from "../src/components/List";
 const EmPicture = "/images/home-profile.jpg";
 
 export default function Home() {
-
   return (
     <>
       <Slideshow />
       <section id="some" className={`${styles.container} inner-container`}>
-        <h3 className={styles.home_intro}>
+        {/* <h3 className={styles.home_intro}>
           Hello, I'm Emily and I help men and women lose weight and prevent or
           reverse chronic diseases in a sustainable and enjoyable manner by
           teaching the power of cultivating healthy habits related to eating
           more plants and embracing healthy lifestyle practices.
-        </h3>
+        </h3> */}
         <div>
-          <h3 style={{ fontWeight: "bold", marginBottom: "20px" }}>Are you:</h3>
+          <h1 style={{ fontSize: "50px", fontWeight: "bold", margin: "40px 0" }}>Are you:</h1>
 
           <List data={homeData} unordered className={styles.unordered_list} />
         </div>

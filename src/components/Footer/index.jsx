@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 const Footer = () => {
   return (
     <footer className={styles.footer} style={{ borderTop: "1px solid black" }}>
-      <Container sx={{ marginTop: "34px" }}>
+      {/* <Container sx={{ marginTop: "34px" }}>
         <Grid container spacing={2}>
           <Grid xs={12} md={4}>
             <Typography variant="h5" component="h5" mb={1}>
@@ -46,11 +46,13 @@ const Footer = () => {
         </Grid>
         <div style={{ marginTop: "40px" }}>
           <address style={{ textAlign: "center" }}>
-            Emily Website Copyright@2023
+            Nature's Wellness PathCopyright@2023
           </address>
-          {/* <SocialIcons /> */}
-        </div>
-      </Container>
+           <SocialIcons /> 
+        {/* </div>
+      </Container> */}
+
+      
     </footer>
   );
 };

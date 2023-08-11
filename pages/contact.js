@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
@@ -79,8 +80,17 @@ function Contact() {
         <div className={styles.columns}>
           <div className={styles.form_wrapper}>
             <form onSubmit={sendEmail} className={styles.form}>
-              <h1>Contact Us</h1>
-              <p>We'll get back to you asap!</p>
+              <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+                I would love to connect with you!{" "}
+              </h3>{" "}
+              <p>
+                Please contact me with any questions or reach out to schedule a
+                <span>
+                  <Link href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist">
+                    free discovery call!
+                  </Link>
+                </span>
+              </p>
               <div className={styles.names}>
                 <div className={styles.form_group}>
                   <label htmlFor="firstName">First Name</label>
@@ -143,7 +153,6 @@ function Contact() {
           <div className={styles.picture_wrapper}>
             <Image
               className={styles.grid_pic}
-           
               src="/images/chickpeas.jpg"
               alt="grid-pic"
               width={300}

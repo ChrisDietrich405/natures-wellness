@@ -4,7 +4,7 @@ import Slideshow from "../src/components/Slideshow";
 import Cards from "../src/components/Cards";
 import PictureCards from "../src/components/PictureCards";
 import styles from "../src/styles/Home.module.css";
-import { aboutData, aboutData2 } from "../src/data/aboutData";
+import { aboutData, aboutData2, aboutData3 } from "../src/data/aboutData";
 import List from "../src/components/List";
 
 const EmPicture = "/images/home-profile.jpg";
@@ -54,7 +54,30 @@ const About = () => {
           {/* )} */}
         </div>
       </div>
-      <section className={styles.biography_section}>
+      <p>
+        I believe that all individuals have the right to live a full and vibrant
+        life. I feel that the foundation for living our best lives is our
+        health. Though our genes play a role in our health, their role is small
+        compared to the role that healthful lifestyle practices have on our
+        physical and mental wellbeing. Healthy lifestyle practices that have a
+        positive impact on our physical and mental wellbeing include the
+        following. I denote them as SPARC to help us ignite these practices in
+        our life to achieve our optional physical and mental wellbeing:
+      </p>
+      <p style={{ marginTop: "20px" }}>
+        <List data={aboutData2} />
+        Stress-management and self care Plant-based nutrition and purpose
+        Adequate hydration and physical activity Restorative sleep Connection
+        and community
+      </p>
+      <p style={{ marginBottom: "20px" }}>
+        In addition to being the most effective, healthy, and sustainable way to
+        lose weight and maintain weight loss, some health issues that are
+        effectively addressed by embracing these practices or doing our best to
+        do so include:
+      </p>
+        <List data={aboutData3}  />
+      {/* <section className={styles.biography_section}>
         <p>
           Early in my career as a Dietitian at several nursing homes in
           Baltimore City, I witnessed what seemed like immense suffering and
@@ -76,7 +99,7 @@ const About = () => {
         <div className={styles.health_problem_list}>
           <List data={aboutData2} />
         </div>
-      </section>
+      </section> */}
       {/* <Cards />
       <PictureCards /> */}
     </section>

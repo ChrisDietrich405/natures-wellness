@@ -1,5 +1,5 @@
 export const coachingData = [
-    "1 75-90 minute assessment and goal setting session2 total sessions",
+    "1 75-90 minute assessment and goal setting session",
     "1 30-45 minute follow-up session",
     "Check-ins at your desired frequency between sessions via your preferred communication method",
     "Customized health plan and resources to reference.",

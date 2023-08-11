@@ -23,19 +23,19 @@ const CoachingPackages = () => {
           <h2>2 Session Package:</h2>
           <p>Package includes:</p>
           <List data={coachingData} />
-          <p>Cost: $120</p>
+          <p>Cost: $115</p>
         </div>
         <div className={styles.consultation_package}>
           <h2>4 session package</h2>
           <p>Package includes:</p>
           <List data={coachingData2} />
-          <p>Cost: $200</p>
+          <p>Cost: $180</p>
         </div>
         <div className={styles.consultation_package}>
           <h2>6 session package</h2>
           <p>Package includes:</p>
           <List data={coachingData3} />
-          <p>Cost: $275</p>
+          <p>Cost: $240</p>
         </div>
         <div className={styles.consultation_package}>
           <h2>Follow-Up Session Package</h2>
