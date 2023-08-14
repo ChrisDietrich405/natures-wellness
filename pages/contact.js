@@ -78,19 +78,21 @@ function Contact() {
     <main className={styles.inner_container}>
       <div className={styles.inner}>
         <div className={styles.columns}>
+          <div className={styles.contact_title}>
+            {" "}
+            <h1 style={{ marginBottom: "10px" }}>
+              I would love to connect with you!{" "}
+            </h1>{" "}
+            <p>
+              Please contact me with any questions or reach out to schedule a
+              &nbsp;
+              <Link href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist">
+                free discovery call!
+              </Link>
+            </p>
+          </div>
           <div className={styles.form_wrapper}>
             <form onSubmit={sendEmail} className={styles.form}>
-              <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
-                I would love to connect with you!{" "}
-              </h3>{" "}
-              <p>
-                Please contact me with any questions or reach out to schedule a
-                <span>
-                  <Link href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist">
-                    free discovery call!
-                  </Link>
-                </span>
-              </p>
               <div className={styles.names}>
                 <div className={styles.form_group}>
                   <label htmlFor="firstName">First Name</label>
@@ -150,7 +152,7 @@ function Contact() {
               </div>
             </form>
           </div>
-          <div className={styles.picture_wrapper}>
+          {/* <div className={styles.picture_wrapper}>
             <Image
               className={styles.grid_pic}
               src="/images/chickpeas.jpg"
@@ -158,7 +160,7 @@ function Contact() {
               width={300}
               height={300}
             ></Image>
-          </div>
+          </div> */}
         </div>
       </div>
       <ToastContainer />

@@ -14,17 +14,24 @@ export default class Footer2 extends React.Component {
           <div className={styles.footer_container_top}>
             <div>
               <h3 style={{ marginTop: "10px" }}>Contact Us</h3>
-              <p>
-                <span>
-                  <a
-                    href="mailto: emilyperrymanrd@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    emilyperrymanrd@gmail.com
-                  </a>
-                </span>
-              </p>
+
+              <div className={styles.footer_contact_container}>
+                <a
+                  href="https://heal.me/practitioner/emily-perryman"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule an appointment
+                </a>
+                <a
+                  href="mailto: emilyperrymanrd@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  emilyperrymanrd@gmail.com
+                </a>
+              </div>
+
               <div className={styles.filler}></div>
             </div>
             <div className={styles.footer_container_top_title}>
@@ -34,19 +41,13 @@ export default class Footer2 extends React.Component {
 
             <div className={styles.footer_container_top_title}>
               <h3>Office Hours</h3>
-              <p>Monday-Friday 7am-7pm</p>
-              <p>Saturday 9am-3:00pm</p>
-              <p>Sunday closed</p>
-            </div>
-            <div className={styles.footer_container_top_title}>
-              <h3>Follow Us</h3>
+              <p> Monday, Wednesday, Friday: 7 am-6 pm</p>
             </div>
           </div>
-          <div className={styles.footer_container_bottom}>
-            <address className={styles.footer_copyright}>
-              <p>DietrichLandCare ©{currentTime()}</p>
-            </address>
-          </div>
+
+          <address style={{ textAlign: "center" }}>
+            Nature's Wellness PathCopyright ©{currentTime()}
+          </address>
         </div>
       </footer>
     );

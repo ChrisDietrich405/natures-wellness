@@ -18,7 +18,7 @@ const Footer = () => {
               emilyperrymanrd@gmail.com
             </Typography>
             <Typography variant="p">
-              https://heal.me/practitioner/emily-perryman
+              
             </Typography>
           </Grid>
           <Grid xs={12} md={4}>

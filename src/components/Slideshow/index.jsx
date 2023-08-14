@@ -3,11 +3,12 @@ import Image from "next/image";
 
 import styles from "./styles.module.css";
 
-const slideshow1 = "/images/tofu.png";
-const slideshow2 = "/images/chickpeas.jpg";
+const slideshow1 = "/images/home-banner-1.jpg";
+const slideshow2 = "/images/home-banner-2.jpg";
+const slideshow3 = "/images/chickpeas.jpg";
 
 export default function Slideshow() {
-  const imageArray = [slideshow1, slideshow2];
+  const imageArray = [slideshow1, slideshow2, slideshow3];
 
   const [pause, setPause] = useState(false);
   const [index, setIndex] = useState(0);
@@ -36,7 +37,9 @@ export default function Slideshow() {
             width={333}
             height={333}
             alt="slideshow"
-            className={`${styles.slideshow_image} ${index === i ? styles.active : styles.inactive}`}
+            className={`${styles.slideshow_image} ${
+              index === i ? styles.active : styles.inactive
+            }`}
             // className={`${index === i ? "active" : "inactive"} ${
             //   styles.slideshow_image
             // }`}
