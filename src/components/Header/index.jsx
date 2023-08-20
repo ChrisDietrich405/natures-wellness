@@ -40,12 +40,7 @@ const Header = () => {
                 <Link href="/testimonials">Testimonials</Link>
               </li>
               <div className={styles.dropdown_content}>
-                {/* <Link href="/resources/1">Documentaries</Link>
-                  <Link href="/resources/2">Meal Delivery Services</Link>
-                  <Link href="/resources/3">Cookbooks</Link>
-                  <Link href="/resources/4">Books</Link>
-                  <Link href="/desserts">Cookbooks</Link>
-                  <Link href="/">Travel</Link> */}
+                
               </div>
 
               <li>

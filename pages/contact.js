@@ -80,8 +80,8 @@ function Contact() {
         <div className={styles.columns}>
           <div className={styles.contact_title}>
             {" "}
-            <h1 style={{ marginBottom: "10px" }}>
-              I would love to connect with you!{" "}
+            <h1 style={{ marginBottom: "10px"}}>
+              Connect with Us!{" "}
             </h1>{" "}
             <p>
               Please contact me with any questions or reach out to schedule a

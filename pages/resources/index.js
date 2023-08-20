@@ -27,6 +27,7 @@ const Resources = () => {
   }, []);
   return (
     <Container style={{ marginTop: "100px" }}>
+      <h1>Resources</h1>
       <Grid
         container
         spacing={4}
@@ -59,7 +60,7 @@ const Resources = () => {
                     alt={resource.name}
                     style={{
                       width: "100%",
-                      height: "auto",
+                      height: "75%",
                       maxHeight: "300px",
                       objectFit: "cover",
                     }}

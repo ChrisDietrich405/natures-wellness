@@ -1,102 +1,55 @@
-import { Container, Grid, Typography } from "@mui/material";
-import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
-
-import SocialIcons from "../SocialIcons";
+import React from "react";
 
 import styles from "./styles.module.css";
+export default class Footer extends React.Component {
+  render() {
+    function currentTime() {
+      let time = new Date();
+      let timeNow = time.getUTCFullYear();
+      return timeNow;
+    }
+    return (
+      <footer className={styles.footer}>
+        <div className={styles.footer_container}>
+          <div className={styles.footer_container_top}>
+            <div>
+              <h3 style={{ marginTop: "10px" }}>Contact Us</h3>
 
-const Footer = () => {
-  return (
-    <footer className={styles.footer} style={{ borderTop: "1px solid black" }}>
-      {/* <Container sx={{ marginTop: "34px" }}>
-        <Grid container spacing={2}>
-          <Grid xs={12} md={4}>
-            <Typography variant="h5" component="h5" mb={1}>
-              Contact Me Anytime
-            </Typography>
-            <Typography variant="p" component="p" mb={1}>
-              emilyperrymanrd@gmail.com
-            </Typography>
-            <Typography variant="p">
-              
-            </Typography>
-          </Grid>
-          <Grid xs={12} md={4}>
-            <Typography variant="h5" component="h5" mb={1}>
-              Offerings
-            </Typography>
-            <Typography variant="p" component="p" mb={1}>
-              In-person (Baltimore area)
-            </Typography>
-            <Typography variant="p">
-              Virtual nutrition consults & wellness programs{" "}
-            </Typography>
-          </Grid>
-          <Grid xs={12} md={4}>
-            <Typography variant="h5" component="h5" mb={1}>
-              Hours
-            </Typography>
-            <Typography variant="p" component="p" mb={1}>
-              Monday, Wednesday, Friday: 7 am-6 pm
-            </Typography>
+              <div className={styles.footer_contact_container}>
+                <a
+                  href="https://heal.me/practitioner/emily-perryman"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule an appointment póoo
+                </a>
+                <a
+                  href="mailto: emilyperrymanrd@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  emilyperrymanrd@gmail.com
+                </a>
+              </div>
 
-            <Typography variant="p">Saturday: 7 am-noon</Typography>
-            <p></p>
-          </Grid>
-        </Grid>
-        <div style={{ marginTop: "40px" }}>
+              <div className={styles.filler}></div>
+            </div>
+            <div className={styles.footer_container_top_title}>
+              <h3>Serving</h3>
+              <p>Baltimore County, MD, Since 2021</p>
+            </div>
+
+            <div className={styles.footer_container_top_title}>
+              <h3>Office Hours</h3>
+              <p> Monday, Wednesday, Friday: 7 am-6 pm</p>
+            </div>
+          </div>
+
           <address style={{ textAlign: "center" }}>
-            Nature's Wellness PathCopyright@2023
+            Nature's Wellness PathCopyright ©{currentTime()}
           </address>
-           <SocialIcons /> 
-        {/* </div>
-      </Container> */}
-
-      
-    </footer>
-  );
-};
-
-export default Footer;
-
-//   <div className={styles.footer_content}>
-//   <div className={styles.inner}>
-//     {" "}
-//     <div className={styles.grid_container}>
-//       <div className={styles.footer_container}>
-//         <div className={styles.nutritionist_pic_container}>
-//           {/* <img
-//             src={publicURL + "/assets/images/tofu.png"}
-//             className={styles.footer_pic}
-//             alt="picture of dietician"
-//           ></img> */}
-//           {/* <p>
-//             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-//             Earum accusantium, sit modi debitis repellat culpa.
-//           </p> */}
-//         </div>
-//         <div className={styles.meatless_monday_logo}>
-//           {/* <img
-//             src={publicURL + "/assets/images/chickpeas.jpg"}
-//             alt="picture of dietician"
-//           ></img> */}
-//         </div>
-//         <div className={styles.credentials}>
-//           {" "}
-//           {/* <img
-//             src={publicURL + "/assets/images/tofu.png"}
-//             alt="picture of dietician"
-//           ></img> */}
-//           {/* <p>Lorem ipsum dolor sit, amet</p>
-//           <p>accusantium, sit modi debitis </p> */}
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-// <div className={styles.footer_contacts}>
-//   <div className={styles.inner}>
-//     <address>Emily Website Copyright@2023</address>
-//     {/* <SocialIcons /> */}
-//   </div>
-// </div>
+        </div>
+      </footer>
+    );
+  }
+}

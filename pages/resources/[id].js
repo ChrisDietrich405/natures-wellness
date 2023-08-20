@@ -13,7 +13,7 @@ import { api } from "../api/api";
 
 const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
-  // const [resources, setResources] = useState([]);
+
   const [title, setTitle] = useState("");
 
   const url = "http://localhost:3001/";
@@ -42,7 +42,11 @@ const ResourcesId = (props) => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginTop: "20px" }}>{title}</h1>
+      <h1
+      
+      >
+        {title}
+      </h1>
       <Container style={{ marginTop: "100px" }}>
         <Grid
           spacing={4}
@@ -69,13 +73,13 @@ const ResourcesId = (props) => {
                     <h1>{card.name}</h1>
                     <Image
                       width="200"
-                      height="200"
+                      height="300"
                       alt={card.title}
                       src={url + card.image}
                       style={{
                         width: "100%",
-                        height: "auto",
-                        maxHeight: "300px",
+                        height: "50%",
+                        // maxHeight: "300px",
                         objectFit: "cover",
                       }}
                     />

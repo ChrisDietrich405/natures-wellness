@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #67a97b;
+  --secondary-color: #a4c868;
+  --title-color: --highlight-color;
+  --secondary-color: #15223f;
+  --tertiary-color: #546484;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +26,15 @@ h4,
 h5,
 h6 {
   font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 20px auto;
+  padding-bottom: 20px; 
+  border-bottom: 1px solid black;
+  width: 500px;
 }
 
 .page_title {
