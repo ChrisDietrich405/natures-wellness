@@ -20,8 +20,9 @@ export default function Home() {
           teaching the power of cultivating healthy habits related to eating
           more plants and embracing healthy lifestyle practices.
         </h3> */}
+        <h1 className={styles.home_title}>Welcome to Nature's Wellness Path</h1>
         <div>
-          <h1 style={{ fontSize: "50px", fontWeight: "bold", margin: "40px 0" }}>Are you:</h1>
+          <h2 className={styles.home_subtitle}>Are you:</h2>
 
           <List data={homeData} unordered className={styles.unordered_list} />
         </div>

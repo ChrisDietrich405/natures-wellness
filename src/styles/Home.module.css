@@ -2,7 +2,17 @@
   margin: 50px;
 }
 
-/* //////////////////////////////////// */
+.home_title {
+  font-size: 44px; 
+  width: 900px; 
+  border-bottom: none; 
+}
+
+.home_subtitle {
+  color: var(--primary-color);
+  margin: 20px 0; 
+  font-size: 34px; 
+}
 
 .intro {
   display: flex;
@@ -16,7 +26,7 @@
 
 .intro_text {
   padding-left: 20px;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .intro_text p:not(:last-of-type),
@@ -46,7 +56,7 @@
 .freeGuideLink {
   border-radius: 4px;
   text-decoration: none;
-  padding: 10px 30px; 
+  padding: 10px 30px;
   background-color: aquamarine;
 }
 

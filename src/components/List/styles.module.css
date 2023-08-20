@@ -32,7 +32,7 @@
     align-items: center;
     width: 32px;
     height: 32px;
-    background-color: #419393;
+    background-color: var(--primary-color);
     color: #fff;
   }
   
@@ -48,6 +48,6 @@
     align-items: center;
     width: 16px;
     height: 16px;
-    background-color: #63b5b5;
+    background-color: var(--primary-color);
   }
   

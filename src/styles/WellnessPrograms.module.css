@@ -1,67 +1,61 @@
 .wellness_container p {
-    padding-bottom: 20px !important;
+  padding-bottom: 20px !important;
 }
 
-
 .offerings_title {
-    padding-bottom: 20px; 
+  padding-bottom: 20px;
 }
 
 .offerings_list {
-    list-style: circle !important;
+  list-style: circle !important;
 }
 
 .program_info {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .program_info h3 {
-    text-align: center;
-    padding: 20px 0;  
+  text-align: center;
+  padding: 20px 0;
 }
 
 .program_details {
-    font-weight: bold;   
+  font-weight: bold;
 }
 
 .program_details_list {
-    padding: 20px 0 !important; 
+  padding: 20px 0 !important;
 }
 
 .program_details_list li {
-    list-style:circle !important;
+  list-style: circle !important;
 }
 
 .offerings_img {
-  
-    margin: 40px auto; 
+  margin: 40px auto;
 }
 
 .path_title {
-    text-align: center;
+  text-align: center;
 }
 
 .path {
-    padding: 20px 0; 
+  padding: 20px 0;
 }
 
-.path p:nth-child(1){
-    text-decoration: underline;
+.path p:nth-child(1) {
+  text-decoration: underline;
 }
 
 .plan_details {
-    margin: 10px; 
+  margin: 10px;
 }
 
 .plan_details span {
-    font-weight: bold;
-    padding-right: 4px; 
+  font-weight: bold;
+  padding-right: 4px;
 }
 
 .plan_contact {
-    text-align: center;
-}
-
-.content_slider_container::before {
-    content: "hello"
+  text-align: center;
 }

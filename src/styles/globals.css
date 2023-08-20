@@ -6,7 +6,6 @@
   --tertiary-color: #546484;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +31,7 @@ h1 {
   color: var(--primary-color);
   text-align: center;
   margin: 20px auto;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
   border-bottom: 1px solid black;
   width: 500px;
 }
@@ -40,7 +39,7 @@ h1 {
 .page_title {
   text-align: center;
   font-size: 50px;
-  color: #63b5b5;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
