@@ -54,14 +54,20 @@
 }
 
 .freeGuideLink {
-  color: #000; 
+  color: #000;
   border-radius: 4px;
   text-decoration: none;
   padding: 10px 30px;
   background-color: var(--secondary-color);
-  transition: .4s; 
+  transition: 0.4s;
 }
 
 .freeGuideLink:hover {
   background-color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .home_title {
+    font-size: 12px;
+  }
 }
