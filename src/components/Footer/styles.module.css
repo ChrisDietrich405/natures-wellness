@@ -1,8 +1,8 @@
 .footer {
   background-repeat: repeat-x;
   position: relative;
-
-  margin-bottom: 400px;
+  background-color: var(--secondary-color);
+  padding-bottom: 400px;
   margin-top: 50px;
 }
 

@@ -43,6 +43,7 @@
   justify-content: space-between;
   padding-top: 30px;
   padding-bottom: 30px;
+  align-items: center; 
 }
 
 .nav_menu ul {

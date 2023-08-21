@@ -17,11 +17,11 @@ const Header = () => {
         <div className={styles.inner}>
           <div className={styles.logo}>
             <Image
-              width={40}
-              height={40}
-              src={"/images/tofu.png"}
-              style={{ width: "60px" }}
-              alt=""
+              width={80}
+              height={80}
+              src={"/images/logo.png"}
+         
+              alt="Nature's Wellness Path logo"
             />
           </div>
           <div className={styles.nav_menu}>
@@ -39,9 +39,7 @@ const Header = () => {
               <li>
                 <Link href="/testimonials">Testimonials</Link>
               </li>
-              <div className={styles.dropdown_content}>
-                
-              </div>
+              <div className={styles.dropdown_content}></div>
 
               <li>
                 <Link href="/contact">Contact</Link>

@@ -3,15 +3,15 @@
 }
 
 .home_title {
-  font-size: 44px; 
-  width: 900px; 
-  border-bottom: none; 
+  font-size: 44px;
+  width: 900px;
+  border-bottom: none;
 }
 
 .home_subtitle {
   color: var(--primary-color);
-  margin: 20px 0; 
-  font-size: 34px; 
+  margin: 20px 0;
+  font-size: 34px;
 }
 
 .intro {
@@ -54,12 +54,14 @@
 }
 
 .freeGuideLink {
+  color: #000; 
   border-radius: 4px;
   text-decoration: none;
   padding: 10px 30px;
-  background-color: aquamarine;
+  background-color: var(--secondary-color);
+  transition: .4s; 
 }
 
 .freeGuideLink:hover {
-  color: red;
+  background-color: var(--primary-color);
 }
