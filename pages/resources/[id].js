@@ -35,7 +35,7 @@ const ResourcesId = (props) => {
       const response = await api.get(`/resources/${id}`);
       const { data } = response;
       console.log(data);
-      setTitle(data[0].name);
+      setTitle(data[0]?.name);
     };
     fetchTitle();
   }, [id]);
@@ -64,6 +64,7 @@ const ResourcesId = (props) => {
                       height: "100%",
                       display: "flex",
                       flexDirection: "column",
+                      justifyContent: "space-between",
                     }}
                   >
                     <Image

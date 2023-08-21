@@ -48,6 +48,7 @@ const Resources = () => {
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
+                    alignItems: "space-between",
                   }}
                 >
                   <h3 style={{ minHeight: "50px", textAlign: "center" }}>

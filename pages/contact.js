@@ -36,18 +36,20 @@ function Contact() {
   // };
 
   const sendEmail = (e) => {
+    console.log("hi");
     e.preventDefault();
-    let userEmail = document.getElementById("exampleFormControlInput1").value;
-    let userMessage = document.getElementById(
-      "exampleFormControlTextarea1"
-    ).value;
+
+    let userEmail = document.getElementById("emailId").value;
+    let userFirstName = document.getElementById("firstNameId").value;
+    let userLastName = document.getElementById("lastNameId").value;
+    let userMessage = document.getElementById("messageId").value;
 
     var templateParams = {
       email: userEmail,
       message: userMessage,
       to_name: "Emily",
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
+      firstName: userFirstName,
+      lastName: userLastName,
     };
 
     emailjs
@@ -80,16 +82,26 @@ function Contact() {
         <div className={styles.columns}>
           <div className={styles.contact_title}>
             {" "}
-            <h1 style={{ marginBottom: "10px"}}>
-              Connect with Us!{" "}
-            </h1>{" "}
-            <p>
+            <h1 style={{ marginBottom: "10px" }}>Connect with Us! </h1>{" "}
+            <h3>
               Please contact me with any questions or reach out to schedule a
               &nbsp;
               <Link href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist">
                 free discovery call!
               </Link>
-            </p>
+            </h3>
+            <Image
+              style={{
+                margin: "20px 0px 0 20px",
+                borderRadius: "4px",
+                textAlign: "center",
+                boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+              }}
+              src="/images/home-banner-1.jpg"
+              alt="food picture"
+              width={300}
+              height={250}
+            />
           </div>
           <div className={styles.form_wrapper}>
             <form onSubmit={sendEmail} className={styles.form}>
@@ -97,6 +109,7 @@ function Contact() {
                 <div className={styles.form_group}>
                   <label htmlFor="firstName">First Name</label>
                   <input
+                    id="firstNameId"
                     type="text"
                     ref={firstNameRef}
                     name="firstName"
@@ -108,6 +121,7 @@ function Contact() {
                 <div className={styles.form_group}>
                   <label htmlFor="lastName">Last Name</label>
                   <input
+                    id="lastNameId"
                     type="text"
                     ref={lastNameRef}
                     name="lastName"
@@ -120,11 +134,10 @@ function Contact() {
               <div className={styles.form_group}>
                 <label htmlFor="exampleFormControlInput1">Email</label>
                 <input
-                  id="exampleFormControlInput1"
+                  id="emailId"
                   type="email"
                   name="email"
                   ref={emailRef}
-                  // id="email"
                   className={styles.input_text}
                   placeholder="example@corp.com"
                   tabIndex="3"
@@ -134,7 +147,7 @@ function Contact() {
                 <label htmlFor="exampleFormControlTextarea1">Message</label>
 
                 <textarea
-                  id="exampleFormControlTextarea1"
+                  id="messageId"
                   placeholder="Start typing..."
                   className={styles.message}
                   name="message"
