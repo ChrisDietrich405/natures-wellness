@@ -13,7 +13,6 @@ import { api } from "../api/api";
 
 const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
-
   const [title, setTitle] = useState("");
 
   const url = "http://localhost:3001/";
@@ -26,6 +25,7 @@ const ResourcesId = (props) => {
       const response = await api.get(`/resources_information/${id}`);
       const { data } = response;
       setCards(data);
+      console.log("resources:", data);
     };
     fetchResources();
   }, [id]);
@@ -33,20 +33,16 @@ const ResourcesId = (props) => {
   useEffect(() => {
     const fetchTitle = async () => {
       const response = await api.get(`/resources/${id}`);
-      const dataArray = response.data;
-      const name = dataArray[0]?.name;
-      setTitle(name);
+      const { data } = response;
+      console.log(data);
+      setTitle(data[0].name);
     };
     fetchTitle();
   }, [id]);
 
   return (
     <div>
-      <h1
-      
-      >
-        {title}
-      </h1>
+      <h1 style={{ marginTop: "60px" }}>{title}</h1>
       <Container style={{ marginTop: "100px" }}>
         <Grid
           spacing={4}
@@ -70,16 +66,15 @@ const ResourcesId = (props) => {
                       flexDirection: "column",
                     }}
                   >
-                    <h1>{card.name}</h1>
                     <Image
                       width="200"
-                      height="300"
+                      height="200"
                       alt={card.title}
                       src={url + card.image}
                       style={{
                         width: "100%",
-                        height: "50%",
-                        // maxHeight: "300px",
+                        height: "auto",
+                        maxHeight: "300px",
                         objectFit: "cover",
                       }}
                     />
@@ -92,6 +87,19 @@ const ResourcesId = (props) => {
                       </Typography>
                     </CardContent>
                     <CardActions>
+                      {/* <Link
+                      
+                        href={`${card.url}`}
+                        passHref
+                        variant="contained"
+                        size="small"
+                        sx={{
+                          width: "100%",
+                          mt: "10px",
+                        }}
+                      >
+                        <Button>About</Button>
+                      </Link> */}
                       <Button
                         variant="contained"
                         href={`${card.url}`}
@@ -117,3 +125,28 @@ const ResourcesId = (props) => {
 };
 
 export default ResourcesId;
+
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: false,
+//   };
+// }
+
+// export async function getStaticProps(context) {
+//   const getPropsPage = (name) => {
+//     switch (name) {
+//       case "documentaries":
+//         return documentariesData();
+//       case "mealdelivery":
+//         return mealdeliveryData();
+//       default:
+//         return [];
+//     }
+//   };
+
+//   const props = getPropsPage(context.params.name);
+//   return {
+//     props: JSON.stringify(props),
+//   };
+// }
