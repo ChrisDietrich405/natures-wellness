@@ -5,74 +5,82 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import styles from "../src/styles/Contact.module.css";
+import * as Validator from "validatorjs";
 
 const publicKey = process.env.REACT_APP_USER_ID;
 
 function Contact() {
   const [isDisabled, setIsDisabled] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
-
-  //   event.preventDefault();
-
-  //   const data = {
-  //     firstName: firstNameRef.current.value,
-  //     lastName: lastNameRef.current.value,
-  //     email: emailRef.current.value,
-  //     message: messageRef.current.value,
-  //   };
-  //   api
-  //     .post("/chris", {
-  //       params: JSON.stringify({
-  //         characterId: "chris",
-  //       }),
-  //     })
-  //     .then((resp) => {
-  //       console.log(resp);
-  //     });
-  // };
-
+  console.log({ errors: errors });
   const sendEmail = (e) => {
-    console.log("hi");
     e.preventDefault();
 
-    let userEmail = document.getElementById("emailId").value;
-    let userFirstName = document.getElementById("firstNameId").value;
-    let userLastName = document.getElementById("lastNameId").value;
-    let userMessage = document.getElementById("messageId").value;
-
-    var templateParams = {
-      email: userEmail,
-      message: userMessage,
-      to_name: "Emily",
-      firstName: userFirstName,
-      lastName: userLastName,
-    };
-
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        templateParams,
-        process.env.NEXT_PUBLIC_USER_ID
-      )
-      .then(
-        (result) => {
-          toast.success("Your message was successfully sent");
-          firstNameRef.current.value = "";
-          lastNameRef.current.value = "";
-          emailRef.current.value = "";
-          messageRef.current.value = "";
-          setIsDisabled(false);
+    try {
+      const validator = new Validator(
+        {
+          firstName: firstNameRef.current.value,
+          lastName: lastNameRef.current.value,
+          email: emailRef.current.value,
+          message: messageRef.current.value,
         },
-        (error) => {
-          toast.error("Your message wasn't sent. Try later");
-          setIsDisabled(false);
+        {
+          firstName: "required",
+          lastName: "required",
+          email: "required|email",
+          message: "required",
+        },
+        {
+          "required.firstName": "The name field is required",
+          "required.lastName": "The name field is required",
+          "required.email": "The email field is required",
+          "required.message": "The message field is required",
         }
       );
+      const validate = validator.passes();
+      console.log(validator);
+      if (validate) {
+        var templateParams = {
+          email: emailRef.current.value,
+          message: messageRef.current.value,
+          to_name: "Emily",
+          firstName: firstNameRef,
+          lastName: lastNameRef,
+        };
+
+        emailjs
+          .send(
+            process.env.NEXT_PUBLIC_SERVICE_ID,
+            process.env.NEXT_PUBLIC_TEMPLATE_ID,
+            templateParams,
+            process.env.NEXT_PUBLIC_USER_ID
+          )
+          .then(
+            (result) => {
+              toast.success("Your message was successfully sent");
+              firstNameRef.current.value = "";
+              lastNameRef.current.value = "";
+              emailRef.current.value = "";
+              messageRef.current.value = "";
+              setIsDisabled(false);
+            },
+            (error) => {
+              toast.error("Your message wasn't sent. Try later");
+              setIsDisabled(false);
+            }
+          );
+      } else {
+        setErrors(validator.errors.errors);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
     setIsDisabled(true);
   };
 
@@ -117,6 +125,11 @@ function Contact() {
                     className={styles.input_text}
                     tabIndex="1"
                   />
+                  {"firstName" in errors && (
+                    <p className={styles.error_message}>
+                      {errors.firstName.join(",")}
+                    </p>
+                  )}
                 </div>
                 <div className={styles.form_group}>
                   <label htmlFor="lastName">Last Name</label>
@@ -129,6 +142,11 @@ function Contact() {
                     className={styles.input_text}
                     tabIndex="2"
                   />
+                  {"lastName" in errors && (
+                    <p className={styles.error_message}>
+                      {errors.lastName.join(",")}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className={styles.form_group}>
@@ -142,6 +160,11 @@ function Contact() {
                   placeholder="example@corp.com"
                   tabIndex="3"
                 />
+                {"email" in errors && (
+                  <p className={styles.error_message}>
+                    {errors.email.join(",")}
+                  </p>
+                )}
               </div>
               <div className={styles.form_group}>
                 <label htmlFor="exampleFormControlTextarea1">Message</label>
@@ -154,6 +177,11 @@ function Contact() {
                   ref={messageRef}
                 />
               </div>
+              {"message" in errors && (
+                <p className={styles.error_message}>
+                  {errors.message.join(",")}
+                </p>
+              )}
               <div className={styles.form_group}>
                 <button
                   type="submit"
