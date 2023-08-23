@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Slideshow />
-      <section id="some" className={`${styles.container} inner-container`}>
+      <section id="section" className={`${styles.container} inner-container`}>
         {/* <h3 className={styles.home_intro}>
           Hello, I'm Emily and I help men and women lose weight and prevent or
           reverse chronic diseases in a sustainable and enjoyable manner by
@@ -21,12 +21,12 @@ export default function Home() {
           more plants and embracing healthy lifestyle practices.
         </h3> */}
         <h1 className={styles.home_title}>Welcome to Nature's Wellness Path</h1>
-        <div>
+        <div className={styles.home_content}>
           <h2 className={styles.home_subtitle}>Are you:</h2>
 
           <List data={homeData} unordered className={styles.unordered_list} />
         </div>
-        <div>
+        <p>
           If you answered yes to any of these questions, you are not alone.
           Having worked with hundreds of men and women trying to lose weight and
           improve their health, I have witnessed the immense frustration and
@@ -37,8 +37,8 @@ export default function Home() {
           food industry, ease of access to inexpensive and processed foods, and
           the abundance of conflicting nutrition and health information do not
           make it easy.
-        </div>
-        <div style={{ marginTop: "20px" }}>
+        </p>
+        <p style={{ marginTop: "20px" }}>
           I am here to help you to navigate the challenges that society has
           thrown on you by working with you to create and cultivate habits that
           can transform your health and happiness. I am here so that your dreams
@@ -46,15 +46,15 @@ export default function Home() {
           loosely, for jumping out of bed in the morning with little or no
           stiffness, for abundant energy, reducing or eliminating your need for
           some or all medications, and more will become realities long-term.
-        </div>
-        <div className={styles.freeGuide}>
+        </p>
+        <p className={styles.freeGuide}>
           Looking to lose weight & improve your health without sacrificing
           taste, feeling hungry, cutting portion sizes, or counting calories?
           Grab this free Sensational Six Guide to help you slim down while
           feeling satisfied and energized! Complete with servings to aim for,
           ideas on how to boost your intake of plant powerhouses, and links to
           some delicious recipes!
-        </div>
+        </p>
         <div className={styles.freeGuideContainer}>
           <a
             href="https://drive.google.com/file/d/1aLAgxayEAow11BpVgFSO_LKzoDXxdZ82/view?usp=sharing"

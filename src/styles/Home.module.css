@@ -4,7 +4,7 @@
 
 .home_title {
   font-size: 44px;
-  width: 900px;
+  width: 100%;
   border-bottom: none;
 }
 
@@ -68,6 +68,19 @@
 
 @media (max-width: 600px) {
   .home_title {
-    font-size: 12px;
+    font-size: 2.5rem;
   }
+
+  .home_subtitle {
+    font-size: 2rem;
+  }
+
+  .home_content {
+    margin: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* .intro {
+    flex-direction: column-reverse;
+  } */
 }

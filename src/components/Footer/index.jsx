@@ -12,7 +12,7 @@ export default class Footer extends React.Component {
       <footer className={styles.footer}>
         <div className={styles.footer_container}>
           <div className={styles.footer_container_top}>
-            <div>
+            <div className={styles.footer_container_top_title}>
               <h3 style={{ marginTop: "10px" }}>Contact Us</h3>
 
               <div className={styles.footer_contact_container}>
@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Schedule an appointment póoo
+                  Schedule an appointment
                 </a>
                 <a
                   href="mailto: emilyperrymanrd@gmail.com"
@@ -32,7 +32,7 @@ export default class Footer extends React.Component {
                 </a>
               </div>
 
-              <div className={styles.filler}></div>
+              {/* <div className={styles.filler}></div> */}
             </div>
             <div className={styles.footer_container_top_title}>
               <h3>Serving</h3>
@@ -45,7 +45,7 @@ export default class Footer extends React.Component {
             </div>
           </div>
 
-          <address style={{ textAlign: "center" }}>
+          <address style={{ textAlign: "center" }} className={styles.footer_copyright}>
             Nature's Wellness PathCopyright ©{currentTime()}
           </address>
         </div>

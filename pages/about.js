@@ -21,7 +21,7 @@ const About = () => {
           className={styles.photo}
         ></Image>
         <div className={styles.intro_text}>
-          <h1 className="page_title">'Hi, I'm Em!'</h1>
+          {/* <h1 className="page_title">'Hi, I'm Em!'</h1> */}
           <p>
             I have an immense passion for helping guide others toward a more
             healthful and vibrant life. This passion has led me to pursue a
@@ -76,7 +76,7 @@ const About = () => {
         effectively addressed by embracing these practices or doing our best to
         do so include:
       </p>
-        <List data={aboutData3}  />
+      <List data={aboutData3} />
       {/* <section className={styles.biography_section}>
         <p>
           Early in my career as a Dietitian at several nursing homes in

@@ -11,6 +11,8 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 
+import styles from "../../src/styles/Resources.module.css";
+
 const Resources = () => {
   const [resources, setResources] = useState([]);
 
@@ -26,16 +28,13 @@ const Resources = () => {
     fetchResource();
   }, []);
   return (
-    <Container style={{ marginTop: "100px" }}>
+    <Container style={{ marginTop: "100px" }} className={styles.container}>
       <h1>Resources</h1>
       <Grid
         container
         spacing={4}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gridAutoRows: "1fr",
-        }}
+        className={styles.grid_container}
+    
       >
         {resources.map((resource, index) => {
           return (
