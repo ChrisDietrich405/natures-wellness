@@ -6,9 +6,7 @@
 
 @media (max-width: 600px) {
 
-  /* .container {
-    margin: 0 auto;
-  } */
+  
   .grid_container {
     grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;

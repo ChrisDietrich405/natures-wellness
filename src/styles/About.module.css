@@ -1,0 +1,36 @@
+.about_intro {
+  display: flex;
+  align-items: flex-start;
+  margin: 70px;
+  gap: 20px;
+}
+
+.about_intro_text {
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.about_intro_text p:not(:last-of-type),
+.biography_section p:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .about_intro {
+    gap: 0 !important; 
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .about_intro_text {
+    letter-spacing: 0.5px;
+  }
+
+  .content_text {
+    letter-spacing: 0.5px;
+    padding-top: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
