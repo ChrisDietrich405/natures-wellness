@@ -13,7 +13,18 @@ import styles from "../src/styles/About.module.css";
 
 const About = () => {
   return (
-    <section id="some" className={`${styles.container} inner-container`}>
+    <section
+      id="some"
+      style={{ marginTop: "60px" }}
+      className={`${styles.container} inner-container`}
+    >
+      <h1 className={styles.home_intro_title}>Hello, I'm Em!</h1>
+      <h2>
+        I help men and women lose weight and prevent or reverse chronic
+        diseases in a sustainable and enjoyable manner by teaching the power of
+        cultivating healthy habits related to eating more plants and embracing
+        healthy lifestyle practices.
+      </h2>
       <div className={styles.about_intro}>
         <Image
           src={EmPicture}
@@ -22,6 +33,7 @@ const About = () => {
           alt="Em photo"
           className={styles.photo}
         ></Image>
+
         <div className={styles.about_intro_text}>
           {/* <h1 className="page_title">'Hi, I'm Em!'</h1> */}
           <p>

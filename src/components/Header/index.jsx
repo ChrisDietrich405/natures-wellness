@@ -17,8 +17,8 @@ const Header = () => {
         <div className={styles.inner}>
           <div className={styles.logo}>
             <Image
-              width={80}
-              height={80}
+              width={160}
+              height={160}
               src={"/images/logo.png"}
          
               alt="Nature's Wellness Path logo"
