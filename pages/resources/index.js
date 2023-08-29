@@ -34,7 +34,11 @@ const Resources = () => {
         container
         spacing={4}
         className={styles.grid_container}
-    
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gridAutoRows: "1fr",
+        }}
       >
         {resources.map((resource, index) => {
           return (

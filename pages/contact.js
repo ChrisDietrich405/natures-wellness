@@ -85,7 +85,7 @@ function Contact() {
   };
 
   return (
-    <main className={styles.inner_container}>
+    <main className={styles.inner_container} style={{ marginTop: "70px" }}>
       <div className={styles.inner}>
         <div className={styles.columns}>
           <div className={styles.contact_title}>
@@ -94,7 +94,10 @@ function Contact() {
             <h3>
               Please contact me with any questions or reach out to schedule a
               &nbsp;
-              <Link href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist">
+              <Link
+                style={{ color: "#67a97b" }}
+                href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist"
+              >
                 free discovery call!
               </Link>
             </h3>

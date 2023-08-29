@@ -16,7 +16,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div style={{ marginTop: "30px" }}>
+    <div style={{ marginTop: "70px" }}>
       <h1 style={{textAlign: "center", marginBottom: "20px"}}>Testimonials</h1>
       <ContentSlider
         typeOfSlide="text"

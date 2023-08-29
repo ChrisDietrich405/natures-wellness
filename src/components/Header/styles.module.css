@@ -57,8 +57,16 @@
 }
 
 .nav_menu li:hover {
+  background-color: var(--primary-color);
+  color: #fff "!important";
   transform: scale(1.1);
 }
+
+.nav_menu li a:hover, .services_link:hover {
+  color: #fff; 
+}
+
+
 
 .nav_menu a {
   text-decoration: none;

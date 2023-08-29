@@ -20,7 +20,6 @@ const Header = () => {
               width={160}
               height={160}
               src={"/images/logo.png"}
-         
               alt="Nature's Wellness Path logo"
             />
           </div>
@@ -45,13 +44,18 @@ const Header = () => {
                 <Link href="/contact">Contact</Link>
               </li>
               <li>
-                <div disabled={true}>Services</div>
+                <div className={styles.services_link} disabled={true}>
+                  Services
+                </div>
                 <div className={styles.dropdown_content}>
-                  <Link href="/services/coachingPackages">
-                    Coaching Packages
+                  <Link
+                    className={styles.sublink}
+                    href="/services/coachingPackages"
+                  >
+                    <span style={{ color: "#67a97b" }}>Coaching Packages</span>
                   </Link>
                   <Link href="/services/wellnessPrograms">
-                    Wellness Programs
+                    <span style={{ color: "#67a97b" }}>Wellness Programs</span>
                   </Link>
                 </div>
               </li>

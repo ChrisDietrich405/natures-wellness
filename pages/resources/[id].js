@@ -103,6 +103,7 @@ const ResourcesId = (props) => {
                       </Link> */}
                       <Button
                         variant="contained"
+                        target="_blank"
                         href={`${card.url}`}
                         // onClick={() => router.push(`${card.url}`)}
                         size="small"
