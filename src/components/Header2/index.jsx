@@ -1,11 +1,12 @@
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import PropTypes from "prop-types";
+import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton } from "@mui/base/MenuButton";
-import { MenuItem } from "@mui/base/MenuItem";
-import { Dropdown } from "@mui/base/Dropdown";
+import { MenuItem, menuItemClasses } from "@mui/base/MenuItem";
+import { styled } from "@mui/system";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -34,15 +35,30 @@ const navItems = [
     url: "/about",
   },
   {
-    title: "Resources",
-    url: "/resources",
-  },
-  {
     title: "Testimonials",
     url: "/testimonials",
   },
+  {
+    title: "Contact",
+    url: "/contact",
+  },
+  {
+    title: "Coaching Packages",
+    url: "/services/coachingPackages",
+    onlyMobile: true,
+  },
+  {
+    title: "Wellness Programs",
+    url: "/services/wellnessPrograms",
+    onlyMobile: true,
+  },
 ];
 
+const createHandleMenuClick = (menuItem) => {
+  return () => {
+    console.log(`Clicked on ${menuItem}`);
+  };
+};
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -55,18 +71,36 @@ function DrawerAppBar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <div className={styles.logo}>
         <Image
-          width={160}
-          height={160}
+          width={80}
+          height={80}
           src={"/images/logo.png"}
           alt="Nature's Wellness Path logo"
         />
       </div>
       <Divider />
-      {navItems?.map((item, index) => (
-        <a key={index} href={item.url}>
-          {item.title}
-        </a>
-      ))}
+      <List>
+        {navItems.map(({ title, url }) => (
+          <ListItem key={title} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <Link href={url}>{title}</Link>
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Dropdown>
+        <TriggerButton>Hello</TriggerButton>
+        <Menu slots={{ listbox: StyledListbox }}>
+          <StyledMenuItem onClick={createHandleMenuClick("Profile")}>
+            Profile
+          </StyledMenuItem>
+          <StyledMenuItem onClick={createHandleMenuClick("My account")}>
+            Language settings
+          </StyledMenuItem>
+          <StyledMenuItem onClick={createHandleMenuClick("Log out")}>
+            Log out
+          </StyledMenuItem>
+        </Menu>
+      </Dropdown>
     </Box>
   );
 
@@ -76,7 +110,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" className={styles.container}>
+      <AppBar component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -87,48 +121,34 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            Hello
-          </Typography> */}
-
-          <Image
-            width={160}
-            height={160}
-            src={"/images/logo.png"}
-            alt="Nature's Wellness Path logo"
-          />
-
+          <div className={styles.logo}>
+            <Image
+              width={80}
+              height={80}
+              src={"/images/logo.png"}
+              alt="Nature's Wellness Path logo"
+            />
+          </div>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item, index) => (
-              <Button key={index}>
-                <Link sx={{ color: "#fff" }} href={item.url}>
-                  {item.title}
-                </Link>
-              </Button>
-            ))}
+            {navItems
+              .filter((item) => !item.onlyMobile)
+              .map(({ title, url }) => (
+                <Button key={title} sx={{ color: "#fff" }}>
+                  <Link href={url}>{title}</Link>
+                </Button>
+              ))}
             <Dropdown>
-              <MenuButton>Services</MenuButton>
-              <Menu
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  paddingTop: "25px",
-                }}
-              >
-                <MenuItem>
-                  <Link href="/services/coachingPackages">
-                    Coaching Packages
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/services/wellnessPrograms">
-                    Wellness Programs
-                  </Link>
-                </MenuItem>
+              <TriggerButton>My account</TriggerButton>
+              <Menu slots={{ listbox: StyledListbox }}>
+                <StyledMenuItem onClick={createHandleMenuClick("Profile")}>
+                  Profile
+                </StyledMenuItem>
+                <StyledMenuItem onClick={createHandleMenuClick("My account")}>
+                  Language settings
+                </StyledMenuItem>
+                <StyledMenuItem onClick={createHandleMenuClick("Log out")}>
+                  Log out
+                </StyledMenuItem>
               </Menu>
             </Dropdown>
           </Box>
@@ -154,9 +174,6 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
     </Box>
   );
 }
@@ -168,5 +185,107 @@ DrawerAppBar.propTypes = {
    */
   window: PropTypes.func,
 };
+
+const blue = {
+  100: "#DAECFF",
+  200: "#99CCF3",
+  400: "#3399FF",
+  500: "#007FFF",
+  600: "#0072E5",
+  900: "#003A75",
+};
+
+const grey = {
+  50: "#f6f8fa",
+  100: "#eaeef2",
+  200: "#d0d7de",
+  300: "#afb8c1",
+  400: "#8c959f",
+  500: "#6e7781",
+  600: "#57606a",
+  700: "#424a53",
+  800: "#32383f",
+  900: "#24292f",
+};
+
+const StyledListbox = styled("ul")(
+  ({ theme }) => `
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  padding: 6px;
+  margin: 12px 0;
+  min-width: 200px;
+  border-radius: 12px;
+  overflow: auto;
+  outline: 0px;
+  background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
+  border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+  color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+  box-shadow: 0px 4px 30px ${
+    theme.palette.mode === "dark" ? grey[900] : grey[200]
+  };
+  z-index: 1;
+  `
+);
+
+const StyledMenuItem = styled(MenuItem)(
+  ({ theme }) => `
+  list-style: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: default;
+  user-select: none;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &.${menuItemClasses.focusVisible} {
+    outline: 3px solid ${theme.palette.mode === "dark" ? blue[600] : blue[200]};
+    background-color: ${theme.palette.mode === "dark" ? grey[800] : grey[100]};
+    color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+  }
+
+  &.${menuItemClasses.disabled} {
+    color: ${theme.palette.mode === "dark" ? grey[700] : grey[400]};
+  }
+
+  &:hover:not(.${menuItemClasses.disabled}) {
+    background-color: ${theme.palette.mode === "dark" ? grey[800] : grey[100]};
+    color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+  }
+  `
+);
+
+const TriggerButton = styled(MenuButton)(
+  ({ theme }) => `
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  min-height: calc(1.5em + 22px);
+  border-radius: 12px;
+  padding: 8px 14px;
+  line-height: 1.5;
+  background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
+  border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+  color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 120ms;
+
+  &:hover {
+    background: ${theme.palette.mode === "dark" ? grey[800] : grey[50]};
+    border-color: ${theme.palette.mode === "dark" ? grey[600] : grey[300]};
+  }
+
+  &:focus-visible {
+    border-color: ${blue[400]};
+    outline: 3px solid ${theme.palette.mode === "dark" ? blue[500] : blue[200]};
+  }
+  `
+);
 
 export default DrawerAppBar;

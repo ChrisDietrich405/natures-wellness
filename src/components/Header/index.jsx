@@ -80,3 +80,21 @@ const Header = () => {
 };
 
 export default Header;
+const navItems = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "About",
+    url: "/about",
+  },
+  {
+    title: "Testimonials",
+    url: "/testimonials",
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+  },
+];
