@@ -18,10 +18,10 @@ const About = () => {
       style={{ marginTop: "60px" }}
       className={`${styles.container} inner-container`}
     >
-      <h1 className={styles.home_intro_title}>Hello, I'm Em!</h1>
-      <h2>
-        I help men and women lose weight and prevent or reverse chronic
-        diseases in a sustainable and enjoyable manner by teaching the power of
+      <h1 className={styles.about_intro_title}>Hello, I'm Em!</h1>
+      <h2 className={styles.about_intro_sub_title}>
+        I help men and women lose weight and prevent or reverse chronic diseases
+        in a sustainable and enjoyable manner by teaching the power of
         cultivating healthy habits related to eating more plants and embracing
         healthy lifestyle practices.
       </h2>

@@ -1,3 +1,5 @@
+
+
 .about_intro {
   display: flex;
   align-items: flex-start;
@@ -13,6 +15,10 @@
 .about_intro_text p:not(:last-of-type),
 .biography_section p:not(:last-of-type) {
   margin-bottom: 10px;
+}
+
+.about_intro_sub_title {
+  color: green; 
 }
 
 @media (max-width: 600px) {
@@ -32,5 +38,11 @@
     padding-top: 20px;
     width: 90%;
     margin: 0 auto;
+  }
+
+  .about_intro_sub_title {
+    color: green;
+    width: 100%; 
+    margin: 0 auto;  
   }
 }
