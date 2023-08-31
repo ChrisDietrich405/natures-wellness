@@ -1,7 +1,31 @@
+.header_container {
+  background-color: #fff !important;
+}
+
+.toggle_container {
+    color: green !important; 
+}
+
 .container {
-    background: #fff !important; 
+  background: #fff !important;
 }
 
 .logo {
-    width: 60%; 
+  width: 60%;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.services {
+    outline: none;
+    border: none; 
+    color: var(--primary-color); 
+    font-family: "Roboto", sans-serif !important;
+}
+
+.services_sublinks {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
 }

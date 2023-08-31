@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PropTypes from "prop-types";
+import { makeStyles } from "@mui/styles";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton } from "@mui/base/MenuButton";
@@ -23,6 +24,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 import styles from "./styles.module.css";
+
+
 
 const drawerWidth = 240;
 const navItems = [
@@ -63,12 +66,17 @@ function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center" }}
+      className={styles.toggle_container}
+    >
       <div className={styles.logo}>
         <Image
           width={80}
@@ -82,7 +90,9 @@ function DrawerAppBar(props) {
         {navItems.map(({ title, url }) => (
           <ListItem key={title} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <Link href={url}>{title}</Link>
+              <Link className={styles.link} href={url}>
+                {title}
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -108,12 +118,12 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }} className={styles.header_container}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" className={styles.container}>
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="#67a97b"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -134,20 +144,33 @@ function DrawerAppBar(props) {
               .filter((item) => !item.onlyMobile)
               .map(({ title, url }) => (
                 <Button key={title} sx={{ color: "#fff" }}>
-                  <Link href={url}>{title}</Link>
+                  <Link className={styles.link} href={url}>
+                    {title}
+                  </Link>
                 </Button>
               ))}
             <Dropdown>
-              <TriggerButton>My account</TriggerButton>
+              <TriggerButton
+                className={`${styles.customFont} ${styles.services}`}
+              >
+                Services
+              </TriggerButton>
               <Menu slots={{ listbox: StyledListbox }}>
-                <StyledMenuItem onClick={createHandleMenuClick("Profile")}>
-                  Profile
+                <StyledMenuItem>
+                  <Link
+                    href="/services/coachingPackages"
+                    className={styles.services_sublinks}
+                  >
+                    Coaching Packages
+                  </Link>
                 </StyledMenuItem>
-                <StyledMenuItem onClick={createHandleMenuClick("My account")}>
-                  Language settings
-                </StyledMenuItem>
-                <StyledMenuItem onClick={createHandleMenuClick("Log out")}>
-                  Log out
+                <StyledMenuItem>
+                  <Link
+                    href="/services/wellnessPrograms"
+                    className={styles.services_sublinks}
+                  >
+                    Wellness Programs
+                  </Link>
                 </StyledMenuItem>
               </Menu>
             </Dropdown>
