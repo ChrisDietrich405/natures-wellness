@@ -25,8 +25,6 @@ import Button from "@mui/material/Button";
 
 import styles from "./styles.module.css";
 
-
-
 const drawerWidth = 240;
 const navItems = [
   {
@@ -65,7 +63,6 @@ const createHandleMenuClick = (menuItem) => {
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -153,7 +150,18 @@ function DrawerAppBar(props) {
               <TriggerButton
                 className={`${styles.customFont} ${styles.services}`}
               >
-                Services
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    fontFamily: "Roboto,Helvetica,Arial,sansSerif",
+                    fontWeight: "500",
+                    fontSize: "0.9rem",
+                    lineHeight: "1.75",
+                  }}
+                >
+                  SERVICES
+                </Typography>
               </TriggerButton>
               <Menu slots={{ listbox: StyledListbox }}>
                 <StyledMenuItem>
