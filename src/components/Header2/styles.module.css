@@ -17,14 +17,14 @@
 .link {
   color: var(--primary-color);
   text-decoration: none;
-  padding: 10px 30px;
-  transition: .4s; 
-  border-radius: 3px; 
+  padding: 7px 14px;
+  transition: 0.4s;
+  border-radius: 3px;
 }
 
 .link:hover {
   background-color: var(--secondary-color);
-  color: #fff; 
+  color: #fff;
 }
 .services {
   outline: none;
@@ -33,7 +33,20 @@
   font-family: "Roboto", sans-serif !important;
 }
 
+.services_link {
+  padding: 7px 14px;
+  color: var(--primary-color);
+}
+
+.services_link:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 3px;
+}
+
 .services_sublinks {
+  padding-top: 10px; 
+  color: var(--primary-color); 
   text-decoration: none;
   font-family: "Roboto", sans-serif;
 }

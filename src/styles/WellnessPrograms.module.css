@@ -2,6 +2,10 @@
   padding-bottom: 20px !important;
 }
 
+.page_title {
+  color: var(--primary-color); 
+}
+
 .offerings_title {
   padding-bottom: 20px;
 }
@@ -58,4 +62,21 @@
 
 .plan_contact {
   text-align: center;
+}
+
+
+@media (max-width: 600px) {
+   .page_title {
+    margin-bottom : 20px; 
+   }
+
+   .offerings_title {
+    width: 90%;
+    margin: 0 auto;  
+   }
+
+   .inner_container {
+    width: 90%; 
+    margin: 0 auto; 
+   }
 }

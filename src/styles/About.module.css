@@ -20,6 +20,9 @@
 }
 
 @media (max-width: 600px) {
+  .container {
+    margin: 0; 
+  }
   .title_container {
     width: 100%;
   }

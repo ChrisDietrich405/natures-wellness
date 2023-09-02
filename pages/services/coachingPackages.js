@@ -17,8 +17,8 @@ import styles from "../../src/styles/CoachingPackages.module.css";
 const CoachingPackages = () => {
   return (
     <>
-      <section className="inner-container">
-        <h2 className="page_title">Coaching Packages</h2>
+      <section className={styles.inner_container}>
+        <h1 className={styles.page_title}>Coaching Packages</h1>
         <div className={styles.consultation_package}>
           <h2>2 Session Package:</h2>
           <p>Package includes:</p>

@@ -5,13 +5,6 @@ import { wellnessProgramsData2 } from "../../src/componentsData/wellnessPrograms
 import { wellnessProgramsData3 } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData4 } from "../../src/componentsData/wellnessPrograms";
 
-import {
-  coachingData,
-  coachingData2,
-  coachingData3,
-  coachingData4,
-} from "../../src/componentsData/coachingPackages";
-
 import { api } from "../api/api";
 
 import List from "../../src/components/List";
@@ -30,10 +23,9 @@ const WellnessPrograms = () => {
     fetchTestimonials();
   }, []);
   return (
-    <main style={{ margin: "50px auto" }}>
-      <div className={styles.wellness_container}></div>
-      <section className="inner-container">
-        <h2 className="page_title">Wellness Programs</h2>
+    <main>
+      <section className={styles.inner_container}>
+        <h1 className={styles.page_title}>Wellness Programs</h1>
         <div className={styles.consultation_package}>
           <h2 className={styles.offerings_title}>
             Nature’s Wellness Path’s Plant-Powered Weight Loss & Wellness

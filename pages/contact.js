@@ -4,8 +4,9 @@ import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
-import styles from "../src/styles/Contact.module.css";
 import * as Validator from "validatorjs";
+
+import styles from "../src/styles/Contact.module.css";
 
 const publicKey = process.env.REACT_APP_USER_ID;
 
@@ -85,10 +86,10 @@ function Contact() {
   };
 
   return (
-    <main className={styles.inner_container} style={{ marginTop: "70px" }}>
+    <main className={styles.inner_container}>
       <div className={styles.inner}>
         <div className={styles.columns}>
-          <div className={styles.contact_title}>
+          <div className={styles.contact_title_wrapper}>
             {" "}
             <h1 style={{ marginBottom: "10px" }}>Connect with Us! </h1>{" "}
             <h3>
@@ -101,18 +102,20 @@ function Contact() {
                 free discovery call!
               </Link>
             </h3>
-            <Image
-              style={{
-                margin: "20px 0px 0 20px",
-                borderRadius: "4px",
-                textAlign: "center",
-                boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-              }}
-              src="/images/home-banner-1.jpg"
-              alt="food picture"
-              width={300}
-              height={250}
-            />
+            <div className={styles.contact_title_wrapper_image}>
+              <Image
+                style={{
+                  margin: "20px 0px 0 20px",
+                  borderRadius: "4px",
+                  textAlign: "center",
+                  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                }}
+                src="/images/home-banner-1.jpg"
+                alt="food picture"
+                width={300}
+                height={250}
+              />
+            </div>
           </div>
           <div className={styles.form_wrapper}>
             <form onSubmit={sendEmail} className={styles.form}>

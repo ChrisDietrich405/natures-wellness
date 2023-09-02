@@ -1,5 +1,4 @@
-.consultation_package {
-}
+
 
 .consultation_package h2 {
   margin: 30px 0;
@@ -8,4 +7,13 @@
 .consultation_package p {
   font-weight: bold;
   margin: 30px 0;
+}
+
+@media (max-width: 600px) {
+
+
+  .inner_container {
+   width: 90%; 
+   margin: 0 auto; 
+  }
 }

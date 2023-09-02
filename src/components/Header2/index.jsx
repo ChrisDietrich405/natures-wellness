@@ -151,6 +151,7 @@ function DrawerAppBar(props) {
                 className={`${styles.customFont} ${styles.services}`}
               >
                 <Typography
+                  className={styles.services_link}
                   variant="h6"
                   component="div"
                   sx={{
