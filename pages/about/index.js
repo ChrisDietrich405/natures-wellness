@@ -1,24 +1,17 @@
-import { useState } from "react";
 import Image from "next/image";
-import Slideshow from "../src/components/Slideshow";
-import Cards from "../src/components/Cards";
-import PictureCards from "../src/components/PictureCards";
+import { Container } from "@mui/material";
 
-import { aboutData, aboutData2, aboutData3 } from "../src/data/aboutData";
-import List from "../src/components/List";
+import { aboutData, aboutData2, aboutData3 } from "../../src/data/aboutData";
+import List from "../../src/components/List";
 
 const EmPicture = "/images/home-profile.jpg";
 
-import styles from "../src/styles/About.module.css";
+import styles from "../../src/styles/About.module.css";
 
 const About = () => {
   return (
-    <>
-      <section
-        // id="some"
-        style={{ marginTop: "60px" }}
-        className={`${styles.container} inner-container`}
-      >
+    <Container style={{ marginTop: "50px" }}>
+      <section>
         <div className={styles.title_container}>
           <h1 className={styles.about_intro_title}>Hello, I'm Em!</h1>
           <h2 className={styles.about_intro_sub_title}>
@@ -31,8 +24,8 @@ const About = () => {
         <div className={styles.about_intro}>
           <Image
             src={EmPicture}
-            width={550}
-            height={550}
+            width={300}
+            height={300}
             alt="Em photo"
             className={styles.photo}
           ></Image>
@@ -58,21 +51,21 @@ const About = () => {
               to achieving optimal health became my passion and something I feel
               so grateful to be able to do!
             </p>
-            <p>
-              Eating more plants and engaging in healthy lifestyle practices can
-              help us to look and feel our best! A few of the health problems
-              that can be lessened or resolved a plant-predominant or
-              plant-based way of eating and healthy lifestyle practices
-              includes:
-            </p>
 
-            <>
-              <List data={aboutData} ordered className={styles.ordered_list} />
-            </>
             {/* )} */}
           </div>
         </div>
         <div className={styles.content_text}>
+          <p>
+            Eating more plants and engaging in healthy lifestyle practices can
+            help us to look and feel our best! A few of the health problems that
+            can be lessened or resolved a plant-predominant or plant-based way
+            of eating and healthy lifestyle practices includes:
+          </p>
+
+          <div style={{ marginBottom: "10px" }}>
+            <List data={aboutData} ordered className={styles.ordered_list} />
+          </div>
           <p>
             I believe that all individuals have the right to live a full and
             vibrant life. I feel that the foundation for living our best lives
@@ -124,7 +117,7 @@ const About = () => {
       <PictureCards /> */}
         </div>
       </section>
-    </>
+    </Container>
   );
 };
 

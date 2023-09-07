@@ -10,6 +10,7 @@ import { api } from "../api/api";
 import List from "../../src/components/List";
 
 import styles from "../../src/styles/WellnessPrograms.module.css";
+import { Container } from "@mui/material";
 
 const WellnessPrograms = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -23,7 +24,7 @@ const WellnessPrograms = () => {
     fetchTestimonials();
   }, []);
   return (
-    <main>
+    <Container style={{ marginTop: "50px" }}>
       <section className={styles.inner_container}>
         <h1 className={styles.page_title}>Wellness Programs</h1>
         <div className={styles.consultation_package}>
@@ -88,7 +89,7 @@ const WellnessPrograms = () => {
           </div>
         </div>
       </section>
-    </main>
+    </Container>
   );
 };
 

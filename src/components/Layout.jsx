@@ -1,12 +1,12 @@
 // import Header from "./Header";
-import Header2 from "./Header2";
+import Header from "./Header";
 
 import Footer from "./Footer";
 
 export default function Layout({ children }) {
   return (
     <>
-      <Header2 />
+      <Header />
       <main>{children}</main>
       <Footer style={{ position: "fixed", bottom: "0px" }} />
     </>

@@ -1,104 +1,52 @@
-.nav_menu li {
-  list-style: none;
+.header_container {
+  background-color: #fff !important;
 }
 
-.header {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  background: #fff;
-  top: 0;
-  z-index: 100;
+.toggle_container {
+  color: green !important;
 }
 
-.inner {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
+.container {
+  background: #fff !important;
 }
 
-.social_icons {
-  background: #f8f8f8;
+.logo {
+  width: 40%;
 }
 
-.social_icons .inner {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.social_icons_list {
-  display: flex;
-}
-
-.social_icons_list li {
-  padding: 5px 10px;
-}
-
-.social_icons_list a {
-  text-decoration: none;
-}
-
-.header_content .inner {
-  display: flex;
-  justify-content: space-between;
-
-  align-items: center;
-}
-
-.nav_menu ul {
-  display: flex;
-}
-
-.nav_menu li {
-  padding: 5px 10px;
-  position: relative;
+.link {
   color: var(--primary-color);
-  transition: all 0.6s;
-}
-
-.nav_menu li:hover {
-  background-color: var(--primary-color);
-  color: #fff "!important";
-  transform: scale(1.1);
-}
-
-.nav_menu li a:hover, .services_link:hover {
-  color: #fff; 
-}
-
-
-
-.nav_menu a {
   text-decoration: none;
-  position: relative;
+  padding: 7px 14px;
+  transition: 0.4s;
+  border-radius: 3px;
+}
+
+.link:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+.services {
+  outline: none;
+  border: none;
+  color: var(--primary-color);
+  font-family: "Roboto", sans-serif !important;
+}
+
+.services_link {
+  padding: 7px 14px;
   color: var(--primary-color);
 }
 
-.dropdown_content {
-  transition: 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  background-color: #fff;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-  padding: 10px 0;
+.services_link:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 3px;
 }
 
-.nav_menu li:hover .dropdown_content {
-  opacity: 1;
-  visibility: visible;
-}
-
-.dropdown_content > a {
-  padding: 10px 20px;
-  display: block;
-  transition: 0.5s;
-  white-space: nowrap;
-}
-
-.dropdown_content > a:hover {
-  background-color: #f8f8f8;
+.services_sublinks {
+  padding-top: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }

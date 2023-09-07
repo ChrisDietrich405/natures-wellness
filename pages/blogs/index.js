@@ -27,7 +27,7 @@ const Blogs = () => {
   }, []);
 
   return (
-    <Container style={{ marginTop: "100px" }}>
+    <Container style={{ marginTop: "50px" }} style={{ marginTop: "100px" }}>
       <Grid
         container
         spacing={4}
@@ -50,7 +50,10 @@ const Blogs = () => {
                     flexDirection: "column",
                   }}
                 >
-                  <Typography variant="h5" style={{ minHeight: "50px", textAlign: "center" }}>
+                  <Typography
+                    variant="h5"
+                    style={{ minHeight: "50px", textAlign: "center" }}
+                  >
                     {post.title}
                   </Typography>
                   <Typography variant="p">{post.summary}</Typography>

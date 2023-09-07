@@ -41,54 +41,45 @@ const ResourcesId = (props) => {
   }, [id]);
 
   return (
-    <div>
-      <h1 style={{ marginTop: "60px" }}>{title}</h1>
-      <Container style={{ marginTop: "100px" }}>
-        <Grid
-          spacing={4}
-          container
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gridAutoRows: "1fr",
-          }}
-        >
-          {cards.map((card) => {
-            return (
-              <>
-                <Grid item key={card.id}>
-                  <Card
-                    sx={{ p: 2 }}
+    <Container style={{ marginTop: "50px" }}>
+      <h1>{title}</h1>
+      <Grid spacing={4} container>
+        {cards.map((card, index) => {
+          return (
+            <>
+              <Grid item key={index} xs={12} md={6} lg={3}>
+                <Card
+                  sx={{ p: 2 }}
+                  style={{
+                    border: "1px solid black",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Image
+                    width="200"
+                    height="200"
+                    alt={card.title}
+                    src={url + card.image}
                     style={{
-                      border: "1px solid black",
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
+                      width: "100%",
+                      height: "auto",
+                      maxHeight: "300px",
+                      objectFit: "cover",
                     }}
-                  >
-                    <Image
-                      width="200"
-                      height="200"
-                      alt={card.title}
-                      src={url + card.image}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        maxHeight: "300px",
-                        objectFit: "cover",
-                      }}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h6" component="div">
-                        {card.title}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {card.description}
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      {/* <Link
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="div">
+                      {card.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {card.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    {/* <Link
                       
                         href={`${card.url}`}
                         passHref
@@ -101,54 +92,28 @@ const ResourcesId = (props) => {
                       >
                         <Button>About</Button>
                       </Link> */}
-                      <Button
-                        variant="contained"
-                        target="_blank"
-                        href={`${card.url}`}
-                        // onClick={() => router.push(`${card.url}`)}
-                        size="small"
-                        sx={{
-                          width: "100%",
-                          mt: "10px",
-                        }}
-                      >
-                        Learn More{" "}
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              </>
-            );
-          })}
-        </Grid>
-      </Container>
-    </div>
+                    <Button
+                      variant="contained"
+                      target="_blank"
+                      href={`${card.url}`}
+                      // onClick={() => router.push(`${card.url}`)}
+                      size="small"
+                      sx={{
+                        width: "100%",
+                        mt: "10px",
+                      }}
+                    >
+                      Learn More{" "}
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            </>
+          );
+        })}
+      </Grid>
+    </Container>
   );
 };
 
 export default ResourcesId;
-
-// export async function getStaticPaths() {
-//   return {
-//     paths: [],
-//     fallback: false,
-//   };
-// }
-
-// export async function getStaticProps(context) {
-//   const getPropsPage = (name) => {
-//     switch (name) {
-//       case "documentaries":
-//         return documentariesData();
-//       case "mealdelivery":
-//         return mealdeliveryData();
-//       default:
-//         return [];
-//     }
-//   };
-
-//   const props = getPropsPage(context.params.name);
-//   return {
-//     props: JSON.stringify(props),
-//   };
-// }

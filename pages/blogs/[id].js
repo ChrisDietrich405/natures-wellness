@@ -31,7 +31,7 @@ const ResourcesId = (props) => {
 
   return (
     <div>
-      <Container style={{ marginTop: "100px" }}>
+      <Container style={{ marginTop: "50px" }} style={{ marginTop: "100px" }}>
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
         {/* <Grid

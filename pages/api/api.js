@@ -1,8 +1,7 @@
 import axios from "axios";
 
-// const test = "https://warbeasts-api.herokuapp.com";
-export const test = "http://localhost:3001/";
+export const BASE_URL = "http://localhost:3002/";
 
 export const api = axios.create({
-  baseURL: test, // //process.env.NEXT_PUBLIC_CADASTRO_API_HOST
+  baseURL: BASE_URL, // //process.env.NEXT_PUBLIC_CADASTRO_API_HOST
 });

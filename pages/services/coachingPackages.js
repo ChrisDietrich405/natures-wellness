@@ -1,7 +1,5 @@
 import React from "react";
-// import Banner from "../../components/Banner";
-
-// import Text from "../../components/Text";
+import { Container } from "@mui/material";
 
 import {
   coachingData,
@@ -16,7 +14,7 @@ import styles from "../../src/styles/CoachingPackages.module.css";
 
 const CoachingPackages = () => {
   return (
-    <>
+    <Container style={{ marginTop: "50px" }}>
       <section className={styles.inner_container}>
         <h1 className={styles.page_title}>Coaching Packages</h1>
         <div className={styles.consultation_package}>
@@ -63,7 +61,7 @@ const CoachingPackages = () => {
         discuss your health-related challenges, goals, and how we can work
         together to get you on the path to optimal health! */}
       </section>
-    </>
+    </Container>
   );
 };
 

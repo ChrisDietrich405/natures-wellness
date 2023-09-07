@@ -16,7 +16,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="page-title">
+    <Container style={{ marginTop: "50px" }}>
       <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
         Testimonials
       </h1>
@@ -26,7 +26,7 @@ const Testimonials = () => {
         numOfSlides={1}
         slideContent={testimonials}
       />
-    </div>
+    </Container>
   );
 };
 

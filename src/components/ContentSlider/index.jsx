@@ -37,6 +37,7 @@ const ContentSlider = ({
   }
 
   var settings = {
+    adaptiveHeight: true,
     dots: true,
     infinite: true,
     speed: 500,

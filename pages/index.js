@@ -1,25 +1,15 @@
-import { useState } from "react";
-import Image from "next/image";
 import Slideshow from "../src/components/Slideshow";
-import Cards from "../src/components/Cards";
-import PictureCards from "../src/components/PictureCards";
 import styles from "../src/styles/Home.module.css";
 import { homeData } from "../src/data/homeData";
 import List from "../src/components/List";
 
-const EmPicture = "/images/home-profile.jpg";
 
 export default function Home() {
   return (
     <>
       <Slideshow />
       <section id="section" className={`${styles.container} inner-container`}>
-        {/* <h3 className={styles.home_intro}>
-          Hello, I'm Emily and I help men and women lose weight and prevent or
-          reverse chronic diseases in a sustainable and enjoyable manner by
-          teaching the power of cultivating healthy habits related to eating
-          more plants and embracing healthy lifestyle practices.
-        </h3> */}
+      
         <h1 className={styles.home_title}>Welcome to Nature's Wellness Path</h1>
         <div className={styles.home_content}>
           <h2 className={styles.home_subtitle}>Are you:</h2>
