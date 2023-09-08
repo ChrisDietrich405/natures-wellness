@@ -5,8 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import * as Validator from "validatorjs";
+import Slideshow from "../../src/components/Slideshow";
 
 import styles from "../../src/styles/Contact.module.css";
+import { Container } from "@mui/material";
 
 const Contact = () => {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -80,120 +82,122 @@ const Contact = () => {
   };
 
   return (
-    <main className={styles.inner_container}>
-      <h1 style={{ marginBottom: "10px" }}>Connect with Us! </h1>
-      <div className={styles.inner}>
-        <div className={styles.columns}>
-          <div className={styles.contact_title_wrapper}>
-            <h3>
-              Please contact me with any questions or reach out to schedule a{" "}
-              <Link
-                style={{ color: "#67a97b" }}
-                href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist"
-              >
-                free discovery call!
-              </Link>
-            </h3>
-            <div className={styles.contact_title_wrapper_image}>
-              <Image
-                style={{
-                  margin: "20px 0px 0 20px",
-                  borderRadius: "4px",
-                  textAlign: "center",
-                  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                }}
-                src="/images/home-banner-1.jpg"
-                alt="food picture"
-                width={300}
-                height={250}
-              />
+    <>
+      <Slideshow title="Connect with us" />
+      <Container>
+        <div className={styles.inner}>
+          <div className={styles.columns}>
+            <div className={styles.contact_title_wrapper}>
+              <h3>
+                Please contact me with any questions or reach out to schedule a{" "}
+                <Link
+                  style={{ color: "#67a97b" }}
+                  href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist"
+                >
+                  free discovery call!
+                </Link>
+              </h3>
+              <div className={styles.contact_title_wrapper_image}>
+                <Image
+                  style={{
+                    margin: "20px 0px 0 20px",
+                    borderRadius: "4px",
+                    textAlign: "center",
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  }}
+                  src="/images/home-banner-1.jpg"
+                  alt="food picture"
+                  width={300}
+                  height={250}
+                />
+              </div>
+            </div>
+            <div className={styles.form_wrapper}>
+              <form onSubmit={handleFormSubmit} className={styles.form}>
+                <div className={styles.names}>
+                  <div className={styles.form_group}>
+                    <label htmlFor="firstName">First Name</label>
+                    <input
+                      id="firstName"
+                      type="text"
+                      ref={firstNameRef}
+                      name="firstName"
+                      placeholder="First Name"
+                      className={styles.input_text}
+                      tabIndex="1"
+                    />
+                    {errors.firstName && (
+                      <p className={styles.error_message}>
+                        {errors.firstName.join(", ")}
+                      </p>
+                    )}
+                  </div>
+                  <div className={styles.form_group}>
+                    <label htmlFor="lastName">Last Name</label>
+                    <input
+                      id="lastName"
+                      type="text"
+                      ref={lastNameRef}
+                      name="lastName"
+                      placeholder="Last Name"
+                      className={styles.input_text}
+                      tabIndex="2"
+                    />
+                    {errors.lastName && (
+                      <p className={styles.error_message}>
+                        {errors.lastName.join(", ")}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className={styles.form_group}>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    ref={emailRef}
+                    className={styles.input_text}
+                    placeholder="example@corp.com"
+                    tabIndex="3"
+                  />
+                  {errors.email && (
+                    <p className={styles.error_message}>
+                      {errors.email.join(", ")}
+                    </p>
+                  )}
+                </div>
+                <div className={styles.form_group}>
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    id="message"
+                    placeholder="Start typing..."
+                    className={styles.message}
+                    name="message"
+                    ref={messageRef}
+                  />
+                  {errors.message && (
+                    <p className={styles.error_message}>
+                      {errors.message.join(", ")}
+                    </p>
+                  )}
+                </div>
+                <div className={styles.form_group}>
+                  <button
+                    type="submit"
+                    className={styles.send_message}
+                    disabled={isDisabled}
+                  >
+                    {isDisabled ? "Sending..." : "Send"}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-          <div className={styles.form_wrapper}>
-            <form onSubmit={handleFormSubmit} className={styles.form}>
-              <div className={styles.names}>
-                <div className={styles.form_group}>
-                  <label htmlFor="firstName">First Name</label>
-                  <input
-                    id="firstName"
-                    type="text"
-                    ref={firstNameRef}
-                    name="firstName"
-                    placeholder="First Name"
-                    className={styles.input_text}
-                    tabIndex="1"
-                  />
-                  {errors.firstName && (
-                    <p className={styles.error_message}>
-                      {errors.firstName.join(", ")}
-                    </p>
-                  )}
-                </div>
-                <div className={styles.form_group}>
-                  <label htmlFor="lastName">Last Name</label>
-                  <input
-                    id="lastName"
-                    type="text"
-                    ref={lastNameRef}
-                    name="lastName"
-                    placeholder="Last Name"
-                    className={styles.input_text}
-                    tabIndex="2"
-                  />
-                  {errors.lastName && (
-                    <p className={styles.error_message}>
-                      {errors.lastName.join(", ")}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <div className={styles.form_group}>
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  ref={emailRef}
-                  className={styles.input_text}
-                  placeholder="example@corp.com"
-                  tabIndex="3"
-                />
-                {errors.email && (
-                  <p className={styles.error_message}>
-                    {errors.email.join(", ")}
-                  </p>
-                )}
-              </div>
-              <div className={styles.form_group}>
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  placeholder="Start typing..."
-                  className={styles.message}
-                  name="message"
-                  ref={messageRef}
-                />
-                {errors.message && (
-                  <p className={styles.error_message}>
-                    {errors.message.join(", ")}
-                  </p>
-                )}
-              </div>
-              <div className={styles.form_group}>
-                <button
-                  type="submit"
-                  className={styles.send_message}
-                  disabled={isDisabled}
-                >
-                  {isDisabled ? "Sending..." : "Send"}
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
-      </div>
-      <ToastContainer />
-    </main>
+        <ToastContainer />
+      </Container>
+    </>
   );
 };
 

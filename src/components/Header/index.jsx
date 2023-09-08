@@ -49,7 +49,7 @@ const navItems = [
   },
   {
     title: "Coaching Packages",
-    url: "/services/coachingPackages",
+    url: "/services/coaching-packages",
     onlyMobile: true,
   },
   {
@@ -139,7 +139,10 @@ function DrawerAppBar(props) {
               alt="Nature's Wellness Path logo"
             />
           </div>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{ display: { xs: "none", sm: "block" } }}
+            style={{ zIndex: "20000" }}
+          >
             {navItems
               .filter((item) => !item.onlyMobile)
               .map(({ title, url }) => (
@@ -149,7 +152,7 @@ function DrawerAppBar(props) {
                   </Link>
                 </Button>
               ))}
-            <Dropdown>
+            <Dropdown style={{ position: "relative" }}>
               <TriggerButton
                 className={`${styles.customFont} ${styles.services}`}
               >
@@ -167,10 +170,13 @@ function DrawerAppBar(props) {
                   SERVICES
                 </Typography>
               </TriggerButton>
-              <Menu slots={{ listbox: StyledListbox }}>
+              <Menu
+                slots={{ listbox: StyledListbox }}
+                className={styles.sublink_container}
+              >
                 <StyledMenuItem>
                   <Link
-                    href="/services/coachingPackages"
+                    href="/services/coaching-packages"
                     className={styles.services_sublinks}
                   >
                     Coaching Packages
