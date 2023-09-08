@@ -2,6 +2,7 @@ import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { api } from "../api/api";
 import ContentSlider from "../../src/components/ContentSlider";
+import Slideshow from "../../src/components/Slideshow";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -16,17 +17,17 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <Container style={{ marginTop: "50px" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
-        Testimonials
-      </h1>
-      <ContentSlider
-        typeOfSlide="text"
-        childrenImageHeight="large"
-        numOfSlides={1}
-        slideContent={testimonials}
-      />
-    </Container>
+    <>
+      <Slideshow title="Testimonials" />
+      <Container style={{ marginTop: "50px" }}>
+        <ContentSlider
+          typeOfSlide="text"
+          childrenImageHeight="large"
+          numOfSlides={1}
+          slideContent={testimonials}
+        />
+      </Container>
+    </>
   );
 };
 

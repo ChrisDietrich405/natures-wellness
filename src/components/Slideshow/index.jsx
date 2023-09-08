@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
-import styles from "./styles.module.css";
+import Title from "../Title";
 
 const slideshow1 = "/images/home-banner-1.jpg";
 const slideshow2 = "/images/home-banner-2.jpg";
 const slideshow3 = "/images/chickpeas.jpg";
 
-export default function Slideshow() {
+import styles from "./styles.module.css";
+
+export default function Slideshow({ title }) {
   const imageArray = [slideshow1, slideshow2, slideshow3];
 
   const [pause, setPause] = useState(false);
@@ -40,14 +41,12 @@ export default function Slideshow() {
             className={`${styles.slideshow_image} ${
               index === i ? styles.active : styles.inactive
             }`}
-            // className={`${index === i ? "active" : "inactive"} ${
-            //   styles.slideshow_image
-            // }`}
             src={image}
             key={i}
           ></Image>
         ))}
       </div>
+      <h2 className={styles.slideshow_title}>{title}</h2>
     </div>
   );
 }

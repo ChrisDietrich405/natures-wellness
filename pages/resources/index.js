@@ -8,6 +8,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import { Container } from "@mui/system";
 import { makeStyles } from "@mui/styles"; // Import makeStyles
+import Slideshow from "../../src/components/Slideshow";
 
 // Define custom styles using makeStyles
 const useStyles = makeStyles((theme) => ({
@@ -36,55 +37,57 @@ const Resources = () => {
   }, []);
 
   return (
-    <Container style={{ marginTop: "50px" }}>
-      <h1>Resources</h1>
-      <Grid container spacing={4}>
-        {resources.map((resource, index) => (
-          <Grid item key={index} xs={12} md={6} lg={3}>
-            <Card
-              sx={{ p: 2 }}
-              style={{
-                border: "1px solid black",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "space-between",
-              }}
-            >
-              <h3 style={{ minHeight: "50px", textAlign: "center" }}>
-                {resource.name}
-              </h3>
-              <Image
-                src={BASE_URL + resource.image}
-                height="200"
-                width="200"
-                alt={resource.name}
+    <>
+      <Slideshow title="Resources" style={{ marginBottom: "20px" }} />
+      <Container style={{ marginTop: "50px" }}>
+        <Grid container spacing={4}>
+          {resources.map((resource, index) => (
+            <Grid item key={index} xs={12} md={6} lg={3}>
+              <Card
+                sx={{ p: 2 }}
                 style={{
-                  width: "100%",
-                  height: "75%",
-                  maxHeight: "300px",
-                  objectFit: "cover",
+                  border: "1px solid black",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "space-between",
                 }}
-              />
-              <CardActions style={{ marginTop: "auto" }}>
-                <Button
-                  className={classes.customButton} // Apply custom class
-                  variant="contained"
-                  onClick={() => router.push(`/resources/${resource.id}`)}
-                  size="small"
-                  sx={{
+              >
+                <h3 style={{ minHeight: "50px", textAlign: "center" }}>
+                  {resource.name}
+                </h3>
+                <Image
+                  src={BASE_URL + resource.image}
+                  height="200"
+                  width="200"
+                  alt={resource.name}
+                  style={{
                     width: "100%",
-                    mt: "10px",
+                    height: "75%",
+                    maxHeight: "300px",
+                    objectFit: "cover",
                   }}
-                >
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+                />
+                <CardActions style={{ marginTop: "auto" }}>
+                  <Button
+                    className={classes.customButton} // Apply custom class
+                    variant="contained"
+                    onClick={() => router.push(`/resources/${resource.id}`)}
+                    size="small"
+                    sx={{
+                      width: "100%",
+                      mt: "10px",
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </>
   );
 };
 
