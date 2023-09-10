@@ -50,3 +50,9 @@
   height: 1rem;
   background-color: var(--primary-color);
 }
+
+@media only screen and (max-width: 600px) {
+  .unordered_list li::before {
+    top: 4px;
+  }
+}

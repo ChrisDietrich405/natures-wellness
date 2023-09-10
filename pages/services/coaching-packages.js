@@ -19,7 +19,6 @@ const CoachingPackages = () => {
       <Slideshow title="Coaching Packages" />
       <Container style={{ marginTop: "50px" }}>
         <section className={styles.inner_container}>
-          <h1 className={styles.page_title}>Coaching Packages</h1>
           <div className={styles.consultation_package}>
             <h2>2 Session Package:</h2>
             <p>Package includes:</p>

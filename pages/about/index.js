@@ -61,16 +61,22 @@ const About = () => {
             </div>
           </div>
           <div className={styles.content_text}>
-            <p>
-              Eating more plants and engaging in healthy lifestyle practices can
-              help us to look and feel our best! A few of the health problems
-              that can be lessened or resolved a plant-predominant or
-              plant-based way of eating and healthy lifestyle practices
-              includes:
-            </p>
-            <div style={{ marginBottom: "10px" }}>
-              <List data={aboutData} ordered className={styles.ordered_list} />
-            </div>
+            <Card sx={{ mt: 3, py: 4, px: 10 }}>
+              <p>
+                Eating more plants and engaging in healthy lifestyle practices
+                can help us to look and feel our best! A few of the health
+                problems that can be lessened or resolved a plant-predominant or
+                plant-based way of eating and healthy lifestyle practices
+                includes:
+              </p>
+              <div style={{ marginBottom: "10px" }}>
+                <List
+                  data={aboutData}
+                  ordered
+                  className={styles.ordered_list}
+                />
+              </div>
+            </Card>
             <Grid container spacing={2} style={{ marginTop: "20px" }}>
               <Grid item lg={6}>
                 <Card sx={{ mt: 3, py: 4, px: 10, height: "600px" }}>

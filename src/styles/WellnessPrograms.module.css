@@ -3,7 +3,7 @@
 }
 
 .page_title {
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .offerings_title {
@@ -64,19 +64,18 @@
   text-align: center;
 }
 
-
 @media (max-width: 600px) {
-   .page_title {
-    margin-bottom : 20px; 
-   }
+  .page_title {
+    margin-bottom: 20px;
+  }
 
-   .offerings_title {
+  .offerings_title {
     width: 90%;
-    margin: 0 auto;  
-   }
+    margin: 200px auto 0;
+  }
 
-   .inner_container {
-    width: 90%; 
-    margin: 0 auto; 
-   }
+  .inner_container {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
