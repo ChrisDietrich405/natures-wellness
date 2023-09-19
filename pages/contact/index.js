@@ -99,11 +99,9 @@ const Contact = () => {
               </h3>
               <div className={styles.contact_title_wrapper_image}>
                 <Image
+                  className={styles.contact_image}
                   style={{
-                    margin: "20px 0px 0 20px",
-                    borderRadius: "4px",
-                    textAlign: "center",
-                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                   
                   }}
                   src="/images/home-banner-1.jpg"
                   alt="food picture"

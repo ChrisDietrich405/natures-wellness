@@ -15,6 +15,13 @@
   flex: 35%;
 }
 
+.contact_image {
+  margin: 20px 0px 0 20px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 .form_wrapper {
   flex: 65%;
   background-color: rgb(246, 245, 245);
@@ -92,12 +99,20 @@
 
 @media (max-width: 600px) {
   .columns {
-    flex-direction: column; 
-    padding: 0 10px; 
+    flex-direction: column;
+    padding: 0 10px;
   }
 
   .contact_title_wrapper_image {
-   display: flex; 
-   justify-content: center; 
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact_image {
+    display: none;
+  }
+
+  .form_wrapper {
+    margin-top: 100px; 
   }
 }

@@ -16,15 +16,20 @@
 }
 
 .list_container {
-  display: flex; 
+  display: flex;
 }
 
 @media (max-width: 600px) {
   .container {
     margin: 0;
   }
+
   .title_container {
     width: 100%;
+  }
+
+  .about_wrapper {
+    margin-top: 200px;
   }
 
   .about_intro_title {
@@ -40,7 +45,7 @@
 
   .about_intro {
     gap: 0 !important;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     flex-direction: column;
   }
@@ -50,9 +55,14 @@
   }
 
   .content_text {
+    text-align: justify;
     letter-spacing: 0.5px;
-    padding-top: 20px;
     width: 90%;
     margin: 0 auto;
+  }
+
+  .content_paragraph {
+    height: 600px; 
+    padding: 15px 15px 0 15px !important;
   }
 }

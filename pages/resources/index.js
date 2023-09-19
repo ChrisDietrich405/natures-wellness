@@ -10,7 +10,8 @@ import { Container } from "@mui/system";
 import { makeStyles } from "@mui/styles"; // Import makeStyles
 import Slideshow from "../../src/components/Slideshow";
 
-// Define custom styles using makeStyles
+import styles from "../../src/styles/Resources.module.css";
+
 const useStyles = makeStyles((theme) => ({
   customButton: {
     backgroundColor: "#000", // Change this to your desired background color
@@ -39,7 +40,7 @@ const Resources = () => {
   return (
     <>
       <Slideshow title="Resources" style={{ marginBottom: "20px" }} />
-      <Container style={{ marginTop: "50px" }}>
+      <Container className={styles.resources_wrapper}>
         <Grid container spacing={4}>
           {resources.map((resource, index) => (
             <Grid item key={index} xs={12} md={6} lg={3}>

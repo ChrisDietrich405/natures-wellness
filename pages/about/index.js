@@ -14,7 +14,7 @@ const About = () => {
   return (
     <>
       <Slideshow title="About Em" />
-      <Container style={{ marginTop: "50px" }}>
+      <Container className={styles.about_wrapper}>
         <section>
           <div className={styles.title_container}>
             <h2 className={styles.about_intro_sub_title}>
@@ -61,7 +61,10 @@ const About = () => {
             </div>
           </div>
           <div className={styles.content_text}>
-            <Card sx={{ mt: 3, py: 4, px: 10 }}>
+            <Card
+              sx={{ mt: 3, py: 4, px: 10 }}
+              className={styles.content_paragraph}
+            >
               <p>
                 Eating more plants and engaging in healthy lifestyle practices
                 can help us to look and feel our best! A few of the health
@@ -79,7 +82,10 @@ const About = () => {
             </Card>
             <Grid container spacing={2} style={{ marginTop: "20px" }}>
               <Grid item lg={6}>
-                <Card sx={{ mt: 3, py: 4, px: 10, height: "600px" }}>
+                <Card
+                  sx={{ mt: 3, py: 4, px: 10, height: "600px" }}
+                  className={styles.content_paragraph}
+                >
                   <p style={{ marginBottom: "10px" }}>
                     Stress-management and self care Plant-based nutrition and
                     purpose Adequate hydration and physical activity Restorative
@@ -96,7 +102,10 @@ const About = () => {
                 </Card>
               </Grid>
               <Grid item lg={6}>
-                <Card sx={{ mt: 3, py: 4, px: 10, height: "600px" }}>
+                <Card
+                  sx={{ mt: 3, py: 4, px: 10, height: "600px" }}
+                  className={styles.content_paragraph}
+                >
                   <p style={{ marginBottom: "10px" }}>
                     I believe that all individuals have the right to live a full
                     and vibrant life. I feel that the foundation for living our

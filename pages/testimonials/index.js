@@ -4,6 +4,8 @@ import { api } from "../api/api";
 import ContentSlider from "../../src/components/ContentSlider";
 import Slideshow from "../../src/components/Slideshow";
 
+import styles from "../../src/styles/Testimonials.module.css"
+
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
@@ -19,7 +21,7 @@ const Testimonials = () => {
   return (
     <>
       <Slideshow title="Testimonials" />
-      <Container style={{ marginTop: "50px" }}>
+      <Container className={styles.testimonials_wrapper}> 
         <ContentSlider
           typeOfSlide="text"
           childrenImageHeight="large"
