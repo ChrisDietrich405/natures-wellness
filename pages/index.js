@@ -3,13 +3,11 @@ import styles from "../src/styles/Home.module.css";
 import { homeData } from "../src/data/homeData";
 import List from "../src/components/List";
 
-
 export default function Home() {
   return (
     <>
       <Slideshow />
-      <section id="section" className={`${styles.container} inner-container`}>
-      
+      <section id="section">
         <h1 className={styles.home_title}>Welcome to Nature's Wellness Path</h1>
         <div className={styles.home_content}>
           <h2 className={styles.home_subtitle}>Are you:</h2>
@@ -55,8 +53,7 @@ export default function Home() {
             Get a Free Guide Today!
           </a>
         </div>
-        {/* <Cards /> */}
-        {/* <PictureCards /> */}
+     
       </section>
     </>
   );
