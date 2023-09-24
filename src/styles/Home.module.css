@@ -2,6 +2,10 @@
   margin: 50px;
 }
 
+.home_content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .home_title {
   font-size: 44px;

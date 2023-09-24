@@ -1,3 +1,12 @@
+.about_intro_sub_title {
+  margin-top: 20px; 
+}
+
+.inner_container {
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
 .about_intro {
   display: flex;
   align-items: flex-start;
@@ -55,8 +64,8 @@
   }
 
   .photo {
-    margin: 0 auto; 
-    width: 90%; 
+    margin: 0 auto;
+    width: 90%;
   }
 
   .content_text {
@@ -71,7 +80,6 @@
   }
 
   .list_container {
- 
-    margin: 0 15px 0 15px; 
+    margin: 0 15px 0 15px;
   }
 }
