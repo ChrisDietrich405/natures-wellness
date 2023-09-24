@@ -31,12 +31,10 @@ export default class Footer extends React.Component {
                   emilyperrymanrd@gmail.com
                 </a>
               </div>
-
-              {/* <div className={styles.filler}></div> */}
             </div>
             <div className={styles.footer_container_top_title}>
               <h3>Serving</h3>
-              <p>Baltimore County, MD, Since 2019</p>
+              <p>Baltimore County, MD, Since 2016</p>
             </div>
 
             <div className={styles.footer_container_top_title}>

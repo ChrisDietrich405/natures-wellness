@@ -80,9 +80,9 @@ function DrawerAppBar(props) {
     >
       <div className={styles.logo}>
         <Image
-          width={80}
-          height={80}
-          src={"/images/logo.png"}
+          width={200}
+          height={30}
+          src={"/images/header-logo.png"}
           alt="Nature's Wellness Path logo"
         />
       </div>
@@ -121,7 +121,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }} className={styles.header_container}>
       <CssBaseline />
       <AppBar component="nav" className={styles.container}>
-        <Toolbar style={{ height: "150px" }}>
+        <Toolbar style={{ height: "70px" }}>
           <IconButton
             color="#67a97b"
             aria-label="open drawer"
@@ -133,9 +133,9 @@ function DrawerAppBar(props) {
           </IconButton>
           <div className={styles.logo}>
             <Image
-              width={120}
-              height={120}
-              src={"/images/logo.png"}
+              width={200}
+              height={60}
+              src={"/images/header-logo.png"}
               alt="Nature's Wellness Path logo"
             />
           </div>

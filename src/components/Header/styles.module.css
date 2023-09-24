@@ -23,6 +23,7 @@
   background-color: var(--secondary-color);
   color: #fff;
 }
+
 .services {
   outline: none;
   border: none;
@@ -42,15 +43,12 @@
 }
 
 .sublink_container {
-  z-index: 100 !important;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 35px !important;
 }
 
 .services_sublinks {
-  padding-top: 10px;
   color: var(--primary-color);
   text-decoration: none;
   font-family: "Roboto", sans-serif;
