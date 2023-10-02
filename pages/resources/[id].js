@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -10,6 +9,8 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import { api } from "../api/api";
+
+import styles from "../../src/styles/Resources.module.css";
 
 const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
@@ -59,16 +60,11 @@ const ResourcesId = (props) => {
                   }}
                 >
                   <Image
+                    className={styles.image}
                     width="200"
                     height="200"
                     alt={card.title}
                     src={url + card.image}
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      maxHeight: "300px",
-                      objectFit: "cover",
-                    }}
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h6" component="div">

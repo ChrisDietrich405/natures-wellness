@@ -58,16 +58,11 @@ const Resources = () => {
                   {resource.name}
                 </h3>
                 <Image
+                  className={styles.image}
                   src={`http://localhost:3000${resource.image}`}
                   height="200"
                   width="200"
                   alt={resource.name}
-                  style={{
-                    width: "100%",
-                    height: "75%",
-                    maxHeight: "300px",
-                    objectFit: "cover",
-                  }}
                 />
                 <CardActions style={{ marginTop: "auto" }}>
                   <Button

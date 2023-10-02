@@ -1,9 +1,13 @@
 .resources_wrapper {
-  margin-top: 50px; 
+  margin-top: 50px;
+}
+
+.image {
+  width: 100% !important;
 }
 
 @media (max-width: 600px) {
   .resources_wrapper {
-    margin-top: 200px; 
+    margin-top: 200px;
   }
 }
