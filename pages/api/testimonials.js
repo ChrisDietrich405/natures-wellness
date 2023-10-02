@@ -10,7 +10,7 @@ export default async function handler(req, res) {
           .collection("testimonials")
           .find({})
           .toArray();
-        res.json({ status: 200, data: testimonials });
+        res.json(testimonials);
         break;
       } catch (error) {
         return res.status(401).json({ status: 401, message: error });

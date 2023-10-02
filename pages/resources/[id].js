@@ -22,10 +22,9 @@ const ResourcesId = (props) => {
 
   useEffect(() => {
     const fetchResources = async () => {
-      const response = await api.get(`/resources_information/${id}`);
+      const response = await api.get(`/resources-information/${id}`);
       const { data } = response;
       setCards(data);
-      console.log("resources:", data);
     };
     fetchResources();
   }, [id]);
@@ -34,14 +33,15 @@ const ResourcesId = (props) => {
     const fetchTitle = async () => {
       const response = await api.get(`/resources/${id}`);
       const { data } = response;
-      console.log(data);
-      setTitle(data[0]?.name);
+      console.log("DATA", data);
+      // console.log("DATA", data[0].name);
+      setTitle(data.name);
     };
     fetchTitle();
   }, [id]);
 
   return (
-    <Container style={{ marginTop: "50px" }}>
+    <Container style={{ marginTop: "100px" }}>
       <h1>{title}</h1>
       <Grid spacing={4} container>
         {cards.map((card, index) => {
@@ -79,24 +79,13 @@ const ResourcesId = (props) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    {/* <Link
-                      
-                        href={`${card.url}`}
-                        passHref
-                        variant="contained"
-                        size="small"
-                        sx={{
-                          width: "100%",
-                          mt: "10px",
-                        }}
-                      >
-                        <Button>About</Button>
-                      </Link> */}
                     <Button
                       variant="contained"
                       target="_blank"
                       href={`${card.url}`}
-                      // onClick={() => router.push(`${card.url}`)}
+                      // onClick={() =>
+                      //   router.push(`/resources-information/${card.id}`)
+                      // }
                       size="small"
                       sx={{
                         width: "100%",

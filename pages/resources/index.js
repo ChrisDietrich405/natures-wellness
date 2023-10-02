@@ -58,7 +58,7 @@ const Resources = () => {
                   {resource.name}
                 </h3>
                 <Image
-                  src={BASE_URL + resource.image}
+                  src={`http://localhost:3000${resource.image}`}
                   height="200"
                   width="200"
                   alt={resource.name}
