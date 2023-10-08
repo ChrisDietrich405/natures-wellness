@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { Container, Grid, Card } from "@mui/material";
-
-import Title from "../../src/components/Title";
 import { aboutData, aboutData2, aboutData3 } from "../../src/data/aboutData";
 import List from "../../src/components/List";
 

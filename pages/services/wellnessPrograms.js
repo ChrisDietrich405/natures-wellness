@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Container } from "@mui/material";
+import { Container, Grid, Card } from "@mui/material";
 
 import { wellnessProgramsData } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData2 } from "../../src/componentsData/wellnessPrograms";
@@ -67,26 +67,49 @@ const WellnessPrograms = () => {
             <h3 className={styles.path_title}>
               Pick Your Plant-Powered Path To Optimal Wellness
             </h3>
-            <div className={styles.path}>
-              <p style={{ marginBottom: "10px" }}>
-                Path #1: 4 Week Plant-Powered Wellness Jumpstart
-              </p>
-              <List
-                data={wellnessProgramsData2}
-                className={styles.offering_list}
-              />
-              <p>Cost: $200</p>
-            </div>
+            <Grid
+              className={styles.grid_container}
+              container
+              spacing={2}
+              style={{ marginTop: "20px" }}
+            >
+              <Grid item lg={6} sm={12}>
+                <Card
+                  md={12}
+                  sx={{ mt: 3, py: 4, px: 10, height: "400px" }}
+                  className={styles.content_paragraph}
+                >
+                  <p style={{ marginBottom: "10px" }}>
+                    Path #1: 4 Week Plant-Powered Wellness Jumpstart
+                  </p>
+                  <List
+                    data={wellnessProgramsData2}
+                    className={styles.offering_list}
+                  />
+                  <p>Cost: $200</p>
+                </Card>
+              </Grid>
+              <Grid item lg={6} sm={12}>
+                <Card
+                  sx={{ mt: 3, py: 4, px: 10, height: "400px" }}
+                  className={styles.content_paragraph}
+                >
+                  <p style={{ marginBottom: "10px" }}>
+                    Path #2: 12 Week Plant-Powered Weight Loss & Wellness
+                    Immersion
+                  </p>
+                  <List
+                    data={wellnessProgramsData4}
+                    className={styles.offering_list}
+                  />
+                  <p>Cost: $600</p>
+                </Card>
+              </Grid>
+            </Grid>
+{/* 
+            <div className={styles.path}></div> */}
 
             <div className={styles.path}>
-              <p style={{ marginBottom: "10px" }}>
-                Path #2: 12 Week Plant-Powered Weight Loss & Wellness Immersion
-              </p>
-              <List
-                data={wellnessProgramsData4}
-                className={styles.offering_list}
-              />
-              <p>Cost: $600</p>
               <p style={{ marginTop: "10px" }}>
                 <Link
                   target="_blank"
@@ -108,3 +131,5 @@ const WellnessPrograms = () => {
 };
 
 export default WellnessPrograms;
+
+
