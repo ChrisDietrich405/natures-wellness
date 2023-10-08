@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@mui/material";
 
@@ -79,18 +80,24 @@ const WellnessPrograms = () => {
 
             <div className={styles.path}>
               <p style={{ marginBottom: "10px" }}>
-                Path #3: 12 Week Program: longest program option, ideal for
-                those who are l
+                Path #2: 12 Week Plant-Powered Weight Loss & Wellness Immersion
               </p>
               <List
                 data={wellnessProgramsData4}
                 className={styles.offering_list}
               />
               <p>Cost: $600</p>
-              <p>
-                Contact me to schedule a free discovery call to learn more about
-                the programs and how they can help you to conquer your weight
-                loss and wellness challenges!
+              <p style={{ marginTop: "10px" }}>
+                <Link
+                  target="_blank"
+                  style={{ color: "#67a97b" }}
+                  href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist"
+                >
+                  Contact me
+                </Link>{" "}
+                to schedule a free discovery call to learn more about the
+                programs and how they can help you to conquer your weight loss
+                and wellness challenges!
               </p>
             </div>
           </div>

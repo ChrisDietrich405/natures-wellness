@@ -91,6 +91,7 @@ const Contact = () => {
               <h3>
                 Please contact me with any questions or reach out to schedule a{" "}
                 <Link
+                  target="_blank"
                   style={{ color: "#67a97b" }}
                   href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist"
                 >
@@ -100,9 +101,7 @@ const Contact = () => {
               <div className={styles.contact_title_wrapper_image}>
                 <Image
                   className={styles.contact_image}
-                  style={{
-                   
-                  }}
+                  style={{}}
                   src="/images/home-banner-1.jpg"
                   alt="food picture"
                   width={300}
