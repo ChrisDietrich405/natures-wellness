@@ -53,3 +53,14 @@
   text-decoration: none;
   font-family: "Roboto", sans-serif;
 }
+
+@media only screen and (max-width: 900px) {
+  .link, .services_link {
+    padding: 7px 7px; 
+    font-size: 10px;
+  }
+
+  .logo {
+    width: 30%;
+  }
+}

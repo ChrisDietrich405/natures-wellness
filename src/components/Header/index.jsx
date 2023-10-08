@@ -2,7 +2,6 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PropTypes from "prop-types";
-import { makeStyles } from "@mui/styles";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton } from "@mui/base/MenuButton";
@@ -17,12 +16,10 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-
 import styles from "./styles.module.css";
 
 const drawerWidth = 240;
@@ -64,6 +61,7 @@ const createHandleMenuClick = (menuItem) => {
     console.log(`Clicked on ${menuItem}`);
   };
 };
+
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -98,7 +96,7 @@ function DrawerAppBar(props) {
           </ListItem>
         ))}
       </List>
-      <Dropdown>
+      {/* <Dropdown>
         <Menu slots={{ listbox: StyledListbox }}>
           <StyledMenuItem onClick={createHandleMenuClick("Profile")}>
             Profile
@@ -109,8 +107,8 @@ function DrawerAppBar(props) {
           <StyledMenuItem onClick={createHandleMenuClick("Log out")}>
             Log out
           </StyledMenuItem>
-        </Menu>
-      </Dropdown>
+        </Menu> */}
+      {/* </Dropdown> */}
     </Box>
   );
 

@@ -3,7 +3,8 @@
 }
 
 .image {
-  width: 100% !important;
+  /* object-fit: fill !important;
+  width: 100% !important; */
 }
 
 @media (max-width: 600px) {

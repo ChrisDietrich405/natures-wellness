@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { makeStyles } from "@mui/styles"; // Import makeStyles
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
@@ -12,9 +13,21 @@ import { api } from "../api/api";
 
 import styles from "../../src/styles/Resources.module.css";
 
+const useStyles = makeStyles((theme) => ({
+  customButton: {
+    backgroundColor: "#000", // Change this to your desired background color
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#67a97b", // Change this to your desired hover background color
+    },
+  },
+}));
+
 const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
   const [title, setTitle] = useState("");
+
+  const classes = useStyles(); // Initialize useStyles
 
   const url = "http://localhost:3001/";
 
@@ -33,12 +46,13 @@ const ResourcesId = (props) => {
   useEffect(() => {
     const fetchTitle = async () => {
       const response = await api.get(`/resources/${id}`);
+
       const { data } = response;
-      console.log("DATA", data);
-      // console.log("DATA", data[0].name);
-      setTitle(data.name);
+      setTitle(data?.name);
     };
-    fetchTitle();
+    if (id) {
+      fetchTitle();
+    }
   }, [id]);
 
   return (
@@ -61,13 +75,19 @@ const ResourcesId = (props) => {
                 >
                   <Image
                     className={styles.image}
-                    width="200"
-                    height="200"
+                    width={300}
+                    height={300}
+                    style={{ objectFit: "contain" }}
                     alt={card.title}
                     src={url + card.image}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography
+                      style={{ fontWeight: "bold", textAlign: "center" }}
+                      gutterBottom
+                      variant="h6"
+                      component="div"
+                    >
                       {card.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -76,12 +96,10 @@ const ResourcesId = (props) => {
                   </CardContent>
                   <CardActions>
                     <Button
+                      className={classes.customButton}
                       variant="contained"
                       target="_blank"
                       href={`${card.url}`}
-                      // onClick={() =>
-                      //   router.push(`/resources-information/${card.id}`)
-                      // }
                       size="small"
                       sx={{
                         width: "100%",

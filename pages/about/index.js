@@ -19,14 +19,14 @@ const About = () => {
         <div className={styles.title_container}>
           <div className={styles.inner_container}>
             <h2 className={styles.about_intro_sub_title}>
-              I help men and women lose weight and prevent or reverse chronic
-              diseases in a sustainable and enjoyable manner by teaching the
-              power of cultivating healthy habits related to eating more plants
-              and embracing healthy lifestyle practices.
+              Hi. I'm Em! I help men and women lose weight and prevent or
+              reverse chronic diseases in a sustainable and enjoyable manner by
+              teaching the power of cultivating healthy habits related to eating
+              more plants and embracing healthy lifestyle practices.
             </h2>
             <Card
-              sx={{ mt: 3, px: 10, height: "500px" }}
-              className={styles.content_paragraph}
+              sx={{ mt: 3, px: 10, height: "400px" }}
+              className={styles.content_paragraph_with_image}
             >
               {" "}
               <div className={styles.about_intro}>
@@ -67,24 +67,15 @@ const About = () => {
             </Card>
 
             <div className={styles.content_text}>
-              <Card
-                sx={{ mt: 3, py: 4, px: 10, height: "300px" }}
-                className={styles.content_paragraph}
+              <Grid
+                className={styles.grid_container}
+                container
+                spacing={2}
+                style={{ marginTop: "20px" }}
               >
-                <p>
-                  Eating more plants and engaging in healthy lifestyle practices
-                  can help us to look and feel our best! A few of the health
-                  problems that can be lessened or resolved a plant-predominant
-                  or plant-based way of eating and healthy lifestyle practices
-                  includes:
-                </p>
-                <div className={styles.list_container}>
-                  <List data={aboutData} />
-                </div>
-              </Card>
-              <Grid container spacing={2} style={{ marginTop: "20px" }}>
-                <Grid item lg={6}>
+                <Grid item lg={6} sm={12}>
                   <Card
+                    md={12}
                     sx={{ mt: 3, py: 4, px: 10, height: "600px" }}
                     className={styles.content_paragraph}
                   >
@@ -105,9 +96,26 @@ const About = () => {
                     </div>
                   </Card>
                 </Grid>
-                <Grid item lg={6}>
+                <Grid item lg={6} sm={12}>
                   <Card
                     sx={{ mt: 3, py: 4, px: 10, height: "600px" }}
+                    className={styles.content_paragraph}
+                  >
+                    <p>
+                      Eating more plants and engaging in healthy lifestyle
+                      practices can help us to look and feel our best! A few of
+                      the health problems that can be lessened or resolved a
+                      plant-predominant or plant-based way of eating and healthy
+                      lifestyle practices includes:
+                    </p>
+                    <div className={styles.list_container}>
+                      <List data={aboutData} />
+                    </div>
+                  </Card>
+                </Grid>
+                <Grid item lg={12} sm={12}>
+                  <Card
+                    sx={{ mt: 3, py: 4, px: 10, height: "400px" }}
                     className={styles.content_paragraph}
                   >
                     <p style={{ marginBottom: "10px" }}>

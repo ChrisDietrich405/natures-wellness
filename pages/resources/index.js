@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api, BASE_URL } from "../api/api";
+import { api } from "../api/api";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
@@ -60,8 +60,9 @@ const Resources = () => {
                 <Image
                   className={styles.image}
                   src={`http://localhost:3000${resource.image}`}
-                  height="200"
-                  width="200"
+                  height={300}
+                  width={300}
+                  style={{ objectFit: "contain" }}
                   alt={resource.name}
                 />
                 <CardActions style={{ marginTop: "auto" }}>
