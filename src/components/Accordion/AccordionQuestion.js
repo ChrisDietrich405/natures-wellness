@@ -17,3 +17,8 @@ const AccordionQuestion = ({ question }) => {
 };
 
 export default AccordionQuestion;
+
+
+image:"/content/happycow.png"
+
+image:"/content/theveganstay.png"
