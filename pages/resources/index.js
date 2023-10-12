@@ -26,7 +26,9 @@ const Resources = () => {
   const [resources, setResources] = useState([]);
 
   const router = useRouter();
-  const classes = useStyles(); // Initialize useStyles
+  const classes = useStyles();
+
+  const url = process.env.NEXT_PUBLIC_BASE_URL;
 
   useEffect(() => {
     const fetchResource = async () => {
@@ -59,7 +61,7 @@ const Resources = () => {
                 </h3>
                 <Image
                   className={styles.image}
-                  src={`http://localhost:3000${resource.image}`}
+                  src={`${url}${resource.image}`}
                   height={300}
                   width={300}
                   style={{ objectFit: "contain" }}

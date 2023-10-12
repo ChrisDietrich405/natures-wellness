@@ -29,7 +29,7 @@ const ResourcesId = (props) => {
 
   const classes = useStyles(); // Initialize useStyles
 
-  const url = "http://localhost:3001/";
+  const url = process.env.NEXT_PUBLIC_BASE_URL
 
   const router = useRouter();
   const { id } = router.query;
@@ -46,7 +46,6 @@ const ResourcesId = (props) => {
   useEffect(() => {
     const fetchTitle = async () => {
       const response = await api.get(`/resources/${id}`);
-
       const { data } = response;
       setTitle(data?.name);
     };
@@ -74,10 +73,14 @@ const ResourcesId = (props) => {
                   }}
                 >
                   <Image
-                    className={styles.image}
-                    width={300}
-                    height={300}
-                    style={{ objectFit: "contain" }}
+                    // className={styles.image}
+                    sizes="100vw"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    width={200}
+                    height={200}
                     alt={card.title}
                     src={url + card.image}
                   />
