@@ -13,13 +13,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ContentSlider = ({
-  childrenImageHeight,
+
   numOfSlides,
   slideContent,
   typeOfSlide,
 }) => {
   function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const {  onClick } = props;
     return (
       <button className={styles.next_button} onClick={onClick}>
         <BsFillArrowRightCircleFill className={styles.next_arrow} />
@@ -28,7 +28,7 @@ const ContentSlider = ({
   }
 
   function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+    const {  onClick } = props;
     return (
       <button className={styles.prev_button} onClick={onClick}>
         <BsFillArrowLeftCircleFill className={styles.prev_arrow} />

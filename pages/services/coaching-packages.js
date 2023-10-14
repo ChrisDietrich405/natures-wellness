@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Grid, Card } from "@mui/material";
-
+import Link from "next/link";
 import {
   coachingData,
   coachingData2,
@@ -83,7 +83,26 @@ const CoachingPackages = () => {
             </Card>
           </Grid>
         </Grid>
-       
+        <div>
+          <Card
+            className={styles.contact_container}
+            sx={{ mt: 3, mb: 3, py: 2, px: 2, height: "120px" }}
+          >
+            {" "}
+            Contact me to schedule a free discovery call to learn more about the
+            programs and how they can help you to conquer your weight loss and
+            wellness challenges!
+            <p className={styles.contact_btn_container}>
+              <Link
+                className={styles.contact_btn}
+                target="_blank"
+                href="https://heal.me/practitioner/emily-perryman-registered-dietitian-nutritionist"
+              >
+                Contact me
+              </Link>{" "}
+            </p>
+          </Card>
+        </div>
       </Container>
     </>
   );

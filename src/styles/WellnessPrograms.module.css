@@ -64,6 +64,27 @@
   text-align: center;
 }
 
+.contact_btn_container {
+  width: 13%;
+  margin: 0 auto;
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none !important;
+  padding: 10px 30px;
+  background-color: var(--secondary-color);
+  transition: 0.4s;
+  margin-bottom: 10px;
+}
+
+.contact_btn_container:hover {
+  background-color: var(--primary-color);
+}
+
+.contact_btn {
+  text-decoration: none;
+  color: #000;
+}
+
 @media (max-width: 600px) {
   .page_title {
     margin-bottom: 20px;

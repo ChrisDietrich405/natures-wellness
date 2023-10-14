@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Title from "../Title";
 
 const slideshow1 = "/images/home-banner-1.jpg";
 const slideshow2 = "/images/home-banner-2.jpg";
@@ -17,7 +16,6 @@ export default function Slideshow({ title }) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (pause) {
-        // clearInterval(interval);
         return;
       }
       if (index === imageArray.length - 1) {
@@ -45,6 +43,7 @@ export default function Slideshow({ title }) {
             key={i}
           ></Image>
         ))}
+        
       </div>
       <h2 className={styles.slideshow_title}>{title}</h2>
     </div>
