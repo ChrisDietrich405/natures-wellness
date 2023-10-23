@@ -12,7 +12,7 @@ const Testimonials = () => {
     const fetchTestimonials = async () => {
       const response = await api.get(`/testimonials`);
       const { data } = response;
-      console.log("ASD: ", data);
+     
       setTestimonials(data);
     };
     fetchTestimonials();

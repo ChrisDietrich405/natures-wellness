@@ -78,9 +78,7 @@ app.post("/login", (req, resp, next) => {
   });
 });
 
-// CHARACTERS
 app.get("/characters", (req, res, next) => {
-  console.log("RDX: ", req.query);
   const userId = req.query.userId
     ? req.query.userId
     : JSON.parse(req.query[0]).userId;

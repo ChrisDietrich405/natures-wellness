@@ -1,6 +1,5 @@
 import Image  from "next/image"
 
-// const publicURL = import.meta.env.VITE_PUBLIC_URL;
 import styles from "./styles.module.css";
 
 

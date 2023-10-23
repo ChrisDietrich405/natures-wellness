@@ -1,7 +1,8 @@
 .footer {
+  color: #fff;
   background-repeat: repeat-x;
   position: relative;
-  background-color: var(--primary-color);
+  background-color: #3e3e3e;
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 50px;
@@ -15,7 +16,7 @@
 .footer_contact_container a {
   text-decoration: none;
   margin: 3px 0;
-  color: #000 !important;
+  color: #fff !important;
 }
 
 .footer_container_top_title h3 {

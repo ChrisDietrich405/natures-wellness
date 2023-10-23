@@ -11,14 +11,12 @@ import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import { api } from "../api/api";
 
-import styles from "../../src/styles/Resources.module.css";
-
 const useStyles = makeStyles((theme) => ({
   customButton: {
-    backgroundColor: "#000", // Change this to your desired background color
+    backgroundColor: "#000", 
     color: "white",
     "&:hover": {
-      backgroundColor: "#67a97b", // Change this to your desired hover background color
+      backgroundColor: "#67a97b", 
     },
   },
 }));
@@ -27,7 +25,7 @@ const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
   const [title, setTitle] = useState("");
 
-  const classes = useStyles(); // Initialize useStyles
+  const classes = useStyles(); 
 
   const url = process.env.NEXT_PUBLIC_BASE_URL
 
@@ -73,7 +71,7 @@ const ResourcesId = (props) => {
                   }}
                 >
                   <Image
-                    // className={styles.image}
+                 
                     sizes="100vw"
                     style={{
                       width: "100%",

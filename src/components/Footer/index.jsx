@@ -14,32 +14,50 @@ export default class Footer extends React.Component {
           <div className={styles.footer_container_top}>
             <div className={styles.footer_container_top_title}>
               <h3 style={{ marginTop: "10px" }}>Contact Us</h3>
-
-              <div className={styles.footer_contact_container}>
-                <a
-                  href="https://heal.me/practitioner/emily-perryman"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule an appointment
-                </a>
-                <a
-                  href="mailto: emilyperrymanrd@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  emilyperrymanrd@gmail.com
-                </a>
-              </div>
+              <a
+                href="https://heal.me/practitioner/emily-perryman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Schedule an appointment
+              </a>
+              <a
+                href="mailto: emilyperrymanrd@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                emilyperrymanrd@gmail.com
+              </a>
             </div>
             <div className={styles.footer_container_top_title}>
-              <h3>Serving</h3>
-              <p>Baltimore County, MD, Since 2016</p>
+              <h3 style={{ marginTop: "10px" }}>Serving</h3>
+              <a
+                href="https://heal.me/practitioner/emily-perryman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Baltimore County, MD, Since 2016
+              </a>
+              <a
+                href="mailto: emilyperrymanrd@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
             </div>
-
             <div className={styles.footer_container_top_title}>
-              <h3>Office Hours</h3>
-              <p> Monday, Wednesday, Friday: 7 am-6 pm</p>
+              <h3 style={{ marginTop: "10px" }}>Office Hours</h3>
+              <a
+                href="https://heal.me/practitioner/emily-perryman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Monday, Wednesday, Friday: 7 am-6 pm
+              </a>
+              <a
+                href="mailto: emilyperrymanrd@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
             </div>
           </div>
 

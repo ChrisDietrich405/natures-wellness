@@ -72,7 +72,7 @@ const CoachingPackages = () => {
               <div className={styles.consultation_package}>
                 <h2>Follow-Up Session Package</h2>
                 <p>
-                  If you're interested in continuing to work together and to
+                  If you&apos;re interested in continuing to work together and to
                   receive ongoing support and accountability, this is a good
                   option for you!
                 </p>

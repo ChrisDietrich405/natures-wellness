@@ -9,7 +9,9 @@ export default function Home() {
     <>
       <Slideshow />
       <section id="section">
-        <h1 className={styles.home_title}>Welcome to Nature's Wellness Path</h1>
+        <h1 className={styles.home_title}>
+          Welcome to Nature&apos;s Wellness Path
+        </h1>
         <div className={styles.home_content}>
           <h2 className={styles.home_subtitle}>Are you:</h2>
 

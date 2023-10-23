@@ -11,7 +11,6 @@ export default async function handler(req, res) {
           .collection("resources-information")
           .find({ resource_id: Number(id) })
           .toArray();
-        console.log(id);
         res.json(resourcesInformation);
         break;
       } catch (error) {

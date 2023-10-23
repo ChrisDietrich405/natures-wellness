@@ -14,10 +14,10 @@ import styles from "../../src/styles/Resources.module.css";
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
-    backgroundColor: "#000", // Change this to your desired background color
+    backgroundColor: "#000", 
     color: "white",
     "&:hover": {
-      backgroundColor: "#67a97b", // Change this to your desired hover background color
+      backgroundColor: "#67a97b", 
     },
   },
 }));

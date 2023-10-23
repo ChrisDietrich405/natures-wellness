@@ -2,13 +2,14 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import * as Validator from "validatorjs";
+import { Container } from "@mui/material";
+
 import Slideshow from "../../src/components/Slideshow";
 
+import "react-toastify/dist/ReactToastify.css";
 import styles from "../../src/styles/Contact.module.css";
-import { Container } from "@mui/material";
 
 const Contact = () => {
   const [isDisabled, setIsDisabled] = useState(false);

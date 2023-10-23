@@ -20,6 +20,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+
 import styles from "./styles.module.css";
 
 const drawerWidth = 240;
@@ -56,12 +57,6 @@ const navItems = [
   },
 ];
 
-const createHandleMenuClick = (menuItem) => {
-  return () => {
-    console.log(`Clicked on ${menuItem}`);
-  };
-};
-
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -96,19 +91,6 @@ function DrawerAppBar(props) {
           </ListItem>
         ))}
       </List>
-      {/* <Dropdown>
-        <Menu slots={{ listbox: StyledListbox }}>
-          <StyledMenuItem onClick={createHandleMenuClick("Profile")}>
-            Profile
-          </StyledMenuItem>
-          <StyledMenuItem onClick={createHandleMenuClick("My account")}>
-            Language settings
-          </StyledMenuItem>
-          <StyledMenuItem onClick={createHandleMenuClick("Log out")}>
-            Log out
-          </StyledMenuItem>
-        </Menu> */}
-      {/* </Dropdown> */}
     </Box>
   );
 
@@ -146,7 +128,7 @@ function DrawerAppBar(props) {
               .map(({ title, url }) => (
                 <Button key={title} sx={{ color: "#fff" }}>
                   <Link className={styles.link} href={url}>
-                    {title}
+                    {title} 
                   </Link>
                 </Button>
               ))}
@@ -200,7 +182,7 @@ function DrawerAppBar(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },

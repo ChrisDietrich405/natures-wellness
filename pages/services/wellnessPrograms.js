@@ -5,7 +5,6 @@ import { Container, Grid, Card } from "@mui/material";
 
 import { wellnessProgramsData } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData2 } from "../../src/componentsData/wellnessPrograms";
-import { wellnessProgramsData3 } from "../../src/componentsData/wellnessPrograms";
 import { wellnessProgramsData4 } from "../../src/componentsData/wellnessPrograms";
 import Slideshow from "../../src/components/Slideshow";
 
@@ -21,7 +20,6 @@ const WellnessPrograms = () => {
     const fetchTestimonials = async () => {
       const response = await api.get(`/testimonials`);
       const { data } = response;
-      console.log("ASD: ", data);
       setTestimonials(data);
     };
     fetchTestimonials();
