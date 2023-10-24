@@ -29,7 +29,7 @@ const Contact = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("hello", process.env.NEXT_PUBLIC_SERVICE_ID);
+  
     try {
       const validator = new Validator(
         {
