@@ -14,6 +14,7 @@ const nextConfig = {
     NEXT_PUBLIC_USER_ID: process.env.NEXT_PUBLIC_USER_ID,
     MONGO_URL: process.env.MONGO_URL,
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+    BASE_URL: process.env.BASE_URL,
   },
 };
 
