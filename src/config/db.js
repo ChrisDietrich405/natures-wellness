@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+const { MongoClient } = require("mongodb");
 
 const uri = process.env.MONGO_URL;
 const options = {
@@ -16,4 +16,4 @@ if (!process.env.MONGO_URL) {
 client = new MongoClient(uri, options);
 clientPromise = client.connect();
 
-export default clientPromise;
+module.exports = clientPromise;
