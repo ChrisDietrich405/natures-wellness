@@ -29,7 +29,7 @@ const Contact = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const validator = new Validator(
         {
@@ -84,7 +84,7 @@ const Contact = () => {
 
   return (
     <>
-      <Slideshow title="Connect with us" />
+      <Slideshow title="Connect with me" />
       <Container>
         <div className={styles.inner}>
           <div className={styles.columns}>

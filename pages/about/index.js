@@ -65,23 +65,44 @@ const About = () => {
             </Card>
 
             <div className={styles.content_text}>
+              <Grid item lg={12} sm={12}>
+                <Card
+                  sx={{ mt: 3, py: 4, px: 10, height: "400px" }}
+                  className={styles.content_paragraph}
+                >
+                  <p style={{ marginBottom: "10px" }}>
+                    I believe that all individuals have the right to live a full
+                    and vibrant life. I feel that the foundation for living our
+                    best lives is our health. Though our genes play a role in
+                    our health, their role is small compared to the role that
+                    healthful lifestyle practices have on our physical and
+                    mental wellbeing.{" "}
+                  </p>
+                  <p style={{ marginBottom: "20px" }}>
+                    {" "}
+                    Healthy lifestyle practices that have a positive impact on
+                    our physical and mental wellbeing include the following. I
+                    denote them as SPARC to help us ignite these practices in
+                    our life to achieve our optional physical and mental
+                    wellbeing:{" "}
+                  </p>
+                  <div className={styles.list_container}>
+                    <List data={aboutData2} />
+                  </div>
+                </Card>
+              </Grid>
               <Grid
                 className={styles.grid_container}
                 container
                 spacing={2}
                 style={{ marginTop: "20px" }}
               >
-                <Grid item lg={6} sm={12}>
+                <Grid item lg={12} sm={12}>
                   <Card
                     md={12}
                     sx={{ mt: 3, py: 4, px: 10, height: "600px" }}
                     className={styles.content_paragraph}
                   >
-                    <p style={{ marginBottom: "10px" }}>
-                      Stress-management and self care Plant-based nutrition and
-                      purpose Adequate hydration and physical activity
-                      Restorative sleep Connection and community
-                    </p>
                     <p style={{ marginBottom: "20px" }}>
                       In addition to being the most effective, healthy, and
                       sustainable way to lose weight and maintain weight loss,
@@ -91,49 +112,6 @@ const About = () => {
                     </p>
                     <div className={styles.list_container}>
                       <List data={aboutData3} className={styles.ordered_list} />
-                    </div>
-                  </Card>
-                </Grid>
-                <Grid item lg={6} sm={12}>
-                  <Card
-                    sx={{ mt: 3, py: 4, px: 10, height: "600px" }}
-                    className={styles.content_paragraph}
-                  >
-                    <p>
-                      Eating more plants and engaging in healthy lifestyle
-                      practices can help us to look and feel our best! A few of
-                      the health problems that can be lessened or resolved a
-                      plant-predominant or plant-based way of eating and healthy
-                      lifestyle practices includes:
-                    </p>
-                    <div className={styles.list_container}>
-                      <List data={aboutData} />
-                    </div>
-                  </Card>
-                </Grid>
-                <Grid item lg={12} sm={12}>
-                  <Card
-                    sx={{ mt: 3, py: 4, px: 10, height: "400px" }}
-                    className={styles.content_paragraph}
-                  >
-                    <p style={{ marginBottom: "10px" }}>
-                      I believe that all individuals have the right to live a
-                      full and vibrant life. I feel that the foundation for
-                      living our best lives is our health. Though our genes play
-                      a role in our health, their role is small compared to the
-                      role that healthful lifestyle practices have on our
-                      physical and mental wellbeing.{" "}
-                    </p>
-                    <p style={{ marginBottom: "20px" }}>
-                      {" "}
-                      Healthy lifestyle practices that have a positive impact on
-                      our physical and mental wellbeing include the following. I
-                      denote them as SPARC to help us ignite these practices in
-                      our life to achieve our optional physical and mental
-                      wellbeing:{" "}
-                    </p>
-                    <div className={styles.list_container}>
-                      <List data={aboutData2} />
                     </div>
                   </Card>
                 </Grid>

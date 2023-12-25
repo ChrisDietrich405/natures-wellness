@@ -14,6 +14,7 @@ describe("testimonials", () => {
     const testimonials = await db.collection("testimonials").find({}).toArray();
     expect(typeof testimonials).toBe(typeof []);
   });
+
   test("should be individual testimonial", async () => {
     const testimonial = await db.collection("testimonials").findOne({ id: 2 });
     expect(testimonial.id).toBe(2);

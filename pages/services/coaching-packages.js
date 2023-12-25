@@ -44,7 +44,7 @@ const CoachingPackages = () => {
               className={styles.content_paragraph}
             >
               <div className={styles.consultation_package}>
-                <h2>4 session package</h2>
+                <h2>4 Session Package</h2>
                 <p>Package includes:</p>
                 <List data={coachingData2} />
                 <p>Cost: $180</p>
