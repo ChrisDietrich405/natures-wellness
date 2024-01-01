@@ -39,10 +39,10 @@
   }
 }
 
-@media (max-width: 400px) {
-  .inner_container {
-    width: 90%;
-    margin: 0 auto;
+@media (max-width: 450px) {
+  .content_paragraph {
+    margin-top: 40px;
+    min-height: 850px;
   }
 
   .contact_container {
@@ -50,10 +50,6 @@
   }
 
   .contact_btn_container {
-    width: 41%; 
+    width: 41%;
   }
-
-  /* .contact_btn {
-    margin-top: 10px;
-  } */
 }
