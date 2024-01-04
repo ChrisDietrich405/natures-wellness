@@ -33,15 +33,14 @@ export default function Slideshow({ title }) {
       <div className={styles.slideshow}>
         {imageArray.map((image, i) => (
           <Image
-            width={333}
-            height={333}
-            alt="slideshow"
-            className={`${styles.slideshow_image} ${
-              index === i ? styles.active : styles.inactive
-            }`}
-            src={image}
             key={i}
-          ></Image>
+            fill
+            alt="slideshow"
+              className={`${styles.slideshow_image} ${
+                  index === i ? styles.active : styles.inactive
+              }`}
+            src={image}
+          />
         ))}
         
       </div>
