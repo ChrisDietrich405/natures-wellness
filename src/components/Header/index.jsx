@@ -2,24 +2,22 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PropTypes from "prop-types";
-import { Dropdown } from "@mui/base/Dropdown";
-import { Menu } from "@mui/base/Menu";
-import { MenuButton } from "@mui/base/MenuButton";
-import { MenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
+import { Dropdown, Menu, MenuButton, MenuItem, menuItemClasses } from '@mui/base'
+import {AppBar,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  Toolbar
+  ,Typography,
+  Button,
+  useMediaQuery,
+  CssBaseline } from '@mui/material'
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 
 import styles from "./styles.module.css";
 
@@ -71,10 +69,10 @@ function DrawerAppBar(props) {
       sx={{ textAlign: "center" }}
       className={styles.toggle_container}
     >
-      <div className={styles.logo}>
+      <div className={styles.drawer__logo}>
         <Image
-          width={200}
-          height={30}
+          width={256}
+          height={55}
           src={"/images/header-logo.png"}
           alt="Nature's Wellness Path logo"
         />
@@ -97,11 +95,19 @@ function DrawerAppBar(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
+  const isDesktop = useMediaQuery('(min-width:600px)');
+
+
   return (
     <Box sx={{ display: "flex" }} className={styles.header_container}>
       <CssBaseline />
       <AppBar component="nav" className={styles.container}>
-        <Toolbar style={{ height: "70px" }}>
+        <Toolbar
+            sx={{
+              height: "70px",
+              justifyContent: isDesktop ? 'space-between' : 'initial'
+            }}
+        >
           <IconButton
             color="#67a97b"
             aria-label="open drawer"
@@ -111,7 +117,10 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <div className={styles.logo}>
+          <div
+              className={styles.logo}
+              style={{ marginLeft: isDesktop ? 0 : 10}}
+          >
             <Image
               width={200}
               height={60}

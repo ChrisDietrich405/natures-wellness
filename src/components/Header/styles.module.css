@@ -7,8 +7,21 @@
   background: #fff !important;
 }
 
+.drawer__logo {
+  width: 95%;
+  margin: 10px auto;
+}
+
+.drawer__logo img {
+  height: auto;
+}
+
 .logo {
-  width: 40%;
+  width: 256px;
+}
+.logo img {
+  height: auto;
+  width: 100%;
 }
 
 .link {
@@ -58,9 +71,5 @@
   .link, .services_link {
     padding: 7px 7px; 
     font-size: 10px;
-  }
-
-  .logo {
-    width: 30%;
   }
 }
