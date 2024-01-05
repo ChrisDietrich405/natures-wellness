@@ -34,7 +34,7 @@ const About = () => {
                   height={300}
                   alt="Em photo"
                   className={styles.photo}
-                ></Image>
+                />
 
                 <div className={styles.about_intro_text}>
                   <p>
