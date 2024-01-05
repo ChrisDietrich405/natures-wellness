@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Container, Grid, Card } from "@mui/material";
-import { aboutData, aboutData2, aboutData3 } from "../../src/data/aboutData";
+import { Grid, Card } from "@mui/material";
+import { aboutData2, aboutData3 } from "../../src/data/aboutData";
 import List from "../../src/components/List";
 
 const EmPicture = "/images/home-profile.jpg";
@@ -34,7 +34,7 @@ const About = () => {
                   height={300}
                   alt="Em photo"
                   className={styles.photo}
-                ></Image>
+                />
 
                 <div className={styles.about_intro_text}>
                   <p>

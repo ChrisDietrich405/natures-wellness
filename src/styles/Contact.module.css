@@ -1,3 +1,6 @@
+.inner {
+  margin-top: 20px;
+}
 .inner_container {
   max-width: 1100px;
   margin: 0 auto;
@@ -16,6 +19,7 @@
 }
 
 .contact_image {
+  height: auto;
   margin: 20px 0px 0 20px;
   border-radius: 4px;
   text-align: center;
