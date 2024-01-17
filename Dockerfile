@@ -2,11 +2,12 @@ FROM node:alpine
 
 WORKDIR /react-app
 
-COPY package.json /react-app
+COPY package.json .
 
-RUN npm install 
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
-# Define the command to run the application
-CMD [ "npm", "run", "dev" ]
+RUN npm run build 
+
+CMD [ "npm", "start" ]
