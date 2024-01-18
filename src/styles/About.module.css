@@ -53,12 +53,6 @@
   .content_paragraph {
     padding: 15px 30px; 
   }
-
-  /* .grid_container {
-    display: flex; 
-    flex-direction: column;
-    width: 100%; 
-  } */
 }
 
 @media (max-width: 600px) {

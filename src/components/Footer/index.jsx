@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
         <div className={styles.footer_container}>
           <div className={styles.footer_container_top}>
             <div className={styles.footer_container_top_title}>
-              <h3 style={{ marginTop: "10px" }}>Contact Us</h3>
+              <h3 style={{ marginTop: "10px" }}>Contact Me</h3>
               <a
                 href="https://heal.me/practitioner/emily-perryman"
                 target="_blank"

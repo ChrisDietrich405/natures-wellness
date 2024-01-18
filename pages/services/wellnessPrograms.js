@@ -34,7 +34,7 @@ const WellnessPrograms = () => {
               Nature’s Wellness Path’s Plant-Powered Weight Loss & Wellness
               Programs are right for you if you are:
             </h2>
-            <p style={{ marginBottom: "15px" }}>
+            {/* <p style={{ marginBottom: "15px" }}>
               Programs are a series of structured sessions that cover pertinent
               topics each week that can help to conquer your health-related
               challenges.
@@ -50,11 +50,16 @@ const WellnessPrograms = () => {
               plant-powered weight loss and wellness program could be just what
               you need to transform your health and achieve your ideal weight
               and optimal wellness:
-            </p>
+            </p> */}
             <List
               data={wellnessProgramsData}
               className={styles.offering_list}
             />
+            <h4>
+              Program sessions also include time for open discussion, addressing
+              questions and challenges, and celebrating successes as well as
+              action steps for the coming week!
+            </h4>
             <Image
               className={styles.offerings_img}
               src="https://quotefancy.com/media/wallpaper/3840x2160/1755552-Virgil-Quote-The-greatest-wealth-is-health.jpg"

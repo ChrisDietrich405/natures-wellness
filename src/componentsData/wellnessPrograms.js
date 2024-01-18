@@ -3,6 +3,8 @@ export const wellnessProgramsData = [
   "Lack of energy to do the activities you enjoy or even just to get out of bed in the morning",
   "Low confidence in how you look and frequently feeling uncomfortable in your clothes",
   "Confusion related to how to healthfully lose weight and keep it off",
+  "Concerns about your overall health and wellbeing",
+  "Elevated blood sugar levels, high cholesterol, or high blood pressure",
 ];
 
 export const wellnessProgramsData2 = [
