@@ -7,13 +7,9 @@ const createJestConfig = nextJest({
 
 const config = {
   preset: "@shelf/jest-mongodb",
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   coverageProvider: "v8",
-  testEnvironment: "node",
-  watchPathIgnorePatterns: ['globalConfig'],
-  moduleNameMapper: {
-    '^.+\\/db$': '<rootDir>/__mocks__/mockMongoDB.js'
-  }
+  watchPathIgnorePatterns: ["globalConfig"],
 };
-
 
 module.exports = createJestConfig(config);
