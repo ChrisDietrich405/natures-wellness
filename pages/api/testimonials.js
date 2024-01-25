@@ -1,15 +1,14 @@
 import testimonialsData from "./testimonials-data";
 
 export default async function handler(req, res) {
-  switch (req.method) {
-    case "GET":
-      try {
-        const testimonials = await testimonialsData();
+  if (req.method !== "GET")
+    return res.status(405).json({ status: 405, message: "Method not allowed" });
+  try {
+    const testimonials = await testimonialsData();
 
-        res.json(testimonials);
-        break;
-      } catch (error) {
-        return res.status(401).json({ status: 401, message: error });
-      }
+    res.status(200).json(testimonials);
+  } catch (error) {
+    console.log("ERROR", error);
+    return res.status(500).json({ status: 500, message: error });
   }
 }

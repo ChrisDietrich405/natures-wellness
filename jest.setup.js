@@ -1,9 +1,10 @@
+const { client } = jest.requireActual("./__mocks__/mockMongoDB.js");
+
 jest.mock("./src/config/db.js", () => {
   const { clientPromise } = jest.requireActual("./__mocks__/mockMongoDB.js");
-
   return clientPromise;
 });
 
-// afterAll(async () => {
-//   await client?.close();
-// });
+afterAll(async () => {
+  await client?.close();
+});
