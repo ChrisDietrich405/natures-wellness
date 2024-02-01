@@ -1,6 +1,6 @@
 import testimonials from "../pages/api/testimonials";
 
-const { client } = jest.requireActual("../__mocks__/mockMongoDB.js");
+const { client, clientPromise } = jest.requireActual("../__mocks__/mockMongoDB.js");
 
 const jsonMock = jest.fn();
 
@@ -41,7 +41,7 @@ describe("testimonials", () => {
     await collection.insertMany(exampleTestimonials);
   });
 
-  it.only("should return with a status code of 200", async () => {
+  it("should return with a status code of 200", async () => {
     await testimonials({ method: "GET" }, res);
     expect(res.status).toHaveBeenCalledWith(200);
     expect(jsonMock).toHaveBeenCalledWith(exampleTestimonials);
@@ -53,23 +53,9 @@ describe("testimonials", () => {
   });
 
   it("should respond with an error because no collection was found", async () => {
-    jest.mock("../src/config/db.js", () => ({}));
-
-    // const client = await clientPromise;
-    // console.log("before", client);
-
-    // jest.spyOn(await clientPromise, "s");
-    // console.log(client);
-    // client.mockImplementationOnce(() => {
-    //   throw new Error("no collection found");
-    // });
-    // const db = clientMock.db("emily-website-next");
-
-    // const collectionSpy = jest.spyOn(db, "collection");
-
-    // collectionSpy.mockImplementationOnce(() => {
-    //   throw new Error("Testimonials not found");
-    // });
+    jest.spyOn(await clientPromise, 'db').mockImplementationOnce(() => {
+      throw new Error("Simulated error connecting to MongoDB");
+    });
 
     await testimonials(req, res);
     expect(res.status).toHaveBeenCalledWith(500);
