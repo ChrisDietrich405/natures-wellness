@@ -1,6 +1,8 @@
 import testimonials from "../pages/api/testimonials";
 
-const { client, clientPromise } = jest.requireActual("../__mocks__/mockMongoDB.js");
+const { client, clientPromise } = jest.requireActual(
+  "../__mocks__/mockMongoDB.js"
+);
 
 const jsonMock = jest.fn();
 
@@ -40,6 +42,7 @@ describe("testimonials", () => {
 
     await collection.insertMany(exampleTestimonials);
   });
+ 
 
   it("should return with a status code of 200", async () => {
     await testimonials({ method: "GET" }, res);
@@ -53,7 +56,7 @@ describe("testimonials", () => {
   });
 
   it("should respond with an error because no collection was found", async () => {
-    jest.spyOn(await clientPromise, 'db').mockImplementationOnce(() => {
+    jest.spyOn(await clientPromise, "db").mockImplementationOnce(() => {
       throw new Error("Simulated error connecting to MongoDB");
     });
 

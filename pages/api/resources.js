@@ -1,16 +1,12 @@
-import clientPromise from "../../src/config/db";
+import resourcesData from "./resources-data";
 
 export default async function handler(req, res) {
-  const client = await clientPromise;
-  const db = client.db("emily-website-next");
-  switch (req.method) {
-    case "GET":
-      try {
-        const resources = await db.collection("resources").find({}).toArray();
-        res.json(resources);
-        break;
-      } catch (error) {
-        return res.status(401).json({ status: 401, message: error });
-      }
+  if (req.method !== "GET")
+    return res.status(405).json({ status: 405, message: "Method not allowed" });
+  try {
+    const resources = await resourcesData();
+    res.status(200).json(resources);
+  } catch (error) {
+    return res.status(500).json({ status: 500, message: error });
   }
 }
