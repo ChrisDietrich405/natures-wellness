@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-import {resourcesMock} from "./collections";
 
 let client;
 let clientPromise;

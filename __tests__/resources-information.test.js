@@ -1,10 +1,6 @@
 import resources from "../pages/api/resources-information/[id]";
 import {resourcesInfoMock} from "../__mocks__/collections";
 
-const { client, clientPromise } = jest.requireActual(
-  "../__mocks__/mockMongoDB.js"
-);
-
 const res = {
   status: jest.fn().mockReturnThis(),
   json: jest.fn(),

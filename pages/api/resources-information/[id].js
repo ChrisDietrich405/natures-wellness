@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const db = client.db("emily-website-next");
 
   if (req.method !== "GET") {
-    return res.status(405).json({ status: 405, message: "Method not allowed" });;
+    return res.status(405).json({ status: 405, message: "Method not allowed" });
   }
 
   try {

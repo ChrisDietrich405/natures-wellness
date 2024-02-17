@@ -1,7 +1,7 @@
 import resources from "../pages/api/resources";
 import {resourcesMock} from "../__mocks__/collections";
 
-const { client, clientPromise } = jest.requireActual(
+const { clientPromise } = jest.requireActual(
   "../__mocks__/mockMongoDB.js"
 );
 
