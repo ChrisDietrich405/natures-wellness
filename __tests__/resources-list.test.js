@@ -1,4 +1,5 @@
 import resources from "../pages/api/resources";
+import {resourcesMock} from "../__mocks__/collections";
 
 const { client, clientPromise } = jest.requireActual(
   "../__mocks__/mockMongoDB.js"
@@ -13,35 +14,12 @@ const req = {
   method: "GET",
 };
 
-const exampleResources = [
-  {
-    _id: 1,
-    id: 1,
-    name: "shoe",
-    active: 1,
-    image: "shoe.jpg",
-  },
-  {
-    _id: 2,
-    id: 2,
-    name: "shoe2",
-    active: 1,
-    image: "shoe2.jpg",
-  },
-];
-
 describe("resources", () => {
-  beforeAll(async () => {
-    const db = client.db("emily-website-next");
-    const collection = db.collection("resources");
-
-    await collection.insertMany(exampleResources);
-  });
 
   it("should return with a status of 200", async () => {
     await resources({ method: "GET" }, res);
     expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalledWith(exampleResources);
+    expect(res.json).toHaveBeenCalledWith(resourcesMock);
   });
 
   it("should return with a status of 405", async () => {

@@ -14,7 +14,8 @@ export default async function handler(req, res) {
       .collection("resources-information")
       .find({ resource_id: Number(id) })
       .toArray();
-    res.json(resourcesInformation);
+
+    return res.status(200).json(resourcesInformation);
   } catch (error) {
     return res.status(401).json({ status: 401, message: error });
   }
