@@ -4,11 +4,9 @@ const { client, clientPromise } = jest.requireActual(
   "../__mocks__/mockMongoDB.js"
 );
 
-const jsonMock = jest.fn();
-
 const res = {
-  json: jsonMock,
-  status: jest.fn(() => ({ json: jsonMock })),
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
 };
 
 const req = {
@@ -47,7 +45,7 @@ describe("testimonials", () => {
   it("should return with a status code of 200", async () => {
     await testimonials({ method: "GET" }, res);
     expect(res.status).toHaveBeenCalledWith(200);
-    expect(jsonMock).toHaveBeenCalledWith(exampleTestimonials);
+    expect(res.json).toHaveBeenCalledWith(exampleTestimonials);
   });
 
   it("should return with a status code of 405", async () => {

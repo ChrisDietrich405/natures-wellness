@@ -1,4 +1,4 @@
-import resources from "../pages/api/resources/[id]";
+import resources from "../pages/api/resources";
 
 const { client, clientPromise } = jest.requireActual(
   "../__mocks__/mockMongoDB.js"
@@ -11,7 +11,6 @@ const res = {
 
 const req = {
   method: "GET",
-  query: { id: 1 },
 };
 
 const exampleResources = [
@@ -38,21 +37,25 @@ describe("resources", () => {
 
     await collection.insertMany(exampleResources);
   });
-  it("should return one resource", async () => {
-    await resources(req, res);
 
+  it("should return with a status of 200", async () => {
+    await resources({ method: "GET" }, res);
     expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalledWith(exampleResources[0]);
+    expect(res.json).toHaveBeenCalledWith(exampleResources);
   });
-  it("should return an empty array", async () => {
-    const query = { id: 3 };
-    await resources({ ...req, query }, res);
 
-    expect(res.status).toHaveBeenCalledWith(404);
-    expect(res.json).toHaveBeenCalledWith({ message: "Resource not found" });
-  });
   it("should return with a status of 405", async () => {
     await resources({ method: "PUT" }, res);
     expect(res.status).toHaveBeenCalledWith(405);
+  });
+
+  it("should return with a status 500", async () => {
+    const client = await clientPromise;
+
+    jest.spyOn(client, "db").mockImplementationOnce(() => {
+      throw new Error("Forced server error");
+    });
+    await resources(req, res);
+    expect(res.status).toHaveBeenCalledWith(500);
   });
 });

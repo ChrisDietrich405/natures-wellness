@@ -1,26 +1,12 @@
-version: "3"
+version: "3"   
 
 services:
   frontend:
     build: 
       context: .
-    environment:
-      - NEXT_PUBLIC_SERVICE_ID=service_vuygmmf
-      - NEXT_PUBLIC_TEMPLATE_ID=template_c93oemn
-      - NEXT_PUBLIC_USER_ID=630uiCBV0K235A4GY
-      - NEXT_PUBLIC_BASE_URL=http://localhost:3000
-      - BASE_URL=/api
     ports:
       - "3001:3000"
     volumes:
       - ./test2:/react-app
 
-#   db:
-#     image: mongodb
-#     environment:
-#       MONGO_URL: mongodb+srv://chrisdietrich366:Devindiet1@dietrichlandcare.kq6v5mn.mongodb.net/test
-#     volumes:
-#       - postgres-data:/var/lib/postgresql/data
 
-# volumes:
-#   postgres-data:
