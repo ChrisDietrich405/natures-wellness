@@ -17,12 +17,12 @@ export async function initializeDatabase(db: Db): Promise<void> {
     for (const { name, data } of collectionsToInitialize) {
       const collectionExists = await db.listCollections({ name }).hasNext();
 
-      if (!collectionExists) {
-        const collection = db.collection(name);
+      if (collectionExists) continue;
 
-        // @ts-ignore
-        await collection.insertMany(data);
-      }
+      const collection = db.collection(name);
+
+      // @ts-ignore
+      await collection.insertMany(data);
     }
   } catch (error) {
     console.error('MongoDb error:', error.message);
