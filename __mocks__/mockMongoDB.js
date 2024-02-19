@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+import { MongoClient } from "mongodb";
 
 let client;
 let clientPromise;
@@ -11,5 +11,3 @@ client = new MongoClient(global.__MONGO_URI__);
 clientPromise = client.connect();
 
 module.exports = { clientPromise, client };
-
-
