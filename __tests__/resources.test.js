@@ -1,5 +1,9 @@
 import resources from "../pages/api/resources/[id]";
-import {resourcesMock} from "../__mocks__/collections";
+import { resourcesMock } from "../__mocks__/collections";
+
+const { clientPromise } = jest.requireActual(
+  "../__mocks__/mockMongoDB.js"
+);
 
 const res = {
   status: jest.fn().mockReturnThis(),
@@ -28,5 +32,12 @@ describe("resources", () => {
   it("should return with a status of 405", async () => {
     await resources({ method: "PUT" }, res);
     expect(res.status).toHaveBeenCalledWith(405);
+  });
+  it("should return with a status code 500", async () => {
+    jest.spyOn(await clientPromise, "db").mockImplementationOnce(() => {
+      throw new Error("Simulated error connecting to MongoDB");
+    });
+    await resources(req, res);
+    expect(res.status).toHaveBeenCalledWith(500);
   });
 });
