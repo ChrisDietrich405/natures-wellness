@@ -1,12 +1,12 @@
 import clientPromise from "../../../src/config/db";
 
 export default async function handler(req, res) {
-  const client = await clientPromise;
-  const db = client.db("emily-website-next");
-
   if (req.method !== "GET")
     return res.status(405).json({ status: 405, message: "Method not allowed" });
   try {
+    const client = await clientPromise;
+    const db = client.db("emily-website-next");
+
     const { id } = req.query;
 
     const resources = await db
@@ -22,3 +22,16 @@ export default async function handler(req, res) {
     return res.status(500).json({ status: 500, message: error });
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
