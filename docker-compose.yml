@@ -1,12 +1,17 @@
-version: "3"   
+version: "3"
 
 services:
-  frontend:
-    build: 
+  dev:
+    build:
       context: .
+      dockerfile: ./Docker/dev/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/react-app
+  prod:
+    build:
+      context: .
+      dockerfile: ./Docker/prod/Dockerfil
     ports:
       - "3001:3000"
-    volumes:
-      - ./test2:/react-app
-
-
