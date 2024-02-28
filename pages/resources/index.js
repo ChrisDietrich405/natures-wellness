@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api } from "../api/api";
+import axios from "axios";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
@@ -14,10 +14,10 @@ import styles from "../../src/styles/Resources.module.css";
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
-    backgroundColor: "#000", 
+    backgroundColor: "#000",
     color: "white",
     "&:hover": {
-      backgroundColor: "#67a97b", 
+      backgroundColor: "#67a97b",
     },
   },
 }));
@@ -32,9 +32,17 @@ const Resources = () => {
 
   useEffect(() => {
     const fetchResource = async () => {
-      const response = await api.get(`/resources`);
-      const { data } = response;
-      setResources(data);
+      const response = await axios.get(
+        `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resources`,
+        {
+          headers: {
+            "x-api-key": process.env.API_KEY,
+          },
+        }
+      );
+      console.log(response.data);
+      const { body } = response.data;
+      setResources(body);
     };
     fetchResource();
   }, []);
