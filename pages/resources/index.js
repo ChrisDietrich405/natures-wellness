@@ -80,7 +80,7 @@ const Resources = () => {
                     className={classes.customButton} // Apply custom class
                     variant="contained"
                     onClick={() => router.push(`/resources/${resource.id}`)}
-                    size="small"
+                    size="small"    button  
                     sx={{
                       width: "100%",
                       mt: "10px",
@@ -99,3 +99,5 @@ const Resources = () => {
 };
 
 export default Resources;
+
+

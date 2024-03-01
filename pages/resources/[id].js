@@ -9,7 +9,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
-import { api } from "../api/api";
+import axios from "axios"
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
@@ -34,7 +34,12 @@ const ResourcesId = (props) => {
 
   useEffect(() => {
     const fetchResources = async () => {
-      const response = await api.get(`/resources-information/${id}`);
+      const response = await axios.get(`https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resource-information`,
+      {
+        headers: {
+          "x-api-key": process.env.API_KEY,
+        }, 
+      });
       const { data } = response;
       setCards(data);
     };
