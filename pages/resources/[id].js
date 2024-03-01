@@ -9,14 +9,15 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
-import axios from "axios"
+import axios from "axios";
+import { api } from "../api/api";
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
-    backgroundColor: "#000", 
+    backgroundColor: "#000",
     color: "white",
     "&:hover": {
-      backgroundColor: "#67a97b", 
+      backgroundColor: "#67a97b",
     },
   },
 }));
@@ -25,37 +26,45 @@ const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
   const [title, setTitle] = useState("");
 
-  const classes = useStyles(); 
+  const classes = useStyles();
 
-  const url = process.env.NEXT_PUBLIC_BASE_URL
+  const url = process.env.NEXT_PUBLIC_BASE_URL;
 
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
     const fetchResources = async () => {
-      const response = await axios.get(`https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resource-information`,
-      {
-        headers: {
-          "x-api-key": process.env.API_KEY,
-        }, 
-      });
-      const { data } = response;
-      setCards(data);
+      const response = await axios.get(
+        `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resourceInformation?resourceId=${id}`,
+        {
+          headers: {
+            "x-api-key": process.env.API_KEY,
+          },
+        }
+      );
+      const { body } = response.data;
+      setCards(body);
     };
-    fetchResources();
+    if (id) fetchResources();
   }, [id]);
 
-  useEffect(() => {
-    const fetchTitle = async () => {
-      const response = await api.get(`/resources/${id}`);
-      const { data } = response;
-      setTitle(data?.name);
-    };
-    if (id) {
-      fetchTitle();
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   const fetchResource = async () => {
+  //     const response = await axios.get(
+  //       `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resources`,
+  //       {
+  //         headers: {
+  //           "x-api-key": process.env.API_KEY,
+  //         },
+  //       }
+  //     );
+  //     console.log(response.data);
+  //     const { body } = response.data;
+  //     setResources(body);
+  //   };
+  //   fetchResource();
+  // }, [id]);
 
   return (
     <Container style={{ marginTop: "100px" }}>
@@ -76,7 +85,6 @@ const ResourcesId = (props) => {
                   }}
                 >
                   <Image
-                 
                     sizes="100vw"
                     style={{
                       width: "100%",
@@ -84,8 +92,8 @@ const ResourcesId = (props) => {
                     }}
                     width={200}
                     height={200}
-                    alt={card.title}
-                    src={url + card.image}
+                    alt={card.Title}
+                    src={url + card.Image}
                   />
                   <CardContent>
                     <Typography
@@ -94,10 +102,10 @@ const ResourcesId = (props) => {
                       variant="h6"
                       component="div"
                     >
-                      {card.title}
+                      {card.Title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      {card.description}
+                      {card.Description}
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -105,7 +113,7 @@ const ResourcesId = (props) => {
                       className={classes.customButton}
                       variant="contained"
                       target="_blank"
-                      href={`${card.url}`}
+                      href={`${card.Url}`}
                       size="small"
                       sx={{
                         width: "100%",

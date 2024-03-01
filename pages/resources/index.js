@@ -77,9 +77,9 @@ const Resources = () => {
                 />
                 <CardActions style={{ marginTop: "auto" }}>
                   <Button
-                    className={classes.customButton} // Apply custom class
+                    className={classes.customButton} 
                     variant="contained"
-                    onClick={() => router.push(`/resources/${resource.id}`)}
+                    onClick={() => router.push(`/resources/${resource.ID}`)}
                     size="small"    button  
                     sx={{
                       width: "100%",
