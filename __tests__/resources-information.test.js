@@ -28,8 +28,9 @@ describe("resources information", () => {
       message: "Method not allowed",
     });
   });
-  it.only("should return with a 500 error", async () => {
-    jest.spyOn(await clientPromise, "db").mockImplementationOnce(() => {
+  it("should return with a 500 error", async () => {
+    const client = await clientPromise;
+    jest.spyOn(client, "db").mockImplementationOnce(() => {
       throw new Error("Simulated error connecting to MongoDB");
     });
 
@@ -37,3 +38,5 @@ describe("resources information", () => {
     expect(res.status).toHaveBeenCalledWith(500);
   });
 });
+
+
