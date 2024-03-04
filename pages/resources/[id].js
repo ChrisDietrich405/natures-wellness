@@ -49,22 +49,22 @@ const ResourcesId = (props) => {
     if (id) fetchResources();
   }, [id]);
 
-  // useEffect(() => {
-  //   const fetchResource = async () => {
-  //     const response = await axios.get(
-  //       `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resources`,
-  //       {
-  //         headers: {
-  //           "x-api-key": process.env.API_KEY,
-  //         },
-  //       }
-  //     );
-  //     console.log(response.data);
-  //     const { body } = response.data;
-  //     setResources(body);
-  //   };
-  //   fetchResource();
-  // }, [id]);
+  useEffect(() => {
+    const fetchResource = async () => {
+      const response = await axios.get(
+        `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resources/title?id=${id}`,
+        {
+          headers: {
+            "x-api-key": process.env.API_KEY,
+          },
+        }
+      );
+      console.log(response.data);
+      const { body } = response.data;
+      setTitle(body);
+    };
+    if (id) fetchResource();
+  }, [id]);
 
   return (
     <Container style={{ marginTop: "100px" }}>

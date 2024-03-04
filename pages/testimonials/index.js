@@ -18,9 +18,7 @@ const Testimonials = () => {
           },
         }
       );
-      console.log(response)
-      const { body } = response.data;
-     
+      const { body } = response.data;   
       setTestimonials(body);
     };
     fetchTestimonials();
