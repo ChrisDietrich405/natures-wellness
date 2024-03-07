@@ -18,6 +18,7 @@ const Testimonials = () => {
           },
         }
       );
+      console.log(process.env.API_KEY)
       const { body } = response.data;   
       setTestimonials(body);
     };
