@@ -31,7 +31,7 @@ const WellnessPrograms = () => {
         <section className={styles.inner_container}>
           <div className={styles.consultation_package}>
             <h2 className={styles.offerings_title}>
-              Nature’s Wellness Path’s Plant-Powered Weight Loss & Wellness
+              Nature’s Wellness Path’s Plant-Powered Weight Loss and Wellness
               Programs are right for you if you are:
             </h2>
             {/* <p style={{ marginBottom: "15px" }}>
