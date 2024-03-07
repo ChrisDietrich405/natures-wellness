@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@mui/styles"; // Import makeStyles
+// import { makeStyles } from "@mui/styles"; // Import makeStyles
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
@@ -12,21 +12,21 @@ import { Container } from "@mui/system";
 import axios from "axios";
 import { api } from "../api/api";
 
-const useStyles = makeStyles((theme) => ({
-  customButton: {
-    backgroundColor: "#000",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#67a97b",
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   customButton: {
+//     backgroundColor: "#000",
+//     color: "white",
+//     "&:hover": {
+//       backgroundColor: "#67a97b",
+//     },
+//   },
+// }));
 
 const ResourcesId = (props) => {
   const [cards, setCards] = useState([]);
   const [title, setTitle] = useState("");
 
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const url = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -110,7 +110,7 @@ const ResourcesId = (props) => {
                   </CardContent>
                   <CardActions>
                     <Button
-                      className={classes.customButton}
+                      // className={classes.customButton}
                       variant="contained"
                       target="_blank"
                       href={`${card.Url}`}

@@ -7,26 +7,26 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import { Container } from "@mui/system";
-import { makeStyles } from "@mui/styles"; // Import makeStyles
+// import { makeStyles } from "@mui/styles"; // Import makeStyles
 import Slideshow from "../../src/components/Slideshow";
 
 import styles from "../../src/styles/Resources.module.css";
 
-const useStyles = makeStyles((theme) => ({
-  customButton: {
-    backgroundColor: "#000",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#67a97b",
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   customButton: {
+//     backgroundColor: "#000",
+//     color: "white",
+//     "&:hover": {
+//       backgroundColor: "#67a97b",
+//     },
+//   },
+// }));
 
 const Resources = () => {
   const [resources, setResources] = useState([]);
 
   const router = useRouter();
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const url = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -77,10 +77,11 @@ const Resources = () => {
                 />
                 <CardActions style={{ marginTop: "auto" }}>
                   <Button
-                    className={classes.customButton} 
+                    // className={classes.customButton}
                     variant="contained"
                     onClick={() => router.push(`/resources/${resource.ID}`)}
-                    size="small"    button  
+                    size="small"
+                    button
                     sx={{
                       width: "100%",
                       mt: "10px",
@@ -99,5 +100,3 @@ const Resources = () => {
 };
 
 export default Resources;
-
-
