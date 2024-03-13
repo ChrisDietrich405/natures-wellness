@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: { domains: ["quotefancy.com", "localhost"] },
+  images: { domains: ["quotefancy.com", "localhost", "emily-website.s3.amazonaws.com"] },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
@@ -17,6 +17,5 @@ const nextConfig = {
     BASE_URL: process.env.BASE_URL,
   },
 };
-
 
 module.exports = nextConfig;

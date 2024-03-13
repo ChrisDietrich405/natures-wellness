@@ -28,7 +28,7 @@ const Resources = () => {
           },
         }
       );
-      console.log(response.data);
+   
       const { body } = response.data;
       setResources(body);
     };
@@ -57,7 +57,7 @@ const Resources = () => {
                 </h3>
                 <Image
                   className={styles.image}
-                  src={`${url}${resource.image}`}
+                  src={`${resource.image}`}
                   height={300}
                   width={300}
                   style={{ objectFit: "contain" }}
