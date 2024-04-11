@@ -12,6 +12,6 @@ services:
   prod:
     build:
       context: .
-      dockerfile: ./Docker/prod/Dockerfil
+      dockerfile: ./Docker/prod/Dockerfile
     ports:
       - "3001:3000"
