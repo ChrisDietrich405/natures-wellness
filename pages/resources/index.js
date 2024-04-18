@@ -76,7 +76,7 @@ const Resources = () => {
                       mt: "10px",
                     }}
                   >
-                    Learn More stuff
+                    Learn More stuff tathan
                   </Button>
                 </CardActions>
               </Card>
