@@ -17,7 +17,7 @@ const About = () => {
         <div className={styles.title_container}>
           <div className={styles.inner_container}>
             <h2 className={styles.about_intro_sub_title}>
-              helloHi my name is Emily Perryman, I like to go by Em. I help
+              Hi my name is Emily Perryman, I like to go by Em. I help
               individuals lose weight and prevent or reverse chronic diseases in
               a sustainable and enjoyable manner by teaching the power of
               cultivating healthy habits related to eating more plants and
