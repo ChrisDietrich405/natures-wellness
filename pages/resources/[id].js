@@ -53,7 +53,7 @@ const ResourcesId = (props) => {
   }, [id]);
 
   return (
-    <Container style={{ marginTop: "100px" }}>
+    <Container style={{ marginTop: "50px" }}>
       <h1>{title}</h1>
       <Grid spacing={4} container>
         {cards.map((card, index) => {
