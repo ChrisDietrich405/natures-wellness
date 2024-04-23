@@ -64,7 +64,7 @@ const Resources = () => {
                   alt={resource.name}
                 />
                 <CardActions style={{ marginTop: "auto" }}>
-                hell0
+              
                   <Button
                     style={{ backgroundColor: "#67a97b" }}
                     variant="contained"
