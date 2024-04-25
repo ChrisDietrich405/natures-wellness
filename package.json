@@ -1,6 +1,6 @@
 {
   "name": "emily-website-next",
-  "version": "0.1.0",
+  "version": "0.1.s0",
   "private": true,
   "scripts": {
     "dev": "next dev",

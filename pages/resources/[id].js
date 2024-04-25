@@ -46,6 +46,7 @@ const ResourcesId = (props) => {
           },
         }
       );
+      console.log("RESPONSE", response);
       const { body } = response.data;
       setTitle(body);
     };

@@ -16,7 +16,6 @@ const ContentSlider = ({
 
   numOfSlides,
   slideContent,
-  typeOfSlide,
 }) => {
   function SampleNextArrow(props) {
     const {  onClick } = props;
