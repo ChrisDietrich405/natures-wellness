@@ -164,7 +164,7 @@ const Contact = () => {
                       {errors.email.join(", ")}
                     </p>
                   )}
-                </div>
+                </div> 
                 <div className={styles.form_group}>
                   <label htmlFor="message">Message</label>
                   <textarea

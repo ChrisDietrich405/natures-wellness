@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { api } from "../api/api";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
@@ -20,17 +21,9 @@ const Resources = () => {
 
   useEffect(() => {
     const fetchResource = async () => {
-      const response = await axios.get(
-        `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/resources`,
-        {
-          headers: {
-            "x-api-key": process.env.API_KEY,
-          },
-        }
-      );
-   
-      const { body } = response.data;
-      setResources(body);
+      const response = await api.get(`/resources`);
+      const { data } = response;
+      setResources(data);
     };
     fetchResource();
   }, []);
@@ -64,11 +57,10 @@ const Resources = () => {
                   alt={resource.name}
                 />
                 <CardActions style={{ marginTop: "auto" }}>
-              
                   <Button
                     style={{ backgroundColor: "#67a97b" }}
                     variant="contained"
-                    onClick={() => router.push(`/resources/${resource.ID}`)}
+                    onClick={() => router.push(`/resources/${resource.id}`)}
                     size="small"
                     button
                     sx={{
@@ -76,7 +68,7 @@ const Resources = () => {
                       mt: "10px",
                     }}
                   >
-                    Learn More 
+                    Learn More
                   </Button>
                 </CardActions>
               </Card>

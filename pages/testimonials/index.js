@@ -1,6 +1,6 @@
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import axios from "axios"
+import { api } from "../api/api";
 import ContentSlider from "../../src/components/ContentSlider";
 import Slideshow from "../../src/components/Slideshow";
 
@@ -10,17 +10,10 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
     const fetchTestimonials = async () => {
-      const response = await axios.get(
-        `https://z1ek6m2k90.execute-api.us-east-1.amazonaws.com/dev/testimonials`,
-        {
-          headers: {
-            "x-api-key": process.env.API_KEY,
-          },
-        }
-      );
-      console.log(process.env.API_KEY)
-      const { body } = response.data;   
-      setTestimonials(body);
+      const response = await api.get(`/testimonials`);
+      const { data } = response;
+     
+      setTestimonials(data);
     };
     fetchTestimonials();
   }, []);
