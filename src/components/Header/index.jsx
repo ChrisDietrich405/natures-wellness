@@ -79,7 +79,7 @@ function DrawerAppBar(props) {
       </div>
       <Divider />
       <List>
-        <h2>hello</h2>
+   
         {navItems.map(({ title, url }) => (
           <ListItem key={title} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>

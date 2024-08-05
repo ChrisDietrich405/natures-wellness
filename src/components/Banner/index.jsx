@@ -14,7 +14,7 @@ const Banner = ({ picturePath }) => {
           backgroundPosition: "center",
         }}
       ></div>
-      <h1>Hello</h1>
+      
     </div>
   );
 };
